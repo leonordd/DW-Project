@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Filter Page</title>
+        <link href="css/style-filter-page.css" rel="stylesheet">
+    </head>
+
+
+    <body>
+        <div class="banner">
+            
+            <!-- logo -->
+            <img src="images/eyes.svg" alt="eyes" height="60" width="119" />
+
+        </div>
+        
+        <div class="search-engine">
+            <p>Search ...</p>
+        </div>
+
+        <div class="filters-container">
+            <p>Photography</p>
+            <p>Art</p>
+            <p>Video</p>
+            <p>Architectural Models</p>
+            <p>Lighthouses</p>
+            <p>Games</p>
+            <p>Architectural Elements</p>
+            <p>Hotels</p>
+            <p>Interiors</p>
+            <p>By color</p>
+                     
+        </div>
+
+        
+        <div id= "photos" class="images-container">
+            <script>
+                var section = document.getElementById('photos');
+                var elements = '';
+
+                for (var i = 1; i <= 10; i++) { // Loops through images 1 - 5
+                var imgSrc = 'images/locations/location-' + i + '.jpg';
+                console.log(imgSrc);
+                var element = '<img src=' + '"' + imgSrc + '">';
+                console.log(element);
+                elements += element;
+                }
+
+                section.innerHTML = elements;
+            </script>
+        </div>
+    </body>
+</html>
