@@ -1,6 +1,9 @@
-*{
-    margin:0;
-    padding:0;
+/*NOTAAAAA 
+Não alterar este ficheiro, copiar para outra página para usar (obrigada :D)*/
+
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 
     /*COLORS*/
@@ -9,44 +12,53 @@
 }
 
 .container-fluid {
-    padding-left:3.97%;
-    padding-right:3.97%;
-    padding-top: 5.12%;
-    padding-top: 5.12%;
+    padding-left: calc(3.97% - calc(1.65%/2)); /*margem interna esquerda*/
+    padding-right: calc(3.97% - calc(1.65%/2)); /*margem interna direita*/
+    padding-top: 5.12%; /*margem interna superior*/
+    padding-top: 5.12%; /*margem interna inferior*/
     margin-right: auto;
-    margin-left:auto;
+    margin-left: auto;
 }
 
 .wrap {
     box-sizing: border-box;
-    /*max-width: 1200px;*/
     margin: 0 auto;
 }
 
-div{
+div {
     display: block;
 }
 
-.row{
-    box-sizing: border-box;
+.row {
     display: flex;
     -webkit-box-flex: 0;
-    -webkit-box-orient:horizontal;
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-    flex-direction:row;
+    flex-direction: row;
     flex-wrap: wrap;
-    margin-right:-calc(1.65%/2);
-    margin-left:-calc(1.65%/2);
+    margin-right: -calc(1.65%/2); /*margem de cada coluna (1.65%) é o valor completo, é negativo para inicializar o valor da row*/
+    margin-left: -calc(1.65%/2); /*margem de cada coluna (1.65%) é o valor completo, é negativo para inicializar o valor da row*/
 }
 
-/*.col-m, .col-m-1, .col-m-10, .col-m-11, .col-m-12, .col-m-2, .col-m-3, .col-m-4, .col-m-5, .col-m-6, .col-m-7, .col-m-8, .col-m-9, .col-m-offset-0, .col-m-offset-1, .col-m-offset-10, .col-m-offset-11, .col-m-offset-12, .col-m-offset-2, .col-m-offset-3, .col-m-offset-4, .col-m-offset-5, .col-m-offset-6, .col-m-offset-7, .col-m-offset-8, .col-m-offset-9 {
+[class*='col'] {
     box-sizing: border-box;
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 auto;
-    flex: 0 0 auto;
-    padding-right: 0.5rem;
-    padding-left: 0.5rem
-}*/
+    padding-right: calc(1.65%/2); /*margem de cada coluna (1.65%)*/
+    padding-left: calc(1.65%/2); /*margem de cada coluna (1.65%)*/
+}
+
+
+
+/*A ALTERAR COR E TAMANHO DE MARGEM ----------------------------------------------------------------------------------*/
+.box-row {
+    position: relative;
+    box-sizing: border-box;
+    background: red; /*APAGAR SE NECESSÁRIO*/
+    overflow: hidden;
+    margin-bottom: 20px; /*ALTERAR SE NECESSÁRIO margem de baixo de cada row*/
+}
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+
 
 /*Valores Desktop*/
 @media screen and (min-width: 980px) {
@@ -115,6 +127,7 @@ div{
         flex-basis: calc((100%/12)*11);
         max-width: calc((100%/12)*11);
     }
+
     .col-d-12 {
         -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
@@ -124,18 +137,6 @@ div{
 
 /* Para tablets: */
 @media screen and (min-width: 600px) and (max-width: 980px) {
-    /*.col-t-3 {
-        -ms-flex-preferred-size: 25%;
-        flex-basis: 25%;
-        max-width: 25%;
-    }
-    
-    .col-t-9 {
-        -ms-flex-preferred-size: 25%;
-        flex-basis: 75%;
-        max-width: 75%;
-    }*/
-
     .col-t-1 {
         -ms-flex-preferred-size: calc((100%/12)*1);
         flex-basis: calc((100%/12)*1);
@@ -201,6 +202,7 @@ div{
         flex-basis: calc((100%/12)*11);
         max-width: calc((100%/12)*11);
     }
+
     .col-t-12 {
         -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
@@ -211,7 +213,11 @@ div{
 
 /*para telemóveis*/
 @media screen and (max-width: 600px) {
-
+    [class*='col'] {
+        box-sizing: border-box;
+        padding-right: calc(4.62%/2);
+        padding-left: calc(4.62%/2);
+    }
 
     .col-m-1 {
         -ms-flex-preferred-size: calc((100%/6)*1);
@@ -243,27 +249,8 @@ div{
         max-width: calc((100%/6)*5);
     }
 
-    .col-m-6{
-        flex-basis:100%;
-        max-width:100%;
+    .col-m-6 {
+        flex-basis: 100%;
+        max-width: 100%;
     }
 }
-
-
-[class*='col'] {
-    box-sizing:border-box;
-    /*padding-right:0.5rem;
-    padding-left:0.5rem;*/
-    padding-right:calc(1.65%/2);
-    padding-left:calc(1.65%/2);
-}
-
-
-.box, .box-first, .box-large, .box-nested, .box-row{
-    position:relative;
-    box-sizing: border-box;
-    background: red;
-    overflow:  hidden;
-    margin-bottom:16px;
-}
-
