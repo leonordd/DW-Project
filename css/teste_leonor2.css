@@ -9,8 +9,10 @@
 }
 
 .container-fluid {
-    padding-left:2rem;
-    padding-right:2rem;
+    padding-left:3.97%;
+    padding-right:3.97%;
+    padding-top: 5.12%;
+    padding-top: 5.12%;
     margin-right: auto;
     margin-left:auto;
 }
@@ -22,7 +24,7 @@
 }
 
 div{
-    display:block;
+    display: block;
 }
 
 .row{
@@ -33,9 +35,8 @@ div{
     -webkit-box-direction: normal;
     flex-direction:row;
     flex-wrap: wrap;
-    margin-right:-0.5rem;
-    margin-left:-0.5rem;
-    
+    margin-right:-calc(1.65%/2);
+    margin-left:-calc(1.65%/2);
 }
 
 /*.col-m, .col-m-1, .col-m-10, .col-m-11, .col-m-12, .col-m-2, .col-m-3, .col-m-4, .col-m-5, .col-m-6, .col-m-7, .col-m-8, .col-m-9, .col-m-offset-0, .col-m-offset-1, .col-m-offset-10, .col-m-offset-11, .col-m-offset-12, .col-m-offset-2, .col-m-offset-3, .col-m-offset-4, .col-m-offset-5, .col-m-offset-6, .col-m-offset-7, .col-m-offset-8, .col-m-offset-9 {
@@ -251,8 +252,10 @@ div{
 
 [class*='col'] {
     box-sizing:border-box;
-    padding-right:0.5rem;
-    padding-left:0.5rem;
+    /*padding-right:0.5rem;
+    padding-left:0.5rem;*/
+    padding-right:calc(1.65%/2);
+    padding-left:calc(1.65%/2);
 }
 
 
