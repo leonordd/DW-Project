@@ -1,6 +1,6 @@
-*{
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 
     /*COLORS*/
@@ -34,12 +34,64 @@
 }
 
 
-h3{
+@font-face {
+    font-family: Bremlin;
+    src: url(bremlin.otf);
+}
+
+
+h1 {
 
     font-family: 'Bremlin', sans-serif;
     color: var(--bordo);
+    /* cor de exemplo */
     text-align: center;
-    
-
+    font-size: 6.25rem;
 
 }
+
+h2,
+h3,
+h4,
+p {
+    font-family: 'Jost', sans-serif;
+    color: var(--bordo);
+    /* cor de exemplo */
+}
+
+h2 {
+    font-size: 6rem;
+
+}
+
+h3 {
+    font-size: 3.75rem;
+
+}
+
+h4 {
+    font-size: 3.125rem;
+
+}
+
+.bold{
+    font-weight: 700;
+}
+.semibold{
+    font-weight: 600;
+}
+p {
+    font-size: 2.188rem;
+
+}
+
+.smaller{
+    font-size: 1.25rem;
+}
+
+.background{
+    font-family: 'Jost', sans-serif;
+    font-size: 12rem;
+    font-weight: 600;
+}
+
