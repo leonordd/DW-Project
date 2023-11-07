@@ -15,7 +15,7 @@ Não alterar este ficheiro, copiar para outra página para usar (obrigada :D)*/
     padding-left: calc(3.97% - calc(1.65%/2)); /*margem interna esquerda*/
     padding-right: calc(3.97% - calc(1.65%/2)); /*margem interna direita*/
     padding-top: 5.12%; /*margem interna superior*/
-    padding-top: 5.12%; /*margem interna inferior*/
+    padding-bottom: 5.12%; /*margem interna inferior*/
     margin-right: auto;
     margin-left: auto;
 }

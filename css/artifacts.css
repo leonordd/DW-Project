@@ -1,0 +1,17 @@
+html{
+    background-color: #F2DDC0;
+}
+
+.container-fluid {
+padding-top:0;
+padding-bottom:0;
+margin-bottom:5.12%;
+}
+
+nav{
+    height:10vh;
+}
+#um{
+    min-height:90vh;
+    /*background-color:red;*/
+}
