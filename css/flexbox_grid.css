@@ -52,7 +52,7 @@ div {
 .box-row {
     position: relative;
     box-sizing: border-box;
-    background: red; /*APAGAR SE NECESSÁRIO*/
+    /*background: red;*/ /*APAGAR SE NECESSÁRIO*/
     overflow: hidden;
     margin-bottom: 20px; /*ALTERAR SE NECESSÁRIO margem de baixo de cada row*/
 }
