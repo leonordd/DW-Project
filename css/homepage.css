@@ -1,12 +1,30 @@
-.header{
-    background-color: black;
+header {
+    background-color: var(--preto);
+    height: 100vh;
 }
-.imagens_home{
-    background-color: #642E68 ;
+
+.intro h1 {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:var( --rosasalmão); 
+   
 }
-.keywords{
-background-color: #F0B7BA;
+
+
+.imagens_home {
+    background-color: var(--roxo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.WA{
-    background-color: #900E16;
+
+.keywords {
+    background-color:var(--rosasalmão);
+}
+
+.WA {
+    background-color: var(--bordo);
 }
