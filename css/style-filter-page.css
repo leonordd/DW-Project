@@ -14,9 +14,9 @@ body {
 img {
     max-width: 30%;
     height: auto;
-    width: auto\9; /* ie8 */
+    width: auto\9;
+    /* ie8 */
 }
-
 
 
 .filters-container {
@@ -29,6 +29,7 @@ img {
     gap: 10px;
     width: 800px;
     margin: auto;
+    margin-top: 40px;
     background: #F3E4EC;
 }
 
@@ -44,6 +45,7 @@ img {
     margin: auto;
     margin-top: 100px;
 }
+
 .search-engine {
     display: flex;
     flex-direction: row;
@@ -56,11 +58,11 @@ img {
     margin: auto;
 }
 
-.search-engine p{
-    color: antiquewhite;
-    border-radius: 10px;
+.search-engine p {
+    color: var(--branco);
+    border-radius: 25px;
     background: #642E68;
-    padding: 10px; 
+    padding: 10px;
     flex-basis: 10%;
     text-align: center;
     flex-grow: 4;
@@ -68,17 +70,37 @@ img {
     flex-basis: auto;
     border: 2px solid transparent;
 }
+
+
+.search-engine p:hover {
+    color: #642E68;
+    border-color: #642E68;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 25px;
+    background: #D8C2D3;
+    flex-basis: 10%;
+    text-align: center;
+    flex-grow: 4;
+    flex-shrink: 3;
+    flex-basis: auto;
+}
+
+
+
 .filters-container p {
-    color: antiquewhite;
-    border-radius: 10px;
+    color: var(--branco);
+    border-radius: 25px;
     background: #642E68;
-    padding: 10px; 
+    padding: 10px;
     flex-basis: 10%;
     text-align: center;
     flex-grow: 4;
     flex-shrink: 3;
     flex-basis: auto;
     border: 2px solid transparent;
+    /* textos tamanho normal página diretor, autores dos artefactos */
+    font-size: 1.3rem;
 }
 
 .filters-container p:hover {
@@ -87,7 +109,7 @@ img {
     border-color: #642E68;
     border-style: solid;
     border-width: 2px;
-    border-radius: 10px;
+    border-radius: 25px;
     background: #D8C2D3;
     flex-basis: 10%;
     text-align: center;
