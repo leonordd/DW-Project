@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    /*COLORS*/ 
+
+    --preto: #141414;
+    --branco: #FFFFFF;
+
+    --rosaclaro: #F3E4EC;
+    --roxo: #642E68;
+
+    --amarelo: #FBE45B;
+    --vermelho1: #900E16;
+
+    --azulclaro: #C0FFF3;
+    --vermelho2: #972A22;
+
+    --rosasalmão: #F0B7BA;
+    --bordo: #640C08;
+
+    --bege: #EFEBD0;
+    --azulturquesa: #0E5266;
+
+    --rosaescuro: #842D53;
+    --amareloclaro: #FEED7D;
+
+    --castanho: #773613;
+    --amarelocalro2: #FFEC69;
+
+    --vermelhoescuro: #900E16;
+    --amarelo: #FBE45B;
+}
+
+
+@font-face {
+    font-family: Bremlin;
+    src: url(bremlin.otf);
+}
+
+
+h1 {    /* header homepage*/
+ 
+    font-family: 'Bremlin', sans-serif;
+    color: var(--bordo);
+    /* cor de exemplo */
+    text-align: center;
+    font-size: 6.25rem;
+
+}
+
+h2,
+h3,
+h4,
+p {
+    font-family: 'Jost', sans-serif;
+    color: var(--bordo);
+    /* cor de exemplo */
+}
+
+h2 {
+    /* nome diretor na homepage */
+    font-size: 6rem;
+
+}
+
+h3 {
+    /* frase do diretor homepage */
+    font-size: 3.75rem;
+
+}
+
+h4 {
+    /* as hashtags  e  categorias da pagina do diretor */
+    font-size: 3.125rem;
+
+}
+
+h6 {
+    /* navbar e footer */
+    font-family: 'Bremlin', sans-serif;
+    font-size: 1.6rem;
+}
+
+.bold {
+    /* categorias da pagina do diretor e pagina de artefactos individual */
+    font-weight: 700;
+}
+
+.semibold {
+    /* pagina do diretor "The Matermind" e pagina de artefactos individual */
+    font-weight: 600;
+}
+
+p {
+    /* textos tamanho normal página diretor, autores dos artefactos */
+    font-size: 1.7rem;
+
+}
+
+.smaller {
+    /* texto mais pequeno como o da pagina do diretor e artefactos individuais, e etiquetas das obras(página de filtragem) */
+    font-size: 1.25rem;
+}
+
+.smaller.semibold{   /* "+ More", "Topo" */
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.extrasmall.semibold {  /* palavras dos filtros( presentes tmb na pagina individual de artefactos), barra de pesquisa */
+    font-size: 1rem;    
+}
+
+.background {
+    /*pagina do diretor palavras do background */
+    font-family: 'Jost', sans-serif;
+    font-size: 12rem;
+    font-weight: 600;
+}
