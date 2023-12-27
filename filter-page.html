@@ -11,7 +11,7 @@
         <div class="banner">
             
             <!-- logo -->
-            <img src="images/eyes.svg" alt="eyes" height="60" width="119" />
+            <img src="eyes.svg" alt="eyes" height="60" width="119" />
 
         </div>
         
@@ -19,7 +19,7 @@
             <p>Search ...</p>
         </div>
 
-        <div class="filters-container">
+        <!-- <div class="filters-container">
             <p>Photography</p>
             <p>Art</p>
             <p>Video</p>
@@ -30,25 +30,9 @@
             <p>Hotels</p>
             <p>Interiors</p>
             <p>By color</p>
-                     
-        </div>
+        </div> -->
 
         
-        <div id= "photos" class="images-container">
-            <script>
-                var section = document.getElementById('photos');
-                var elements = '';
-
-                for (var i = 1; i <= 10; i++) { // Loops through images 1 - 5
-                var imgSrc = 'images/locations/location-' + i + '.jpg';
-                console.log(imgSrc);
-                var element = '<img src=' + '"' + imgSrc + '">';
-                console.log(element);
-                elements += element;
-                }
-
-                section.innerHTML = elements;
-            </script>
-        </div>
+        <script src="js/api.js"></script>
     </body>
 </html>
