@@ -29,7 +29,10 @@ function displayArtifact(data) {
 
     {/* <div class="link"><a href="www.uc.pt">More +</a></div>   */}
     title.textContent = data.metadata.name
-    by.textContent = 'by ' + data.metadata.author_name + ' ' + data.metadata.year
+    let year 
+    if (data.metadata.year) year = data.metadata.year
+    else year = ''
+    by.textContent = 'by ' + data.metadata.author_name + ' ' + year
     text.textContent = data.metadata.description
 
     // more link
