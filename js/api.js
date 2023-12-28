@@ -1,5 +1,4 @@
 let tags = {}
-
 let categoriesData, projectsData
 
 const PROJECTS_URL = 'https://api.cosmicjs.com/v3/buckets/dw-project-production/objects?pretty=true&query=%7B%22type%22:%22projects%22%7D&limit=53&skip=0&read_key=rpHe3JIOqs8yp0uC1q6v1J1NjWXksisBbjgrQrUG1voFfLITHg&depth=1&props=slug,title,metadata,id,'
@@ -127,13 +126,45 @@ function displayCategories(data) {
 }
 
 function handleSearchEngine() {
-    const input = document.getElementById('search-engine')
-    var value = input.value
+    const input = document.getElementById('search-engine');
+    const value = input.value.trim().toLowerCase();
 
-    if (value && value.length > 3 && projectsData) {
-        console.log(projectsData)
+    // display all
+    if (!value || value.length === 0 || value.length < 3) {
+        
+        // clear image container
+        const imagesContainer = document.getElementById('images-container');
+        if (imagesContainer) {
+            imagesContainer.parentNode.removeChild(imagesContainer);
+        }
+
+        // display all projects
+        displayProjects(projectsData);
+        return;
     }
 
+    let newData = [];
+
+    // filter search input
+    projectsData.forEach(data => {
+        if (data.metadata.name.toLowerCase().includes(value)) {
+            const exists = newData.some(obj => obj.id === data.id);
+            if (!exists) {
+                newData.push(data);
+            }
+        }
+    });
+
+
+    // new results
+    if (newData !== null) {
+        // clear image container ans display new results
+        const imagesContainer = document.getElementById('images-container');
+        if (imagesContainer) {
+            imagesContainer.parentNode.removeChild(imagesContainer);
+        }
+        displayProjects(newData);
+    }
 }
 
 
