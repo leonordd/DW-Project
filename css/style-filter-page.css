@@ -83,10 +83,11 @@ img {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    align-items: baseline;
+    align-items: center;
     align-content: space-around;
     width: 40vw;
     margin: auto;
+    margin-bottom: 4vh;
 }
 
 .search-engine i {
@@ -127,6 +128,7 @@ img {
 
 .filters-container p {
     font-family: "Jost";
+    font-size: 13px;
     color: #F2F2F2;
     border-radius: 25px;
     background: #642E68;
