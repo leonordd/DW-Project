@@ -1,4 +1,7 @@
 let tags = {}
+
+let categoriesData, projectsData
+
 const PROJECTS_URL = 'https://api.cosmicjs.com/v3/buckets/dw-project-production/objects?pretty=true&query=%7B%22type%22:%22projects%22%7D&limit=53&skip=0&read_key=rpHe3JIOqs8yp0uC1q6v1J1NjWXksisBbjgrQrUG1voFfLITHg&depth=1&props=slug,title,metadata,id,'
 const CATEGORIES_URL =  'https://api.cosmicjs.com/v3/buckets/dw-project-production/objects?pretty=true&query=%7B%22type%22:%22categories%22%7D&limit=19&skip=0&read_key=rpHe3JIOqs8yp0uC1q6v1J1NjWXksisBbjgrQrUG1voFfLITHg&depth=1&props=slug,title,metadata,id,'
 
@@ -123,15 +126,25 @@ function displayCategories(data) {
     document.body.appendChild(filtersContainer)
 }
 
+function handleSearchEngine() {
+    const input = document.getElementById('search-engine')
+    var value = input.value
+
+    if (value && value.length > 3 && projectsData) {
+        console.log(projectsData)
+    }
+
+}
 
 
 (async () => {
     try {
-        const categoriesData = await fetchApi(CATEGORIES_URL)
+        categoriesData = await fetchApi(CATEGORIES_URL)
         displayCategories(categoriesData)
 
-        const projectsData = await fetchApi(PROJECTS_URL);
+        projectsData = await fetchApi(PROJECTS_URL);
         displayProjects(projectsData);
+        handleSearchEngine()
 
     } catch (error) {
         console.error('Fetching error:', error);

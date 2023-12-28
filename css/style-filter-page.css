@@ -109,6 +109,22 @@ img {
     border: 1.5px solid #642E68;
 }
 
+
+.search-engine input {
+    font-family: "Jost";
+    color: #642E68;
+    border-radius: 25px;
+    background: #D8C2D3;
+    padding: 10px; 
+    flex-basis: 10%;
+    text-align: center;
+    flex-grow: 4;
+    flex-shrink: 3;
+    flex-basis: auto;
+    border: 1.5px solid #642E68;
+    outline: none;
+}
+
 .filters-container p {
     font-family: "Jost";
     color: #F2F2F2;
