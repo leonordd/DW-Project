@@ -74,20 +74,11 @@ nav{
     padding: 15px 30px;
 }
 
-.cores li{
-    margin-top: 8px;
-    margin-bottom: 8px;
-}
-
-.image, .cores {
+.image, .cores{
     display: flex;
     align-items: center;
     justify-content: center;
     padding-bottom:10%;
-}
-
-.cores{
-    float:right;
 }
 
 .image > img {
