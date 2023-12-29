@@ -42,6 +42,7 @@ function displayArtifact(data) {
         link.textContent = 'More +'
         linkContainer.appendChild(link)
     }
+    
     // tags
     if (data.metadata.tags) {
         const tagsContainer = document.getElementById('tags-container')
