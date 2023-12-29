@@ -1,5 +1,5 @@
 html{
-    background-color: #F2DDC0;
+    background-color: #FFFFFF;
     --red:#742A2B;
     --yellow: #E1AE66;
 }
@@ -39,19 +39,21 @@ nav{
 }
 
 .by{
-    font-size:1.875rem;
+    color:black;
     margin-bottom:53px;
 }
 
 .text{
-    font-size:1.25rem;
     margin-bottom:32px;
-    line-height:2rem;
+}
+
+.text > p{
+    font-size:1.25rem;
+    line-height:1.85rem;
+    color: black;
 }
 
 .link{
-    font-size:1.375rem;
-    font-weight:600;
     color:var(--red);
 }
 
@@ -61,8 +63,8 @@ nav{
 
 .filter li{
     display:inline-block;
-    margin-right:2%;
-    margin-bottom:2%;
+    margin-right:8px;
+    margin-bottom:8px;
     background-color: var(--yellow);
     border-radius: 25px;
     padding: 15px 30px;

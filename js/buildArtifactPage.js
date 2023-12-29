@@ -19,28 +19,68 @@ async function fetchApi(apiUrl) {
 
 
 function displayArtifact(data) {
-    console.log(data)
+    /*console.log(data)*/
+   let back_color;
+    let filter1;
+    let filter2;
+    let filter3;
+    let filter4;
+    let cor1;
+    let cor2;
+    let tags_back;
+    let tags_text;
+
+    if(data.metadata.filme!==null){
+        console.log(data.metadata.filme);
+        back_color = data.metadata.filme.metadata.background_color;
+        filter1 = data.metadata.filme.metadata.filter1;
+        filter2 = data.metadata.filme.metadata.filter2;
+        filter3 = data.metadata.filme.metadata.filter3;
+        filter4 = data.metadata.filme.metadata.filter4;
+        cor1 = data.metadata.filme.metadata.cor1;
+        cor2 = data.metadata.filme.metadata.cor2;
+        tags_back = data.metadata.filme.metadata.tags_background;
+        tags_text = data.metadata.filme.metadata.tags_text; 
+    } else{ //se for igual a null
+        back_color = "#FFFFFF";
+        /*filter1 = data.metadata.filme.metadata.filter1;
+        filter2 = data.metadata.filme.metadata.filter2;
+        filter3 = data.metadata.filme.metadata.filter3;
+        filter4 = data.metadata.filme.metadata.filter4;
+        cor1 = data.metadata.filme.metadata.cor1;
+        cor2 = data.metadata.filme.metadata.cor2;
+        tags_back = data.metadata.filme.metadata.tags_background;
+        tags_text = data.metadata.filme.metadata.tags_text;*/ 
+    }
 
     // info
 
     const title = document.getElementById('title')
     const by = document.getElementById('by')
     const text = document.getElementById('text')
+    let background = document.querySelector("html");
 
-    title.textContent = data.metadata.name
-    let year 
-    if (data.metadata.year) year = data.metadata.year
+    background.style.backgroundColor = back_color;
+
+    title.textContent = data.metadata.name;
+    title.style.color = cor1;
+    let year; 
+    if (data.metadata.year) year = data.metadata.year;
     else year = ''
-    by.textContent = 'by ' + data.metadata.author_name + ' ' + year
-    text.innerHTML = data.metadata.description
+    by.textContent = 'by ' + data.metadata.author_name + ' ' + year;
+
+    //by.style.color = "black";
+
+    text.innerHTML = data.metadata.description;
 
     // more link
     if (data.metadata.more_link) {
-        const linkContainer = document.getElementById('more-link')
-        const link = document.createElement('a')
-        link.href = data.metadata.more_link
-        link.textContent = 'More +'
-        linkContainer.appendChild(link)
+        const linkContainer = document.getElementById('more-link');
+        const link = document.createElement('a');
+        link.href = data.metadata.more_link;
+        link.textContent = 'More +';
+        link.style.color = cor1;
+        linkContainer.appendChild(link);
     }
     
     // tags
@@ -50,6 +90,8 @@ function displayArtifact(data) {
         data.metadata.tags.forEach(tag => {
             const item = document.createElement('li')
             item.textContent = tag.title
+            item.style.backgroundColor = tags_back;
+            item.style.color = tags_text;
             list.appendChild(item)
         });
         tagsContainer.appendChild(list)
@@ -65,11 +107,17 @@ function displayArtifact(data) {
     // dominant colors
     const colors = document.getElementById('dominant-colors')
     const palette = document.createElement('ul')
+    const filterArray = [filter1, filter2, filter3, filter4];
+
     for (let i = 0; i < 4; i++) {
         const item = document.createElement('li')
-        item.classList.add(`cor-${i + 1}`)
+        item.classList.add(`cor`)
+        //item.classList.add(`cor-${i + 1}`)
+
+        item.style.backgroundColor = filterArray[i];
         palette.appendChild(item)
     }
+
     colors.appendChild(palette)
 }
 
