@@ -42,15 +42,15 @@ function displayArtifact(data) {
         tags_back = data.metadata.filme.metadata.tags_background;
         tags_text = data.metadata.filme.metadata.tags_text; 
     } else{ //se for igual a null
-        back_color = "#FFFFFF";
-        /*filter1 = data.metadata.filme.metadata.filter1;
-        filter2 = data.metadata.filme.metadata.filter2;
-        filter3 = data.metadata.filme.metadata.filter3;
-        filter4 = data.metadata.filme.metadata.filter4;
-        cor1 = data.metadata.filme.metadata.cor1;
-        cor2 = data.metadata.filme.metadata.cor2;
-        tags_back = data.metadata.filme.metadata.tags_background;
-        tags_text = data.metadata.filme.metadata.tags_text;*/ 
+        back_color = "#F7C5C8";
+        filter1 = "#CA4C45";
+        filter2 = "#F2F2F2";
+        filter3 = "#3B53AB";
+        filter4 = "#F2D140";
+        cor1 = "#640C08";
+        cor2 = "#640C08";
+        tags_back = "#640C08";
+        tags_text = "#FFFFFF";
     }
 
     // info
