@@ -116,6 +116,34 @@ nav{
     margin-left: auto;
     box-sizing: border-box;
     margin: 0 auto;
+    font-family: 'Jost', sans-serif;
+}
+
+.inspired{
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom:50px;
+}
+
+.movie_title{
+    font-size: 12rem;
+    font-weight: 600;
+    line-height: 8rem;
+    opacity:40%;
+}
+
+.img_filme{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.year{
+    font-size: 3.125rem;
+    font-weight: 600;
+    opacity: 40%;
+    text-align:right;
 }
 
 /*Valores Desktop*/
