@@ -41,6 +41,43 @@ function displayArtifact(data) {
         cor2 = data.metadata.filme.metadata.cor2;
         tags_back = data.metadata.filme.metadata.tags_background;
         tags_text = data.metadata.filme.metadata.tags_text; 
+
+        let body = document.querySelector("body");
+        let movie = document.createElement("div");
+        movie.classList.add("movie");
+        movie.style.backgroundColor = cor1;
+        body.appendChild(movie);
+
+        let inspired = document.createElement("div");
+        inspired.innerText = "Inspired by";
+        inspired.classList.add("inspired");
+        inspired.style.color = cor2;
+        movie.appendChild(inspired);
+
+        let movie_title = document.createElement("div");
+        movie_title.innerText = data.metadata.filme.title;
+        movie_title.classList.add("movie_title");
+        movie_title.style.color = cor2;
+        movie_title.style.textTransform = "uppercase";
+        movie.appendChild(movie_title);
+
+        let img_filme = document.createElement("img");
+        img_filme.alt = "Movie"
+        img_filme.classList.add("img_filme");
+        img_filme.src = data.metadata.filme.metadata.cover.url;
+        movie.appendChild(img_filme);
+
+        let year = document.createElement("div");
+        year.innerText ="–" + data.metadata.filme.metadata.year;
+        year.classList.add("year");
+        year.style.color = cor2;
+        movie.appendChild(year);
+
+        /*<div class="inspired">Inspired by</div>
+        <div class="movie_title">Fantastic Mr. Fox</div>
+        <div class="img_filme"><img></div>
+        <div class="year">2009</div>*/
+
     } else{ //se for igual a null
         back_color = "#F7C5C8";
         filter1 = "#CA4C45";
@@ -115,10 +152,11 @@ function displayArtifact(data) {
         //item.classList.add(`cor-${i + 1}`)
 
         item.style.backgroundColor = filterArray[i];
-        palette.appendChild(item)
+        palette.appendChild(item);
     }
 
-    colors.appendChild(palette)
+    colors.appendChild(palette);
+
 }
 
 (async () => {

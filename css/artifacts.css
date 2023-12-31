@@ -107,7 +107,16 @@ nav{
     background-color:#F8E03E;
 }
 
-
+.movie{
+    padding-left: calc(3.97% - calc(1.65%/2)); /*margem interna esquerda*/
+    padding-right: calc(3.97% - calc(1.65%/2)); /*margem interna direita*/
+    padding-top: 5.12%; /*margem interna superior*/
+    padding-bottom: 5.12%; /*margem interna inferior*/
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
 
 /*Valores Desktop*/
 @media screen and (min-width: 980px) {
