@@ -9,12 +9,14 @@ header p {
 
 .intro h1 {
     height: 100vh;
+    background-color: var(--preto);
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     color:var( --rosasalmão); 
     font-weight: normal;
+    z-index: 2;
 }
 
 
@@ -239,11 +241,12 @@ header p {
     border-radius: 100%;
     align-items: center;
     justify-content: center;
-    z-index: 10;
+    z-index: 1;
     position: fixed;
-    left: 135vh;
-    bottom: 10vh;
+    right: 5%;
+    bottom: 5%;
     cursor: pointer;
+    opacity: 1;
 }
 
 .costumize img {
@@ -265,6 +268,10 @@ body, .imagens_home, .keywords, .WA {
     }
     .img7 img {
         width: 150%;
+    }
+    .costumize {
+        width: 60px;
+        height: 60px;
     }
 }
 
@@ -333,6 +340,10 @@ body, .imagens_home, .keywords, .WA {
     }
     .words2 h4 {
         font-size: 2.3rem;
+    }
+    .costumize {
+        width: 50px;
+        height: 50px;
     }
 
 }
@@ -404,6 +415,10 @@ body, .imagens_home, .keywords, .WA {
             display: flex;
             justify-content: center;
             grid-column: 5 / span 4;
+        }
+        .costumize {
+            width: 40px;
+            height: 40px;
         }
 }
 

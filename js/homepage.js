@@ -179,3 +179,50 @@ eyes.addEventListener("click", function () {
     }
   }
 
+/*-------------------------------------------------LOADING SCREEN HOMEPAGE----------------------------------------- */
+document.addEventListener('DOMContentLoaded', function () {
+  window.addEventListener('load', function () {
+      setTimeout(function () {
+          window.scrollTo(0, 0);
+          zoomOut();
+      }, 1000);
+  });
+});
+
+function zoomOut() {
+  var image = document.querySelector('.zoom-image');
+  document.body.classList.add('no-scroll');
+
+  // Adiciona a classe para iniciar a animação
+  image.classList.add('zoom-out-animation');
+
+  image.addEventListener('transitionend', function () {
+      image.classList.add('scale-zero'); //dar reset na scale
+      setTimeout(function () {
+          document.body.classList.remove('no-scroll');
+      }, 1000);
+  });
+}
+
+/*-------------BOTÃO COSTUMIZAR INVISIVEL NO HEADER------- */
+document.addEventListener("DOMContentLoaded", function () {
+  var costumizeDiv = document.querySelector(".costumize");
+  var headerHeight = document.querySelector("header").offsetHeight;
+
+  // Verifica a posição do scroll
+  window.addEventListener("scroll", function () {
+      if (window.scrollY > headerHeight ) {
+          // Scroll está fora do cabeçalho, torna a div visível
+          costumizeDiv.style.opacity = "1";
+      } else {
+          // Scroll está dentro do cabeçalho, torna a div invisível
+          costumizeDiv.style.opacity = "0";
+      }
+  });
+  costumizeDiv.style.transition = "opacity 0.3s ease";
+});
+
+
+
+
+

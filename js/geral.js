@@ -27,30 +27,3 @@ $("html").mousemove(function (event) {
 });
 
 
-/*-------------------------------------------------LOADING SCREEN HOMEPAGE----------------------------------------- */
-document.addEventListener('DOMContentLoaded', function () {
-    window.addEventListener('load', function () {
-        setTimeout(function () {
-            window.scrollTo(0, 0);
-            zoomOut();
-        }, 1000);
-    });
-});
-
-function zoomOut() {
-    var image = document.querySelector('.zoom-image');
-    document.body.classList.add('no-scroll');
-
-    // Adiciona a classe para iniciar a animação
-    image.classList.add('zoom-out-animation');
- 
-    image.addEventListener('transitionend', function () {
-        image.classList.add('scale-zero'); //dar reset na scale
-        setTimeout(function () {
-            document.body.classList.remove('no-scroll');
-        }, 1000);
-    });
-}
-
-
-
