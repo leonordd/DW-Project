@@ -38,19 +38,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function zoomOut() {
     var image = document.querySelector('.zoom-image');
-    
-    // Adiciona a classe para evitar scroll
     document.body.classList.add('no-scroll');
 
     // Adiciona a classe para iniciar a animação
     image.classList.add('zoom-out-animation');
 
-    // Adiciona um ouvinte para quando a transição de zoom out estiver completa
     image.addEventListener('transitionend', function () {
-        // Adiciona a classe para transformar a escala para 0
-        image.classList.add('scale-zero');
-
-        // Adia a remoção da classe 'no-scroll' por 2 segundos após o término da animação
+        image.classList.add('scale-zero'); //dar reset na scale
         setTimeout(function () {
             document.body.classList.remove('no-scroll');
         }, 1000);

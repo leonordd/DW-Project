@@ -435,5 +435,5 @@ body, .imagens_home, .keywords, .WA {
 }
 body.no-scroll {
     transition: overflow 1.5s ease-out;
-    overflow: hidden; /* Adicionando overflow: hidden para evitar barras de rolagem no body durante a animação */
+    overflow: hidden;
 }
