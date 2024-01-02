@@ -48,12 +48,26 @@ function displayProjects(data) {
 
         const img = document.createElement('img')
         const hyperlink = document.createElement('a')
+        const container = document.createElement('div')
+        container.classList.add('info-container')
         hyperlink.href = `artifact.html?id=${project.id}`
         img.src = project.metadata.image.url
         img.setAttribute('id', project.id)
         img.classList.add('prevent-select')
+        console.log(project)
+
+        let title, author
+        title = project.metadata.name
+        author = project.metadata.author_name
+        if (title == null) title = "Untitled"
+        if (author == null) author = "Anonymous"
+
+        container.innerHTML = `${title}<br><b>${author}</b>`
+        container.classList.add('prevent-select')
+        console.log(img.width)
         hyperlink.appendChild(img)
         div.appendChild(hyperlink)
+        div.appendChild(container)
         imagesContainer.appendChild(div)
         
     });

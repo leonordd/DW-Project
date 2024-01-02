@@ -16,8 +16,6 @@ body {
 .banner {
     padding: 30px;
     text-align: center;
-    color: black;
-    font-size: 30px;
     margin-bottom: 7vh;
     height: 5vh;
     display: flex;
@@ -25,20 +23,43 @@ body {
     align-items: center;
 }
 
-.banner img {
-    height: 50px;
+
+
+/* desktop */
+@media only screen and (min-width: 992px) {
+    .banner p {
+        font-family: "Bremlin";
+        font-size: 25px;
+    }
+
+    .banner img {
+        height: 45px;
+    }
 }
 
-.banner p {
-    font-family: "Bremlin";
-    font-size: 25px;
-}
-img {
-    max-width: 70%;
-    height: auto;
-    width: auto; /* ie8 */
+/* tablet */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .banner p {
+        font-family: "Bremlin";
+        font-size: 25px;
+    }
+
+    .banner img {
+        height: 40px;
+    }
 }
 
+/* mobile */
+@media only screen and (max-width: 767px) {
+    .banner p {
+        font-family: "Bremlin";
+        font-size: 15px;
+    }
+
+    .banner img {
+        height: 25px;
+    }
+}
 
 .prevent-select {
     -webkit-user-select: none; /* Safari */
@@ -54,37 +75,111 @@ img {
     align-items: baseline;
     align-content: space-around;
     gap: 10px;
-    width: 800px;
+    width: 65vw;
     margin: auto;
-    background: #F3E4EC;
 }
 
-.images-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: baseline;
-    width: 1000px;
-    margin: auto;
-    margin-top: 100px;
-    row-gap: 10vh;
+
+/* desktop */
+@media only screen and (min-width: 992px) {
+    .images-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: baseline;
+        width: 80vw;
+        margin: auto;
+        margin-top: 100px;
+        row-gap: 15vh;
+        column-gap: 1vw;
+    }
+    
+    .img-container {
+        width: 25%;
+        height: fit-content;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
 }
 
-.img-container {
-    width: 25%;
-    height: fit-content;
+.img-container a img {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+
+.info-container {
+    border: 1.5px solid #642E68;
+    padding: 3vh;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    font-family: "Jost";
+    color: #642E68;
+    width: 100%;
+}
+
+/* tablet */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .images-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: baseline;
+        width: 80vw;
+        margin: auto;
+        margin-top: 10vh;
+        row-gap: 10vh;
+        column-gap: 1vw;
+    }
+    
+    .img-container {
+        width: 50%;
+        height: fit-content;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+/* mobile */
+@media only screen and (max-width: 767px) {
+    .images-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: baseline;
+        width: 80vw;
+        margin: auto;
+        margin-top: 10vh;
+        row-gap: 10vh;
+        column-gap: 1vw;
+    }
+    
+    .img-container {
+        width: 45%;
+        height: fit-content;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+}
+
+
+.images-container a {
     display: flex;
     justify-content: center;
 }
 
+
 .search-engine {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    align-content: space-around;
+    align-content: center;
     width: 40vw;
     margin: auto;
     margin-bottom: 4vh;
@@ -96,7 +191,8 @@ img {
     position: relative;
     left: 30px;
 }
-.search-engine p{
+
+.search-engine p {
     font-family: "Jost";
     color: #642E68;
     border-radius: 25px;
