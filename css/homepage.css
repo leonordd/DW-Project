@@ -434,6 +434,6 @@ body, .imagens_home, .keywords, .WA {
     transform: scale(0);
 }
 body.no-scroll {
-    transition: overflow 1.5s ease-out;
+    transition: overflow 1.8s ease-out;
     overflow: hidden;
 }

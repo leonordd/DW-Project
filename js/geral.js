@@ -31,8 +31,9 @@ $("html").mousemove(function (event) {
 document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('load', function () {
         setTimeout(function () {
+            window.scrollTo(0, 0);
             zoomOut();
-        }, 800);
+        }, 1000);
     });
 });
 
@@ -42,7 +43,7 @@ function zoomOut() {
 
     // Adiciona a classe para iniciar a animação
     image.classList.add('zoom-out-animation');
-
+ 
     image.addEventListener('transitionend', function () {
         image.classList.add('scale-zero'); //dar reset na scale
         setTimeout(function () {
