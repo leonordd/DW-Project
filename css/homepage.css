@@ -1,4 +1,3 @@
-
 header p {
     opacity:0;
 }
@@ -411,6 +410,7 @@ body, .imagens_home, .keywords, .WA {
 
 
 .zoom-image {
+    overflow: hidden;
     position: absolute;
     top: 0;
     left: 0;
@@ -423,11 +423,17 @@ body, .imagens_home, .keywords, .WA {
 }
 
 .zoom-image.zoom-out-animation {
+    overflow: hidden;
     transform: scale(20);
     opacity: 0;
     transition: transform 1s ease-out, opacity 1s ease-out;
 }
 
 .zoom-image.scale-zero {
+    overflow: hidden;
     transform: scale(0);
+}
+body.no-scroll {
+    transition: overflow 1.5s ease-out;
+    overflow: hidden; /* Adicionando overflow: hidden para evitar barras de rolagem no body durante a animação */
 }
