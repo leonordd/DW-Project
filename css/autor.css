@@ -1,9 +1,26 @@
+@font-face {
+    font-family: "Bremlin";
+    src: url("../fonts/Bremlin.otf");
+}
+
+
 .banner {
     padding: 30px;
     text-align: center;
+    color: black;
+    font-size: 30px;
     margin-bottom: 7vh;
     height: 5vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.banner img {
+    height: 50px;
+}
+
+.banner p {
+    font-family: "Bremlin";
+    font-size: 25px;
 }
