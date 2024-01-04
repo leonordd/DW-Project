@@ -33,6 +33,7 @@ function setTags(project) {
     return tags
 }
 
+
 function displayProjects(data) {
     
     const imagesContainer = document.createElement('div')
@@ -293,7 +294,6 @@ function handleSearchEngine() {
         moviesData = await fetchApi(MOVIES_URL)
         projectsData = await fetchApi(PROJECTS_URL);
         displayCategories(categoriesData, moviesData, projectsData)
-
         displayProjects(projectsData);
         handleSearchEngine()
 
