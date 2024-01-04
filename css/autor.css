@@ -1,7 +1,9 @@
 .banner {
     padding: 30px;
     text-align: center;
-    color: black;
-    font-size: 30px;
-    margin-bottom: 100px;
+    margin-bottom: 7vh;
+    height: 5vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
