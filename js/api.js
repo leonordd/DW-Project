@@ -1,8 +1,11 @@
 let tags = {}
 let categoriesData, projectsData
+let palettes = {}
+let openMenu = false
 
 const PROJECTS_URL = 'https://api.cosmicjs.com/v3/buckets/dw-project-production/objects?pretty=true&query=%7B%22type%22:%22projects%22%7D&limit=53&skip=0&read_key=rpHe3JIOqs8yp0uC1q6v1J1NjWXksisBbjgrQrUG1voFfLITHg&depth=1&props=slug,title,metadata,id,'
 const CATEGORIES_URL =  'https://api.cosmicjs.com/v3/buckets/dw-project-production/objects?pretty=true&query=%7B%22type%22:%22categories%22%7D&limit=19&skip=0&read_key=rpHe3JIOqs8yp0uC1q6v1J1NjWXksisBbjgrQrUG1voFfLITHg&depth=1&props=slug,title,metadata,id,'
+const MOVIES_URL = 'https://api.cosmicjs.com/v3/buckets/dw-project-production/objects?pretty=true&query=%7B%22type%22:%22movies%22%7D&limit=10&read_key=rpHe3JIOqs8yp0uC1q6v1J1NjWXksisBbjgrQrUG1voFfLITHg&depth=1&props=slug,title,metadata,id,'
 
 async function fetchApi(apiUrl) {
     try {
@@ -54,7 +57,6 @@ function displayProjects(data) {
         img.src = project.metadata.image.url
         img.setAttribute('id', project.id)
         img.classList.add('prevent-select')
-        console.log(project)
 
         let title, author
         title = project.metadata.name
@@ -64,7 +66,6 @@ function displayProjects(data) {
 
         container.innerHTML = `${title}<br><b>${author}</b>`
         container.classList.add('prevent-select')
-        console.log(img.width)
         hyperlink.appendChild(img)
         div.appendChild(hyperlink)
         div.appendChild(container)
@@ -72,11 +73,11 @@ function displayProjects(data) {
         
     });
     
-
+    
     document.body.appendChild(imagesContainer)
 }
 
-function displayCategories(data) {
+function displayCategories(data, movies, projects) {
     const filtersContainer = document.createElement('div')
     filtersContainer.classList.add('filters-container')
     
@@ -136,6 +137,109 @@ function displayCategories(data) {
         filtersContainer.appendChild(newTag)
     });
 
+    const dropdown = document.createElement('div')
+    // open close menu
+    dropdown.addEventListener('click', (e) => {
+        if (!openMenu) {
+            dropdownContent.style.visibility = 'visible'
+            openMenu = true
+        }
+        else {
+            dropdownContent.style.visibility = 'hidden'
+            openMenu = false
+        }
+        
+    })
+
+    dropdown.classList.add('dropdown')
+
+    const paletteTag = document.createElement('p')
+    paletteTag.innerHTML = 'Color Palette <i class="bi bi-caret-down-fill"></i>'
+    paletteTag.classList.add('prevent-select')
+    dropdown.appendChild(paletteTag)
+
+    const dropdownContent = document.createElement('div')
+    dropdownContent.classList.add('dropdown-content')
+
+    movies.forEach(movie => {
+
+        if (movie.metadata.filter1 && movie.metadata.filter2 && movie.metadata.filter3 && movie.metadata.filter4) {
+            console.log(movie.metadata)
+            const colorPalette = document.createElement('div')
+            palettes[movie.metadata.name] = false
+            
+            colorPalette.classList.add('color-palette')
+            colorPalette.setAttribute('id', `${movie.id}`)
+
+            for (let i = 0; i < 4; i++) {
+                const color = document.createElement('span')
+                color.classList.add('color')
+                color.style.backgroundColor = `${movie.metadata['filter' + (i + 1)]}`
+                colorPalette.appendChild(color)
+            }
+            dropdownContent.appendChild(colorPalette)
+
+            colorPalette.addEventListener('click', (e) => {
+               
+                palettes[movie.metadata.name] = !palettes[movie.metadata.name]
+
+                if (palettes[movie.metadata.name]) {
+                    newData = []
+                    colorPalette.style.backgroundColor = '#D8C2D3'
+                    
+                    for (const [key, value] of Object.entries(palettes)) {
+                        if (palettes[key]) {
+                            projects.forEach(project => {
+                                if (project.metadata.filme !== null && project.metadata.filme.metadata.name === key) {
+                                    newData.push(project)
+                                }
+                            });
+                        }
+                    }
+    
+                    if (newData !== null) {
+                        // clear image container ans display new results
+                        const imagesContainer = document.getElementById('images-container');
+                        if (imagesContainer) {
+                            imagesContainer.parentNode.removeChild(imagesContainer);
+                        }
+                        displayProjects(newData);
+                    }
+                } else {
+                    colorPalette.style.backgroundColor = '#642E68'
+                    let newData = []
+                    for (const [key, value] of Object.entries(palettes)) {
+                        if (palettes[key]) {
+                            projects.forEach(project => {
+                                if (project.metadata.filme !== null && project.metadata.filme.metadata.name === key) {
+                                    newData.push(project)
+                                }
+                            });
+                        }
+                    }
+                    console.log(newData)
+                    if (newData !== null) {
+                        // clear image container ans display new results
+                        const imagesContainer = document.getElementById('images-container');
+                        if (imagesContainer) {
+                            imagesContainer.parentNode.removeChild(imagesContainer);
+                        }
+                        displayProjects(newData);
+                    }
+                    if (newData.length === 0) {
+                        const imagesContainer = document.getElementById('images-container');
+                        if (imagesContainer) {
+                            imagesContainer.parentNode.removeChild(imagesContainer);
+                        }
+                        displayProjects(projects);
+                    }
+                }
+                console.log('click')
+            })
+        }
+    });
+    dropdown.appendChild(dropdownContent)
+    filtersContainer.appendChild(dropdown)
     document.body.appendChild(filtersContainer)
 }
 
@@ -185,9 +289,10 @@ function handleSearchEngine() {
 (async () => {
     try {
         categoriesData = await fetchApi(CATEGORIES_URL)
-        displayCategories(categoriesData)
-
+        moviesData = await fetchApi(MOVIES_URL)
         projectsData = await fetchApi(PROJECTS_URL);
+        displayCategories(categoriesData, moviesData, projectsData)
+
         displayProjects(projectsData);
         handleSearchEngine()
 
