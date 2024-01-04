@@ -96,6 +96,12 @@ function displayCategories(data, movies, projects) {
         newTag.addEventListener('click', function (e) {
             tags[`${tag.slug}`] = !tags[`${tag.slug}`]
             
+            //removes the 100% width from the .info-container
+            let contain = document.querySelectorAll(".info-container");
+            for(let i=0; i<contain.length; i++){
+                contain[i].style.width = "auto";
+            }
+            
             // no filter selected => display all images
 
             if (Object.values(tags).reduce((a, b) => a + b, 0) === 0) {
