@@ -265,7 +265,8 @@ function handleSearchEngine() {
 
     // filter search input
     projectsData.forEach(data => {
-        if (data.metadata.name.toLowerCase().includes(value)) {
+        console.log(data)
+        if (data.metadata.name.toLowerCase().includes(value) || (data.metadata.description !== null && data.metadata.description.toLowerCase().includes(value)) || (data.metadata.author_name !== null && data.metadata.author_name.toLowerCase().includes(value))) {
             const exists = newData.some(obj => obj.id === data.id);
             if (!exists) {
                 newData.push(data);
