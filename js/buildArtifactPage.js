@@ -34,6 +34,7 @@ function displayArtifact(data) {
     let movie = document.querySelector(".movie");
     let footer = document.querySelector("footer");
 
+
     if (data.metadata.filme !== null) {
         console.log(data.metadata.filme);
         back_color = data.metadata.filme.metadata.background_color;
@@ -102,13 +103,13 @@ function displayArtifact(data) {
     const by = document.getElementById('by')
     const text = document.getElementById('text')
     let background = document.querySelector("html");
+    let header = document.querySelector("header");
 
     background.style.backgroundColor = back_color;
+    header.style.backgroundColor = back_color;
 
     title.textContent = data.metadata.name;
     title.style.color = cor1;
-    let year;
-
 
     let author = data.metadata.author_name;
     if (author === null) author = "Anonymous";
@@ -184,3 +185,22 @@ function displayArtifact(data) {
         throw error;
     }
 })();
+
+
+
+/*JS GERAL -----------------------------------------------------------------------*/
+/* Reference code: https://codepen.io/whipcat/pen/ExKPQqZ  */
+$("html").mousemove(function (event) {
+    var eye = $(".eye");
+    console.log('eye', eye)
+    var x = (eye.offset().left) + (eye.width() / 2);
+    var y = (eye.offset().top) + (eye.height() / 2);
+    var rad = Math.atan2(event.pageX - x, event.pageY - y);
+    var rot = (rad * (180 / Math.PI) * -1) + 180;
+    eye.css({
+        '-webkit-transform': 'rotate(' + rot + 'deg)',
+        '-moz-transform': 'rotate(' + rot + 'deg)',
+        '-ms-transform': 'rotate(' + rot + 'deg)',
+        'transform': 'rotate(' + rot + 'deg)'
+    });
+});

@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Bremlin";
+    src: url("../content/fonts/bremlin.otf");
+}
+
 html {
     background-color: #FFFFFF;
     --red: #742A2B;
@@ -12,8 +17,8 @@ a {
 }
 
 .container-fluid {
-    padding-top: 10vh;
-    min-height:90vh;
+    padding-top: 20vh;
+    min-height: 100vh;
     padding-bottom: 10vh;
     /*margin-bottom: 5.12%;*/
     font-family: 'Jost', sans-serif;
@@ -24,13 +29,10 @@ a {
     min-height: 100%;
 }
 
-nav {
-    height: 10vh;
-}
-
-#um {
-    /*max-height: 80vh;*/
-    /*background-color:red;*/
+#zero {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .title {
@@ -45,7 +47,7 @@ nav {
     margin-bottom: 53px;
 }
 
-b{
+b {
     font-weight: 600;
 }
 
@@ -86,7 +88,7 @@ b{
 
 
 .image>img {
-    object-fit:cover;
+    object-fit: cover;
     width: 100%;
     max-height: 70vh;
 }
@@ -101,7 +103,7 @@ b{
 }
 
 .cores {
-    border-radius:0;
+    border-radius: 0;
 }
 
 .cor-1 {
@@ -185,6 +187,20 @@ b{
     text-align: right;
 }
 
+/*Valores Desktop*/
+@media screen and (min-width: 980px) {
+    .title {
+        max-width: calc((100%/6)*4);
+    }
+
+    .text {
+        max-width: calc((100%/6)*5);
+    }
+}
+
+
+/*CSS GERAL -----------------------------------------------------------------------*/
+
 footer {
     /*margem interna esquerda*/
     padding-left: calc(3.97% - calc(1.65%/2));
@@ -228,13 +244,85 @@ footer img {
     align-self: center;
 }
 
-/*Valores Desktop*/
-@media screen and (min-width: 980px) {
-    .title {
-        max-width: calc((100%/6)*4);
-    }
 
-    .text {
-        max-width: calc((100%/6)*5);
-    }
+
+header {
+    /*height: 10vh;*/
+    /*margem interna esquerda*/
+    padding-left: calc(3.97% - calc(1.65%/2));
+    /*margem interna direita*/
+    padding-right: calc(3.97% - calc(1.65%/2));
+    /*margem interna superior*/
+    padding-top: 2%;
+    padding-bottom: 2%;
+
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    /*background-color:#E1AE66;*/
+}
+
+nav {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#eyes {
+    max-height: 6vh;
+}
+
+nav p {
+    font-family: "Bremlin";
+    font-size: 1.6rem;
+    color: black;
+}
+
+nav img {
+    max-width: 70%;
+    height: auto;
+    width: auto;
+    /* ie8 */
+}
+
+
+
+.eye {
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    background: #F2F2F2;
+}
+
+.eye>div {
+    /*pupil*/
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    background-color: #424141;
+    border-radius: 50%;
+    content: " ";
+}
+
+.eye>div:after {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 8px;
+    height: 8px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    content: " ";
+}
+
+/*quando faz hover os olhos ficam fixos no utilizador*/
+#eyes:hover > .eye div {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
 }
