@@ -117,6 +117,7 @@ nav{
     box-sizing: border-box;
     margin: 0 auto;
     font-family: 'Jost', sans-serif;
+    position:relative;
 }
 
 .inspired{
@@ -125,18 +126,34 @@ nav{
     margin-bottom:50px;
 }
 
-.movie_title{
-    font-size: 12rem;
+/*.movie_title{
+    font-size: 14rem;
     font-weight: 600;
-    line-height: 8rem;
+    line-height: 9.5rem;
     opacity:40%;
+}*/
+
+/*.movie_title {
+    font-size: 100%; 
+    font-weight: 600;
+    line-height: 12vw; 
+    max-width: 100%; 
+    opacity: 40%;
+}*/
+
+.movie_title {
+    font-size: 15vw; /* Use 'vw' para ajustar o tamanho com base na largura da viewport */
+    font-weight: 600;
+    line-height: 10vw; /* Use um valor adequado para o espaçamento entre linhas */
+    opacity: 40%; /* Ajuste conforme necessário */
+    overflow-wrap: break-word; /* Permite a quebra de palavras quando necessário */
+    text-align-last: right; /* Alinha o texto à margem direita na última linha */
 }
 
 .img_filme{
+    transform: translate(-50%, -6%);
     position: relative;
-    top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
 }
 
 .year{

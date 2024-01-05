@@ -30,6 +30,9 @@ function displayArtifact(data) {
     let tags_back;
     let tags_text;
 
+    let body = document.querySelector("body");
+    let movie = document.querySelector(".movie");
+
     if(data.metadata.filme!==null){
         console.log(data.metadata.filme);
         back_color = data.metadata.filme.metadata.background_color;
@@ -42,11 +45,10 @@ function displayArtifact(data) {
         tags_back = data.metadata.filme.metadata.tags_background;
         tags_text = data.metadata.filme.metadata.tags_text; 
 
-        let body = document.querySelector("body");
-        let movie = document.createElement("div");
-        movie.classList.add("movie");
+        //let movie = document.createElement("div");
+        //movie.classList.add("movie");
         movie.style.backgroundColor = cor1;
-        body.appendChild(movie);
+        //body.appendChild(movie);
 
         let inspired = document.createElement("div");
         inspired.innerText = "Inspired by";
@@ -88,6 +90,8 @@ function displayArtifact(data) {
         cor2 = "#640C08";
         tags_back = "#640C08";
         tags_text = "#FFFFFF";
+
+        body.removeChild(movie);
     }
 
     // info
