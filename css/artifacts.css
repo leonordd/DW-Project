@@ -163,6 +163,17 @@ nav{
     text-align:right;
 }
 
+footer{
+    padding-left: calc(3.97% - calc(1.65%/2)); /*margem interna esquerda*/
+    padding-right: calc(3.97% - calc(1.65%/2)); /*margem interna direita*/
+    padding-top: 4%; /*margem interna superior*/
+    padding-bottom: 4%; /*margem interna inferior*/
+}
+
+footer a {
+ display: inline-block;
+}
+
 /*Valores Desktop*/
 @media screen and (min-width: 980px) {
     .title{
