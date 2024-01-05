@@ -3,71 +3,142 @@
     src: url("font/Bremlin.otf");
 }
 
-
-.banner {
+body {
+    margin: 0;
+    box-sizing: border-box;
     background-color: var(--rosaclaro);
-    padding: 30px;
+}
+
+
+nav {
     text-align: center;
     color: black;
     font-size: 30px;
-   /* margin-bottom: 7vh;  */
-    height: 5vh;
+    height:10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px; /* Adjusted padding */
 }
 
-.banner img {
+nav img {
     height: 50px;
 }
 
-.banner p {
+nav p {
     font-family: "Bremlin";
     font-size: 25px;
 }
 
-h2,
-h3,
-h4,
-p {
+.h2, h3, h4, p {
     font-family: 'Jost', sans-serif;
 }
 
-.autor, .bio {
+.autor,
+.bio {
     background-color: var(--rosaclaro);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px; /* Adjusted padding to move everything down */
 }
 
-.img_autor{
-   
+.img_autor {
+    max-width: 100%;
+    position: absolute;
+    top: 230px; 
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 20px; /* Adjust the margin to separate the image from text */
+    z-index: 1;
+}
+
+.autor h1 {
+    color: var(--roxo);
+    font-family: 'Jost', sans-serif;
+    font-size: 12rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.autor .first-name {
+    position: relative;
+    text-align: left; /* Align the first h1 to the left */
+    margin-right: 750px; /* Push it to the left */
+}
+
+.autor .last-name {
+    position: relative;
+    text-align: right; /* Align the last h1 to the right */
+    margin-left: 700px; /* Push it to the right */
+    margin-top: 220px; /* Adjusted margin to move it down */
+}
+
+.bio{
+margin-bottom: 100px;
 }
 
 .bio h4 {
     color: var(--roxo);
     font-weight: 600;
+    margin-bottom: 15px; /* Adiciona espaço entre o h4 e o p */
 }
-
 
 .bio p {
+    text-align: center;
     color: var(--roxo);
-    font-size: 1.7rem;
+    font-size: 1.7rem; 
+    max-width: 805px; /* Define a largura máxima do texto no <p> */
+
 }
 
-.movies{
+.movies {
     background-color: var(--rosasalmão);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    justify-content: center; /* Center the content horizontally */
+    text-align: center; /* Center the content within each grid item */
+    padding: 20px; /* Adjusted padding */
 }
 
 .movies h4 {
+    grid-column: span 3; /* Make the h4 span all three columns */
     color: var(--bordo);
     font-weight: 700;
+    text-align: left;
+    margin-bottom: 25px; /* Add some bottom margin to create space */
 }
 
-.directors_style{
+.movies .movie {
+    width: 100%; /* Make each movie element take 100% width */
+}
+
+.info-container {
+position: relative;
+border: 1.5px solid #642E68;
+padding: 3vh;
+border-bottom-left-radius: 25px;
+border-bottom-right-radius: 25px;
+font-family: "Jost";
+color: #642E68;
+width: 100%;
+}
+
+
+
+
+.directors_style {
     background-color: var(--rosaclaro);
+  
 }
 
 .directors_style h4 {
-    color: var(--bordo);
+    color: var(--roxo);
     font-weight: 700;
+    text-align: left;
+
 }
 
 .directors_style h1 {
@@ -78,12 +149,10 @@ p {
     opacity: 0.4;
 }
 
-.autor h1 {
+.intro-text,
+.color-text,
+.composition-text {
     color: var(--roxo);
-    font-family: 'Jost', sans-serif;
-    font-size: 12rem;
-    font-weight: 600;
+    font-size: 1.7rem;
 }
-
-
 
