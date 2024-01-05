@@ -20,7 +20,7 @@ async function fetchApi(apiUrl) {
 
 function displayArtifact(data) {
     /*console.log(data)*/
-   let back_color;
+    let back_color;
     let filter1;
     let filter2;
     let filter3;
@@ -32,8 +32,9 @@ function displayArtifact(data) {
 
     let body = document.querySelector("body");
     let movie = document.querySelector(".movie");
+    let footer = document.querySelector("footer");
 
-    if(data.metadata.filme!==null){
+    if (data.metadata.filme !== null) {
         console.log(data.metadata.filme);
         back_color = data.metadata.filme.metadata.background_color;
         filter1 = data.metadata.filme.metadata.filter1;
@@ -43,7 +44,7 @@ function displayArtifact(data) {
         cor1 = data.metadata.filme.metadata.cor1;
         cor2 = data.metadata.filme.metadata.cor2;
         tags_back = data.metadata.filme.metadata.tags_background;
-        tags_text = data.metadata.filme.metadata.tags_text; 
+        tags_text = data.metadata.filme.metadata.tags_text;
 
         //let movie = document.createElement("div");
         //movie.classList.add("movie");
@@ -70,7 +71,7 @@ function displayArtifact(data) {
         movie.appendChild(img_filme);
 
         let year = document.createElement("div");
-        year.innerText ="–" + data.metadata.filme.metadata.year;
+        year.innerText = "–" + data.metadata.filme.metadata.year;
         year.classList.add("year");
         year.style.color = cor2;
         movie.appendChild(year);
@@ -80,7 +81,7 @@ function displayArtifact(data) {
         <div class="img_filme"><img></div>
         <div class="year">2009</div>*/
 
-    } else{ //se for igual a null
+    } else { //se for igual a null
         back_color = "#F7C5C8";
         filter1 = "#CA4C45";
         filter2 = "#F2F2F2";
@@ -91,6 +92,7 @@ function displayArtifact(data) {
         tags_back = "#640C08";
         tags_text = "#FFFFFF";
 
+        footer.style.backgroundColor = "#F3E4EC";
         body.removeChild(movie);
     }
 
@@ -105,10 +107,17 @@ function displayArtifact(data) {
 
     title.textContent = data.metadata.name;
     title.style.color = cor1;
-    let year; 
+    let year;
     if (data.metadata.year) year = data.metadata.year;
     else year = ''
     by.textContent = 'by ' + data.metadata.author_name + ' ' + year;
+
+    if (data.metadata.author_name === null) {
+        by.textContent = 'by ' + "Anonymous" + ' ' + year;
+    } else{
+        by.textContent = 'by ' + data.metadata.author_name + ' ' + year;
+    }
+
 
     //by.style.color = "black";
 
@@ -123,7 +132,7 @@ function displayArtifact(data) {
         link.style.color = cor1;
         linkContainer.appendChild(link);
     }
-    
+
     // tags
     if (data.metadata.tags) {
         const tagsContainer = document.getElementById('tags-container')
