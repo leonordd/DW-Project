@@ -115,18 +115,6 @@ margin-bottom: 100px;
     width: 100%; /* Make each movie element take 100% width */
 }
 
-.info-container {
-position: relative;
-border: 1.5px solid #642E68;
-padding: 3vh;
-border-bottom-left-radius: 25px;
-border-bottom-right-radius: 25px;
-font-family: "Jost";
-color: #642E68;
-width: 100%;
-}
-
-
 
 
 .directors_style {
