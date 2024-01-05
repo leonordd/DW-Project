@@ -1,15 +1,16 @@
 @font-face {
     font-family: "Bremlin";
-    src: url("../fonts/Bremlin.otf");
+    src: url("font/Bremlin.otf");
 }
 
 
 .banner {
+    background-color: var(--rosaclaro);
     padding: 30px;
     text-align: center;
     color: black;
     font-size: 30px;
-    margin-bottom: 7vh;
+   /* margin-bottom: 7vh;  */
     height: 5vh;
     display: flex;
     justify-content: space-between;
@@ -24,3 +25,65 @@
     font-family: "Bremlin";
     font-size: 25px;
 }
+
+h2,
+h3,
+h4,
+p {
+    font-family: 'Jost', sans-serif;
+}
+
+.autor, .bio {
+    background-color: var(--rosaclaro);
+}
+
+.img_autor{
+   
+}
+
+.bio h4 {
+    color: var(--roxo);
+    font-weight: 600;
+}
+
+
+.bio p {
+    color: var(--roxo);
+    font-size: 1.7rem;
+}
+
+.movies{
+    background-color: var(--rosasalmão);
+}
+
+.movies h4 {
+    color: var(--bordo);
+    font-weight: 700;
+}
+
+.directors_style{
+    background-color: var(--rosaclaro);
+}
+
+.directors_style h4 {
+    color: var(--bordo);
+    font-weight: 700;
+}
+
+.directors_style h1 {
+    color: var(--roxo);
+    font-family: 'Jost', sans-serif;
+    font-size: 12rem;
+    font-weight: 600;
+    opacity: 0.4;
+}
+
+.autor h1 {
+    color: var(--roxo);
+    font-family: 'Jost', sans-serif;
+    font-size: 12rem;
+    font-weight: 600;
+}
+
+
+

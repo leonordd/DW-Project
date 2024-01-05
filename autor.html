@@ -7,7 +7,10 @@
     <meta name="viewport" content="width=device-width">
     <link href="css/estilos.css" rel="stylesheet">
     <link href="css/autor.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="css/flexbox_grid.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 
 
 </head>
@@ -17,41 +20,73 @@
         <div class="banner">
             <!-- logo -->
             <p class="prevent-select">Wes Anderson</p>
-            <img src="images/eyes.svg" alt="eyes"/>
+            <!---- <img src="images/eyes.svg" alt="eyes" />  --->
+            <div class="eyes-container">
+                <div class="eyes">
+                    <div class="pupil" id="leftPupil"></div>
+                    <div class="pupil" id="rightPupil"></div>
+                </div>
+            </div>
             <p class="prevent-select">through your eyes</p>
 
         </div>
     </header>
+
+
     <main>
 
         <div class="autor">
-
+            <h1> WES </h1>
+            <h1> ANDERSO </h1>
             <div class="img_autor">
                 <img width="" height="" src="images/autor.png" alt="Imagem intro" class="">
             </div>
         </div>
 
+
         <div class="bio">
+            <h4> THE MASTERMIND</h4>
             <p>
-                Wes Anderson is an American filmmaker known for his distinctive and visually striking style in
+                Wes Anderson is an American filmmaker known for his distinctive and visually striking style
+                in
                 the world of cinema.
-                He was born on May 1, 1969, in Houston, Texas, USA. Anderson is renowned for his meticulous attention to
-                detail, use of vibrant colors, symmetrical framing, and whimsical storytelling. His films often have a
+                He was born on May 1, 1969, in Houston, Texas, USA. Anderson is renowned for his meticulous
+                attention to
+                detail, use of vibrant colors, symmetrical framing, and whimsical storytelling. His films
+                often have
+                a
                 unique blend of comedy, drama, and surrealism.
             </p>
         </div>
 
+
+
         <div class="movies">
-        
+            <h4>HONOURABLE MENTION</h4>
         </div>
 
 
 
+        <div class="directors_style">
+            <h4>DIRECTOR'S STYLE</h4>
+            <h1> SIMETRY </h1>
+            <img width="" height="" src="images/simetria.png" alt="Imagem intro" class="">
+            <h1> COLORS </h1>
+            <img width="" height="" src="images/color1.png" alt="Imagem intro" class="">
+            <img width="" height="" src="images/color2.png" alt="Imagem intro" class="">
+            <img width="" height="" src="images/color3.png" alt="Imagem intro" class="">
+            <img width="" height="" src="images/color4.png" alt="Imagem intro" class="">
+            <h1> COMPO </h1>
+            <h1> OSITION </h1>
+            <img width="" height="" src="images/composicao.png" alt="Imagem intro" class="">
 
         </div>
 
     </main>
     <script src="js/geral.js"></script>
+    <script src="js/eyes.js"></script>
+    <script src="js/autorpage.js"></script>
+    
 </body>
 
 </html>
