@@ -45,6 +45,10 @@ nav {
     margin-bottom: 53px;
 }
 
+b{
+    font-weight: 600;
+}
+
 .text {
     margin-bottom: 32px;
 }
@@ -196,6 +200,7 @@ footer {
 
 footer span {
     font-family: Bremlin;
+    src: url(../content/fonts/bremlin.otf);
     font-size: 1.5rem;
     line-height: 1.6rem;
     text-align: center;

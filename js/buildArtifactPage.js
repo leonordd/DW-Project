@@ -108,17 +108,19 @@ function displayArtifact(data) {
     title.textContent = data.metadata.name;
     title.style.color = cor1;
     let year;
-    if (data.metadata.year) year = data.metadata.year;
-    else year = ''
-    by.textContent = 'by ' + data.metadata.author_name + ' ' + year;
 
-    if (data.metadata.author_name === null) {
-        by.textContent = 'by ' + "Anonymous" + ' ' + year;
-    } else{
-        by.textContent = 'by ' + data.metadata.author_name + ' ' + year;
+
+    let author = data.metadata.author_name;
+    if (author === null) author = "Anonymous";
+
+
+    if (data.metadata.year) {
+        by.innerHTML = 'by ' + '<b>' + author + '</b>' + ' (' + data.metadata.year + ')';
+    } else {
+        by.innerHTML = 'by ' + '<b>' + author + '</b>';
     }
 
-
+    //by.textContent = 'by ' + author + ' (' + year + ')';
     //by.style.color = "black";
 
     text.innerHTML = data.metadata.description;
