@@ -132,6 +132,7 @@ function displayArtifact(data) {
         const link = document.createElement('a');
         link.href = data.metadata.more_link;
         link.textContent = 'More +';
+        link.target = "_blank";
         link.style.color = cor1;
         linkContainer.appendChild(link);
     }
