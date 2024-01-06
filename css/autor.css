@@ -47,7 +47,6 @@ p {
     justify-content: center;
     align-items: center;
     padding: 50px;
-    /* Adjusted padding to move everything down */
 }
 
 .img_autor {
@@ -57,7 +56,6 @@ p {
     left: 50%;
     transform: translateX(-50%);
     margin-bottom: 20px;
-    /* Adjust the margin to separate the image from text */
     z-index: 1;
 }
 
@@ -72,19 +70,14 @@ p {
 .autor .first-name {
     position: relative;
     text-align: left;
-    /* Align the first h1 to the left */
     margin-right: 750px;
-    /* Push it to the left */
 }
 
 .autor .last-name {
     position: relative;
     text-align: right;
-    /* Align the last h1 to the right */
     margin-left: 700px;
-    /* Push it to the right */
     margin-top: 220px;
-    /* Adjusted margin to move it down */
 }
 
 .bio {
@@ -95,7 +88,6 @@ p {
     color: var(--roxo);
     font-weight: 600;
     margin-bottom: 15px;
-    /* Adiciona espaço entre o h4 e o p */
 }
 
 .bio p {
@@ -103,7 +95,6 @@ p {
     color: var(--roxo);
     font-size: 1.7rem;
     max-width: 805px;
-    /* Define a largura máxima do texto no <p> */
 
 }
 
@@ -142,18 +133,18 @@ p {
     display: flex;
     justify-content: center;
     overflow: hidden;
-    perspective: 1000px; 
+    perspective: 1000px;
 }
 
 .movie .image-container img {
     width: 100%;
     height: auto;
-    transition: transform 0.5s ease; 
+    transition: transform 0.5s ease;
     transform-style: preserve-3d;
 }
 
 .movie .image-container:hover img {
-    transform: rotateY(180deg); 
+    transform: rotateY(180deg);
 }
 
 .movie .info-container {
@@ -174,12 +165,12 @@ p {
 }
 
 .info-container p.year {
-    font-size: 1.2rem; 
-    text-align: right; 
+    font-size: 1.2rem;
+    text-align: right;
 }
 
 .info-container p.duration {
-    font-size: 1.2rem;    
+    font-size: 1.2rem;
 }
 
 
@@ -192,6 +183,8 @@ p {
     color: var(--roxo);
     font-weight: 700;
     text-align: left;
+    margin-top: 50px;
+    margin-left: 30px;
 
 }
 
@@ -201,11 +194,110 @@ p {
     font-size: 12rem;
     font-weight: 600;
     opacity: 0.4;
+    z-index: 1;
+}
+
+
+.colors1,
+.colors2 {
+    display: flex;
+    gap: 40px;
+    height: 100%;
+    z-index: 1;
+}
+
+.colors1 {
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 5%;
+    margin-top: -100px;
+
+}
+
+.colors2 {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 5%;
+    margin-top: -530px;
+}
+
+.colors1 img,
+.colors2 img {
+    width: 40%;
+    height: auto;
+    z-index: 1;
+}
+
+.simetria {
+    width: 40%;
+    height: auto;
+    z-index: 2;
+    margin-left: 150px;
+}
+
+.composition {
+    width: 40%;
+    height: auto;
+}
+
+
+.directors_style .simetry {
+    position: relative;
+    text-align: right;
+    right: 20px;
+    top: 100px;
+
+}
+
+.directors_style .colors {
+    position: relative;
+    text-align: left;
+    margin-top: 100px;
+}
+
+.directors_style .first-name {
+    position: relative;
+    text-align: right;
+
+}
+
+.directors_style .last-name {
+    position: relative;
+    text-align: left;
+    margin-top: 220px;
+}
+
+.intro-text {
+    max-width: 27%; 
+    text-align: center; 
+    margin: auto; 
+    margin-right: 100px;
+    position: relative;
+    bottom: 100px;
+}
+
+
+.color-text {
+    max-width: 27%; 
+    text-align: center; 
+    margin: auto; 
+    margin-right: 100px;
+    position: relative;
+    bottom: 100px;
+}
+ 
+.composition-text {
+    max-width: 27%; 
+    text-align: center; 
+    margin: auto; 
+    margin-right: 100px;
+    position: relative;
+    bottom: 100px;
 }
 
 .intro-text,
 .color-text,
 .composition-text {
     color: var(--roxo);
-    font-size: 1.7rem;
+    font-size: 1.3rem;
 }
