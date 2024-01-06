@@ -17,7 +17,7 @@ a {
 }
 
 .container-fluid {
-    padding-top: 20vh;
+    padding-top: 15vh;
     min-height: 100vh;
     padding-bottom: 10vh;
     /*margin-bottom: 5.12%;*/
@@ -187,6 +187,46 @@ b {
     text-align: right;
 }
 
+/*back_div*/
+#back_div {
+    flex-direction: row;
+    width: 35px;
+    min-width: 35px;
+    height: 100%;
+    /*background: salmon;*/
+    overflow: hidden;
+    transition: width 0.5s linear;
+    white-space: nowrap;
+    border-radius: 40px;
+    margin-bottom:2%;
+}
+
+#back_div:hover {
+    border-radius: 40px;
+    width: 85px;
+    cursor: pointer;
+}
+
+#back_div > div{
+    display:block;
+    padding:4px 8px;
+}
+
+#img {
+    display:inline-block;
+    width: 20px;
+    height: auto;
+}
+
+#back {
+    display:inline-block;
+    margin: 0;
+    font-size: 1.125rem;
+    color:white;
+    margin-left:2px;
+    font-weight: 500;
+}
+
 /*Valores Desktop*/
 @media screen and (min-width: 980px) {
     .title {
@@ -321,7 +361,7 @@ nav img {
 }
 
 /*quando faz hover os olhos ficam fixos no utilizador*/
-#eyes:hover > .eye div {
+#eyes:hover>.eye div {
     position: absolute;
     bottom: 10px;
     right: 10px;

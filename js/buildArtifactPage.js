@@ -104,9 +104,11 @@ function displayArtifact(data) {
     const text = document.getElementById('text')
     let background = document.querySelector("html");
     let header = document.querySelector("header");
+    let back_div = document.querySelector("#back_div");
 
     background.style.backgroundColor = back_color;
     header.style.backgroundColor = back_color;
+    back_div.style.backgroundColor = cor1;
 
     title.textContent = data.metadata.name;
     title.style.color = cor1;
