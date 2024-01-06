@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Bremlin";
-    src: url("../content/fonts/bremlin.otf");
+    src: url("../content/font/bremlin.otf");
 }
 
 html {
@@ -450,7 +450,7 @@ footer {
 
 footer span {
     font-family: Bremlin;
-    src: url(../content/fonts/bremlin.otf);
+    src: url(../content/font/bremlin.otf);
     font-size: 1.5rem;
     line-height: 1.6rem;
     text-align: center;
