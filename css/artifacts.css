@@ -7,6 +7,7 @@ html {
     background-color: #FFFFFF;
     --red: #742A2B;
     --yellow: #E1AE66;
+    list-style-type: none;
 }
 
 a {
@@ -17,7 +18,7 @@ a {
 }
 
 .container-fluid {
-    padding-top: 15vh;
+    padding-top: 100px;
     min-height: 100vh;
     padding-bottom: 10vh;
     /*margin-bottom: 5.12%;*/
@@ -66,7 +67,8 @@ b {
 }
 
 .filter {
-    margin-top: 6%;
+    margin-top: 2%;
+    text-align:left;
 }
 
 .filter li {
@@ -104,6 +106,12 @@ b {
 
 .cores {
     border-radius: 0;
+}
+
+.cores ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
 }
 
 .cor-1 {
@@ -178,6 +186,8 @@ b {
     transform: translate(-50%, -6%);
     position: relative;
     left: 50%;
+    margin-left: calc(3.97% - calc(1.65%/2));
+    margin-right: calc(3.97% - calc(1.65%/2));
 }
 
 .year {
@@ -198,7 +208,7 @@ b {
     transition: width 0.5s linear;
     white-space: nowrap;
     border-radius: 40px;
-    margin-bottom:2%;
+    margin-bottom: 2%;
 }
 
 #back_div:hover {
@@ -207,23 +217,23 @@ b {
     cursor: pointer;
 }
 
-#back_div > div{
-    display:block;
-    padding:4px 8px;
+#back_div>div {
+    display: block;
+    padding: 4px 8px;
 }
 
 #img {
-    display:inline-block;
+    display: inline-block;
     width: 20px;
     height: auto;
 }
 
 #back {
-    display:inline-block;
+    display: inline-block;
     margin: 0;
     font-size: 1.125rem;
-    color:white;
-    margin-left:2px;
+    color: white;
+    margin-left: 2px;
     font-weight: 500;
 }
 
@@ -238,9 +248,193 @@ b {
     }
 }
 
+/* Para tablets: */
+@media screen and (min-width: 600px) and (max-width: 980px) {
+    .filter {
+        margin-top: 40px;
+    }
+    
+    .image>img {
+        object-fit: cover;
+        width: 100%;
+        max-height: 100%;
+    }
+}
+
+/*para telemóveis*/
+@media screen and (max-width: 600px) {
+    .container-fluid {
+        padding-top: 140px;
+        min-height: none;
+        text-align: center;
+    }
+
+    .title {
+        font-size: 2rem;
+        margin-top:10px;
+    }
+
+    .by {
+        font-size: 1.25rem;
+        margin-bottom: 28px;
+    }
+
+    .text {
+        margin-bottom: 32px;
+    }
+
+    .text>p {
+        font-size: 1.063rem;
+        line-height: 1.65rem;
+        color: black;
+    }
+
+    #more_link a {
+        font-size: 1.25rem;
+        text-align: center;
+    }
+
+    .filter {
+        margin-top: 36px;
+        margin-bottom:28px;
+        text-align: center;
+        order:4;
+    }
+
+    .filter li {
+        font-size: 0.875rem;
+    }
+
+    #colors{
+        order:5;
+    }
+
+    .cores {
+        width: 100%;
+        align-items: normal;
+    }
+
+    .cores ul {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .movie {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .inspired {
+        font-size: 2rem;
+    }
+
+    .img_filme {
+        transform: translate(-50%, -6%);
+        position: relative;
+        left: 50%;
+        width:70%;
+    }
+
+    .year {
+        font-size: 3.125rem;
+        font-weight: 600;
+        opacity: 40%;
+        text-align: right;
+    }
+
+    #um{
+        display:flex;
+        flex-direction: column;
+    }
+
+
+}
+
+
 
 /*CSS GERAL -----------------------------------------------------------------------*/
+/*header-------------------------------------------------*/
+header {
+    /*height: 10vh;*/
+    /*margem interna esquerda*/
+    padding-left: calc(3.97% - calc(1.65%/2));
+    /*margem interna direita*/
+    padding-right: calc(3.97% - calc(1.65%/2));
+    /*margem interna superior*/
+    padding-top: 20px;
+    padding-bottom: 20px;
 
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    /*background-color:#E1AE66;*/
+}
+
+nav {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#eyes {
+    max-height: 6vh;
+}
+
+nav p {
+    font-family: "Bremlin";
+    font-size: 1.6rem;
+    color: black;
+}
+
+nav img {
+    max-width: 70%;
+    height: auto;
+    width: auto;
+}
+
+.eye {
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    background: #F2F2F2;
+}
+
+.eye>div {
+    /*pupil*/
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    background-color: #424141;
+    border-radius: 50%;
+    content: " ";
+}
+
+.eye>div:after {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 8px;
+    height: 8px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    content: " ";
+}
+
+/*quando faz hover os olhos ficam fixos no utilizador*/
+#eyes:hover>.eye div {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+
+/*footer-----------------------------------------------*/
 footer {
     /*margem interna esquerda*/
     padding-left: calc(3.97% - calc(1.65%/2));
@@ -284,85 +478,73 @@ footer img {
     align-self: center;
 }
 
+/* Para tablets: */
+@media screen and (min-width: 600px) and (max-width: 980px) {}
+
+/*para telemóveis*/
+@media screen and (max-width: 600px) {
+
+    header {
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+
+    nav {
+        flex-direction: column-reverse;
+    }
+
+    nav p {
+        font-size: 1.25rem;
+    }
+
+    nav p:first-child {
+        order: 2;
+    }
+
+    nav p:nth-child(3) {
+        order: 1;
+    }
+
+    nav img {
+        display: block;
+    }
+
+    #eyes {
+        scale: 0.8;
+    }
 
 
-header {
-    /*height: 10vh;*/
-    /*margem interna esquerda*/
-    padding-left: calc(3.97% - calc(1.65%/2));
-    /*margem interna direita*/
-    padding-right: calc(3.97% - calc(1.65%/2));
-    /*margem interna superior*/
-    padding-top: 2%;
-    padding-bottom: 2%;
+    /*footer-----------------------------------------------*/
+    footer {
+        /*margem interna superior*/
+        padding-top: 24px;
+        /*margem interna inferior*/
+        padding-bottom: 24px;
+    }
 
-    position: fixed;
-    z-index: 100;
-    width: 100%;
-    /*background-color:#E1AE66;*/
-}
+    footer span {
+        font-size: 1.25rem;
+        line-height: 1.4rem;
+        text-align: center;
+    }
 
-nav {
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+    footer a {
+        align-self: center;
+        position: absolute;
+        right: 3%;
+        font-family: 'Jost', sans-serif;
+        /*transform: translateX(-50%);*/
+        margin-right: calc(3.97% - calc(1.65%/2));
+    }
 
-#eyes {
-    max-height: 6vh;
-}
+    footer div {
+        display: none;
+    }
 
-nav p {
-    font-family: "Bremlin";
-    font-size: 1.6rem;
-    color: black;
-}
-
-nav img {
-    max-width: 70%;
-    height: auto;
-    width: auto;
-    /* ie8 */
-}
-
-
-
-.eye {
-    position: relative;
-    display: inline-block;
-    border-radius: 50%;
-    height: 40px;
-    width: 40px;
-    background: #F2F2F2;
-}
-
-.eye>div {
-    /*pupil*/
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
-    width: 20px;
-    height: 20px;
-    background-color: #424141;
-    border-radius: 50%;
-    content: " ";
-}
-
-.eye>div:after {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    width: 8px;
-    height: 8px;
-    background-color: #FFFFFF;
-    border-radius: 50%;
-    content: " ";
-}
-
-/*quando faz hover os olhos ficam fixos no utilizador*/
-#eyes:hover>.eye div {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
+    footer img {
+        width: 40%;
+        float:right;
+         /*margem interna direita*/
+        
+    }
 }
