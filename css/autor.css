@@ -96,26 +96,46 @@ margin-bottom: 100px;
 .movies {
     background-color: var(--rosasalmão);
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);  
     grid-gap: 20px;
-    justify-content: center; /* Center the content horizontally */
-    text-align: center; /* Center the content within each grid item */
-    padding: 20px; /* Adjusted padding */
+    justify-content: center;
+    padding: 20px;
 }
 
-.movies h4 {
-    grid-column: span 3; /* Make the h4 span all three columns */
+.movies  h4 {
+    grid-column: span 3;
     color: var(--bordo);
     font-weight: 700;
     text-align: left;
-    margin-bottom: 25px; /* Add some bottom margin to create space */
-}
-
-.movies .movie {
-    width: 100%; /* Make each movie element take 100% width */
+    margin-bottom: 25px;
 }
 
 
+.movie {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.movie .image-container,
+.movie .info-container {
+    width: 100%;
+}
+
+.movie .image-container {
+    display: flex;
+    justify-content: center;
+}
+
+.movie .info-container {
+    position: relative;
+    border: 1.5px solid #642E68;
+    padding: 3vh;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    color: var(--roxo);
+}
 
 .directors_style {
     background-color: var(--rosaclaro);

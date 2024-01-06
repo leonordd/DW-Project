@@ -14,52 +14,54 @@ async function fetchApi(apiUrl) {
     }
 }
 
+function createMovieElement(movie) {
+    const movieElement = document.createElement('div');
+    movieElement.classList.add('movie');
+
+    const imageContainer = document.createElement('div');
+    imageContainer.classList.add('image-container');
+
+    const imgElement = document.createElement('img');
+    imgElement.src = movie.metadata.cover.url;
+    imgElement.alt = `${movie.title} Cover`;
+
+    const infoContainer = document.createElement('div');
+    infoContainer.classList.add('info-container');
+
+
+    const nameElement = document.createElement('h5');
+    nameElement.textContent = movie.title;
+
+    const yearElement = document.createElement('p');
+    yearElement.textContent = movie.metadata.year;
+
+    const durationElement = document.createElement('p');
+    durationElement.textContent = `${movie.metadata.duration_hours}h ${movie.metadata.duration_minutes}min`;
+
+    const hoverElement = document.createElement('div');
+    hoverElement.classList.add('hover-content');
+    hoverElement.textContent = movie.metadata.hover || '';
+
+    // Append elements to their respective parents
+    imageContainer.appendChild(imgElement);
+
+    infoContainer.appendChild(nameElement);
+    infoContainer.appendChild(yearElement);
+    infoContainer.appendChild(durationElement);
+
+    movieElement.appendChild(imageContainer);
+    movieElement.appendChild(infoContainer);
+    movieElement.appendChild(hoverElement);
+
+    return movieElement;
+}
+
+
 function displayMovies(movies) {
     const moviesContainer = document.querySelector('.movies');
 
     movies.forEach(movie => {
-        const movieElement = document.createElement('div');
-        movieElement.classList.add('movie');
-
-        const infoContainer = document.createElement('div');
-        infoContainer.classList.add('info-container');
-
-        const imgElement = document.createElement('img');
-        imgElement.src = movie.metadata.cover.url;
-        imgElement.alt = `${movie.title} Cover`;
-
-        // Add event listeners for mouseenter and mouseleave to show/hide the hover content
-        imgElement.addEventListener('mouseenter', () => {
-            hoverElement.style.display = 'block';
-        });
-
-        imgElement.addEventListener('mouseleave', () => {
-            hoverElement.style.display = 'none';
-        });
-
-        const nameElement = document.createElement('h5');
-        nameElement.textContent = movie.title;
-
-        const yearElement = document.createElement('p');
-        yearElement.textContent = movie.metadata.year;
-
-        const durationElement = document.createElement('p');
-        durationElement.textContent = `${movie.metadata.duration_hours}h ${movie.metadata.duration_minutes}min`;
-
-        const hoverElement = document.createElement('div');
-        hoverElement.classList.add('hover-content');
-        hoverElement.textContent = movie.metadata.hover || '';
-
-        // Append elements to their respective parents
-        infoContainer.appendChild(imgElement);
-        infoContainer.appendChild(nameElement);
-        infoContainer.appendChild(yearElement);
-        infoContainer.appendChild(durationElement);
-
-        movieElement.appendChild(infoContainer);
-        movieElement.appendChild(hoverElement);
-
-        // Append the movie element to the movies container
+        const movieElement = createMovieElement(movie);
         moviesContainer.appendChild(movieElement);
     });
 }
