@@ -25,36 +25,40 @@ function createMovieElement(movie) {
     imgElement.src = movie.metadata.cover.url;
     imgElement.alt = `${movie.title} Cover`;
 
+
+    imgElement.addEventListener('mouseover', () => {
+        imgElement.src = movie.metadata.hover.url || ''; 
+    });
+
+    imgElement.addEventListener('mouseout', () => {
+        imgElement.src = movie.metadata.cover.url; 
+    });
+
     const infoContainer = document.createElement('div');
     infoContainer.classList.add('info-container');
-
 
     const nameElement = document.createElement('h5');
     nameElement.textContent = movie.title;
 
     const yearElement = document.createElement('p');
+    yearElement.classList.add('year');
     yearElement.textContent = movie.metadata.year;
 
     const durationElement = document.createElement('p');
+    durationElement.classList.add('duration');
     durationElement.textContent = `${movie.metadata.duration_hours}h ${movie.metadata.duration_minutes}min`;
-
-    const hoverElement = document.createElement('div');
-    hoverElement.classList.add('hover-content');
-    hoverElement.textContent = movie.metadata.hover || '';
-
-    // Append elements to their respective parents
-    imageContainer.appendChild(imgElement);
 
     infoContainer.appendChild(nameElement);
     infoContainer.appendChild(yearElement);
     infoContainer.appendChild(durationElement);
 
+    imageContainer.appendChild(imgElement);
     movieElement.appendChild(imageContainer);
     movieElement.appendChild(infoContainer);
-    movieElement.appendChild(hoverElement);
 
     return movieElement;
 }
+
 
 
 function displayMovies(movies) {

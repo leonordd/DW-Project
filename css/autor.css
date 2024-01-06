@@ -14,11 +14,12 @@ nav {
     text-align: center;
     color: black;
     font-size: 30px;
-    height:10vh;
+    height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px; /* Adjusted padding */
+    padding: 20px;
+    /* Adjusted padding */
 }
 
 nav img {
@@ -30,7 +31,11 @@ nav p {
     font-size: 25px;
 }
 
-.h2, h3, h4, p {
+h2,
+h3,
+h4,
+h5,
+p {
     font-family: 'Jost', sans-serif;
 }
 
@@ -41,16 +46,18 @@ nav p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 50px; /* Adjusted padding to move everything down */
+    padding: 50px;
+    /* Adjusted padding to move everything down */
 }
 
 .img_autor {
     max-width: 100%;
     position: absolute;
-    top: 230px; 
+    top: 230px;
     left: 50%;
     transform: translateX(-50%);
-    margin-bottom: 20px; /* Adjust the margin to separate the image from text */
+    margin-bottom: 20px;
+    /* Adjust the margin to separate the image from text */
     z-index: 1;
 }
 
@@ -64,58 +71,66 @@ nav p {
 
 .autor .first-name {
     position: relative;
-    text-align: left; /* Align the first h1 to the left */
-    margin-right: 750px; /* Push it to the left */
+    text-align: left;
+    /* Align the first h1 to the left */
+    margin-right: 750px;
+    /* Push it to the left */
 }
 
 .autor .last-name {
     position: relative;
-    text-align: right; /* Align the last h1 to the right */
-    margin-left: 700px; /* Push it to the right */
-    margin-top: 220px; /* Adjusted margin to move it down */
+    text-align: right;
+    /* Align the last h1 to the right */
+    margin-left: 700px;
+    /* Push it to the right */
+    margin-top: 220px;
+    /* Adjusted margin to move it down */
 }
 
-.bio{
-margin-bottom: 100px;
+.bio {
+    margin-bottom: 100px;
 }
 
 .bio h4 {
     color: var(--roxo);
     font-weight: 600;
-    margin-bottom: 15px; /* Adiciona espaço entre o h4 e o p */
+    margin-bottom: 15px;
+    /* Adiciona espaço entre o h4 e o p */
 }
 
 .bio p {
     text-align: center;
     color: var(--roxo);
-    font-size: 1.7rem; 
-    max-width: 805px; /* Define a largura máxima do texto no <p> */
+    font-size: 1.7rem;
+    max-width: 805px;
+    /* Define a largura máxima do texto no <p> */
 
 }
 
 .movies {
     background-color: var(--rosasalmão);
     display: grid;
-    grid-template-columns: repeat(3, 1fr);  
-    grid-gap: 20px;
-    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 17px;
     padding: 20px;
+    justify-items: center;
 }
 
-.movies  h4 {
+.movies h4 {
+    position: relative;
+    justify-self: start;
     grid-column: span 3;
     color: var(--bordo);
     font-weight: 700;
-    text-align: left;
     margin-bottom: 25px;
 }
 
-
 .movie {
-    width: 100%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 40px;
 }
 
 .movie .image-container,
@@ -126,20 +141,51 @@ margin-bottom: 100px;
 .movie .image-container {
     display: flex;
     justify-content: center;
+    overflow: hidden;
+    perspective: 1000px; 
+}
+
+.movie .image-container img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease; 
+    transform-style: preserve-3d;
+}
+
+.movie .image-container:hover img {
+    transform: rotateY(180deg); 
 }
 
 .movie .info-container {
     position: relative;
-    border: 1.5px solid #642E68;
-    padding: 3vh;
+    border: 1.5px solid var(--bordo);
+    padding: 2vh;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
-    color: var(--roxo);
+    color: var(--bordo);
 }
+
+.info-container h5 {
+    font-size: 1.2rem;
+}
+
+.info-container p {
+    font-size: 1.2rem;
+}
+
+.info-container p.year {
+    font-size: 1.2rem; 
+    text-align: right; 
+}
+
+.info-container p.duration {
+    font-size: 1.2rem;    
+}
+
 
 .directors_style {
     background-color: var(--rosaclaro);
-  
+
 }
 
 .directors_style h4 {
@@ -163,4 +209,3 @@ margin-bottom: 100px;
     color: var(--roxo);
     font-size: 1.7rem;
 }
-
