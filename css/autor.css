@@ -9,11 +9,11 @@ body {
     background-color: var(--rosaclaro);
 }
 
-header{
+header {
     background-color: var(--rosaclaro);
 }
 
-footer{
+footer {
     background-color: var(--rosasalmão);
 }
 
@@ -35,14 +35,14 @@ p {
     padding-top: 100px;
 }
 
-.img_autor {
+.img_autor img {
     max-width: 100%;
     position: absolute;
-    top: 230px;
     left: 50%;
     transform: translateX(-50%);
     margin-bottom: 20px;
     z-index: 1;
+    top: 40%;
 }
 
 .autor h1 {
@@ -50,7 +50,6 @@ p {
     font-family: 'Jost', sans-serif;
     font-size: 12rem;
     font-weight: 600;
-    text-align: center;
 }
 
 .autor .first-name {
@@ -62,7 +61,7 @@ p {
 .autor .last-name {
     position: relative;
     text-align: right;
-    margin-left: 350px;
+    margin-left: 440px;
     margin-top: 260px;
 }
 
@@ -180,7 +179,6 @@ p {
     font-size: 12rem;
     font-weight: 600;
     opacity: 0.4;
-    z-index: 1;
 }
 
 
@@ -189,7 +187,7 @@ p {
     display: flex;
     gap: 40px;
     height: 100%;
-    z-index: 1;
+    z-index: 2;
 }
 
 .colors1 {
@@ -217,7 +215,7 @@ p {
 .simetria img {
     width: 40%;
     height: auto;
-    z-index: 4;
+    z-index: 2;
     margin-left: 7%;
 }
 
@@ -259,9 +257,9 @@ p {
 }
 
 .intro-text {
-    max-width: 27%; 
-    text-align: center; 
-    margin: auto; 
+    max-width: 27%;
+    text-align: center;
+    margin: auto;
     margin-right: 170px;
     position: relative;
     bottom: 100px;
@@ -269,18 +267,18 @@ p {
 
 
 .color-text {
-    max-width: 27%; 
-    text-align: center; 
-    margin: auto; 
+    max-width: 27%;
+    text-align: center;
+    margin: auto;
     margin-right: 170px;
     position: relative;
     bottom: 100px;
 }
- 
+
 .composition-text {
-    max-width: 27%; 
-    text-align: center; 
-    margin: auto; 
+    max-width: 27%;
+    text-align: center;
+    margin: auto;
     margin-right: 170px;
     position: relative;
     bottom: 100px;
@@ -293,81 +291,244 @@ p {
     font-size: 1.3rem;
 }
 
-/* Larger screens (PC) */
-@media screen and (min-width: 980px) {
+/* PC */
+@media screen and (min-width: 980px) {}
 
-}
-
-
-
-/* Tablet styles */
+/* Tablet */
 @media screen and (min-width: 600px) and (max-width: 980px) {
-    .img_autor {
-        max-width: 80%; /* Adjust as needed */
-        top: 130px; /* Adjust as needed */
-    }
 
     .autor h1 {
-        font-size: 8rem; /* Adjust as needed */
+        font-size: 7rem;
+        font-weight: 600;
     }
+
 
     .autor .first-name {
-        margin-right: 20px; /* Adjust as needed */
+        position: relative;
+        text-align: left;
+        margin-right: 472px;
     }
 
     .autor .last-name {
-        margin-left: 20px; /* Adjust as needed */
-        margin-top: 120px; /* Adjust as needed */
+        position: relative;
+        text-align: right;
+        margin-left: 308px;
+        margin-top: 320px;
     }
 
-    .movies {
-        grid-template-columns: repeat(2, 1fr); /* Adjust as needed */
+    .img_autor img {
+        max-width: 48%;
+        top: 34%;
     }
 
-    .info-container {
-        padding: 1.5vh; /* Adjust as needed */
+    .bio h4 {
+        font-size: 2.7rem;
     }
 
-    .intro-text,
-    .color-text,
+    .bio p {
+        font-size: 1.3rem;
+        max-width: 578px;
+    }
+
+    .movies h4 {
+        font-size: 2.6rem;
+    }
+
+
+    .directors_style h1 {
+        font-size: 8rem;
+    }
+
+    .directors_style h4 {
+        font-size: 2.6rem;
+    }
+
+    .info-container h5 {
+        font-size: 1rem;
+    }
+
+    .info-container p.year {
+        font-size: 0.9rem;
+        text-align: left;
+        padding: 3px;
+    }
+
+    .info-container p.duration {
+        font-size: 0.9rem;
+    }
+
+    .intro-text {
+        max-width: 34%;
+        margin-right: 170px;
+        font-size: 1rem;
+        bottom: 48px;
+        margin-right: 77px;
+    }
+
+    .color-text {
+        max-width: 34%;
+        margin-right: 170px;
+        font-size: 1rem;
+        bottom: 48px;
+        margin-right: 77px;
+    }
+
     .composition-text {
-        max-width: 50%; /* Adjust as needed */
-        margin-right: 30px; /* Adjust as needed */
-        bottom: 50px; /* Adjust as needed */
+        max-width: 34%;
+        margin-right: 170px;
+        font-size: 1rem;
+        bottom: 48px;
+        margin-right: 77px;
+    }
+
+    .directors_style .colors {
+        margin-left: 0;
+    }
+
+    .colors2 {
+        margin-top: -323px;
     }
 }
 
-/* Mobile styles */
+/* Mobile  */
 @media screen and (max-width: 600px) {
-    .img_autor {
-        max-width: 100%; /* Adjust as needed */
-        top: 80px; /* Adjust as needed */
-    }
 
     .autor h1 {
-        font-size: 6rem; /* Adjust as needed */
+        font-size: 4rem;
+        font-weight: 600;
     }
 
-    .autor .first-name,
+
+    .autor .first-name {
+        margin-right: 199px;
+        top: 70px;
+    }
+
     .autor .last-name {
-        margin-right: 10px; /* Adjust as needed */
-        margin-left: 10px; /* Adjust as needed */
-        margin-top: 80px; /* Adjust as needed */
+        margin-left: 111px;
+        margin-top: 294px;
     }
 
-    .movies {
-        grid-template-columns: 1fr; /* Adjust as needed */
+    .img_autor img {
+        max-width: 60%;
+        top: 34%;
     }
 
-    .info-container {
-        padding: 1vh; /* Adjust as needed */
+    .bio h4 {
+        font-size: 1.7rem;
     }
 
-    .intro-text,
-    .color-text,
+    .bio p {
+        font-size: 1.3rem;
+        max-width: 277px;
+    }
+
+    .movies h4 {
+        font-size: 1.8rem;
+    }
+
+
+    .directors_style h1 {
+        font-size: 3rem;
+    }
+
+    .directors_style h4 {
+        font-size: 1.8rem;
+    }
+
+    .info-container h5 {
+        font-size: 1rem;
+    }
+
+    .info-container p.year {
+        font-size: 0.9rem;
+        text-align: left;
+        padding: 3px;
+    }
+
+    .info-container p.duration {
+        font-size: 0.9rem;
+    }
+
+    .directors_style .simetry {
+        right: 7px;
+        top: 28px;
+    }
+
+    .simetria img {
+        width: 80%;
+        margin-left: 9%;
+    }
+
+    .intro-text {
+        max-width: 80%;
+        margin-right: 170px;
+        bottom: -36px;
+        font-size: 1rem;
+        margin-right: 40px;
+    }
+
+    .color-text {
+        max-width: 80%;
+        margin-right: 170px;
+        bottom: -36px;
+        font-size: 1rem;
+        margin-right: 40px;
+    }
+
     .composition-text {
-        max-width: 80%; /* Adjust as needed */
-        margin-right: 10px; /* Adjust as needed */
-        bottom: 30px; /* Adjust as needed */
+        max-width: 80%;
+        margin-right: 170px;
+        bottom: -36px;
+        font-size: 1rem;
+        margin-right: 40px;
+        padding-bottom: 78px;
     }
+
+
+    .colors1,
+    .colors2 {
+        display: flex;
+        gap: 10px;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .colors1 {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 6%;
+        margin-top: -26px;
+    }
+
+    .colors2 {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 6%;
+        margin-top: 10px;
+        width: 87%;
+    }
+
+    .colors1 img,
+    .colors2 img {
+        width: 100%;
+        height: auto;
+        z-index: 1;
+    }
+
+    .composition img {
+        width: 80%;
+        margin-left: 9%;
+        margin-top: -28px;
+    }
+
+
+    .directors_style .colors {
+        margin-left: 0;
+    }
+
+    .directors_style .first-name {
+        margin-top: 64px;
+    }
+
 }
