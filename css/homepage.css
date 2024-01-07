@@ -105,7 +105,7 @@ header {
 
 .words1 h4 {
     display: inline-block;
-    animation: moveLeft 10s linear infinite;
+    animation: moveLeft 30s linear infinite;
 }
 
 @keyframes moveLeft {
@@ -128,7 +128,7 @@ header {
 
 .words2 h4 {
     display: inline-block;
-    animation: moveRight 60s linear infinite;
+    animation: moveRight 30s linear infinite;
 }
 
 @keyframes moveRight {
@@ -181,10 +181,45 @@ header {
 
 .WA {
     background-color: var(--bordo);
+    padding: 10% 15% 10% 15%;
+    
+
+}
+.pic_h3{
+    align-items: center;
+    max-width:50%;
+    position:relative;
 }
 
+h3{
+    height:min-content;
+    text-wrap: nowrap;
+    rotate: -90deg;
+    position: relative;
+    left: -50%;
+    transform: translateX(-350px);
+}
 
 .name-pic {
+    display: flex;
+    height: auto;
+    gap: 3%;
+}
+
+.quote-WA h4{
+    position: relative;
+    left: 0;
+    top: 10%;
+}
+
+.name-pic img {
+    max-width:100%;
+    height:auto;
+  
+  
+}
+
+/* .name-pic {
     display: flex;
     align-items: center;
     height: 80vh;
@@ -212,4 +247,4 @@ width: 100%;
     max-width: 60%;
     min-width: 30%;
     left: 10%;
-}
+} */
