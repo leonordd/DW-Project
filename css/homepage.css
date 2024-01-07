@@ -10,6 +10,7 @@ header {
     justify-content: center;
     align-items: center;
     color:var( --rosasalmão); 
+    font-weight: normal;
 }
 
 
@@ -22,7 +23,7 @@ header {
     grid-template-rows: repeat(6, 1fr); 
 }
 .rellax {
-    transition: transform 0.6s ease-out; /* Adiciona uma transição suave */
+    transition: transform 0.6s ease-out; 
 }
 
 
@@ -85,10 +86,19 @@ header {
 }
 
 
+
 .keywords {
     background-color:var(--rosasalmão);
 }
 
 .WA {
     background-color: var(--bordo);
+}
+.img_select{
+    display: flex;
+    justify-content: center;
+}
+.img_select img{
+    width: 50%;
+    height: auto;
 }
