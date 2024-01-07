@@ -1,5 +1,5 @@
 let tagsList = [];
-let projectsData; // Declarar a variável de projetos como global
+let projectsData; 
 
 const PROJECTS_URL = 'https://api.cosmicjs.com/v3/buckets/dw-project-production/objects?pretty=true&query=%7B%22type%22:%22projects%22%7D&limit=53&skip=0&read_key=rpHe3JIOqs8yp0uC1q6v1J1NjWXksisBbjgrQrUG1voFfLITHg&depth=1&props=slug,title,metadata,id,';
 const CATEGORIES_URL = 'https://api.cosmicjs.com/v3/buckets/dw-project-production/objects?pretty=true&query=%7B%22type%22:%22categories%22%7D&limit=19&skip=0&read_key=rpHe3JIOqs8yp0uC1q6v1J1NjWXksisBbjgrQrUG1voFfLITHg&depth=1&props=slug,title,metadata,id,';
@@ -33,17 +33,15 @@ function displayCategories(data) {
     const tagsContainer1 = document.getElementById('list1-tags');
     const tagsContainer2 = document.getElementById('list2-tags');
 
-    // Limita o número de tags para exibir em list1-tags
     const tagsToDisplayInList1 = 10;
     
     data.forEach((tag, index) => {
-        const newTag = document.createElement('span');
+        const newTag = document.createElement('spam');
         newTag.textContent = `${tag.title}`;
         newTag.classList.add('prevent-select');
         newTag.setAttribute('id', `${tag.slug}`);
         newTag.style.marginRight = '5%';
 
-        // Adiciona evento de mouseover (hover)
         newTag.addEventListener('mouseover', function () {
             displayRandomImage(tag.slug);
         });
@@ -73,8 +71,8 @@ function displayRandomImage(tagSlug) {
         // Limpa o conteúdo atual e adiciona a nova imagem
         fotoContainer.innerHTML = '';
         const img = document.createElement('img');
-        img.width = ''; // Adicione a largura desejada
-        img.height = ''; // Adicione a altura desejada
+        img.width = '50%'; 
+        img.height = 'auto'; 
         img.src = randomProject.metadata.image.url;
         img.alt = randomProject.metadata.title;
         fotoContainer.appendChild(img);
