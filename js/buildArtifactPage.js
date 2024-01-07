@@ -107,8 +107,36 @@ function displayArtifact(data) {
     let back_div = document.querySelector("#back_div");
 
     background.style.backgroundColor = back_color;
-    header.style.backgroundColor = back_color;
     back_div.style.backgroundColor = cor1;
+
+
+
+
+
+
+    let eyes = document.querySelector("#eyes");
+    let a = document.querySelector("#fullscreen");
+    let boolean = a.classList.contains("show");
+    console.log(boolean);
+    header.style.backgroundColor = back_color;
+
+    eyes.addEventListener("click", function () {
+        boolean=!boolean;
+        console.log(boolean);
+
+        if (boolean === true) {
+            header.style.backgroundColor = "rgba(0,0,0,0)";
+        } else {
+            header.style.backgroundColor = back_color;
+        }
+    });
+
+    
+
+
+    
+
+
 
     title.textContent = data.metadata.name;
     title.style.color = cor1;

@@ -35,6 +35,7 @@ nav p {
     font-family: "Bremlin";
     font-size: 1.6rem;
     color: black;
+    opacity: 1;
 }
 
 nav img {
@@ -81,6 +82,74 @@ nav img {
     bottom: 10px;
     right: 10px;
 }
+
+
+
+.fullscreen-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    z-index: 3;
+    /*opacity: 0;*/
+    /*background-color: #060508;*/
+    background-image: url("../content/images/background.png");
+    background-size: cover;
+    background-position: 50%;
+    transition: height 0.3s ease-in-out;
+    /*transition: opacity 0.3s ease-in-out;*/
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.fullscreen-menu.show {
+    /*opacity: 1;*/
+    height:100%;
+    overflow: hidden;
+    pointer-events: auto;
+}
+
+.fullscreen-menu ul {
+    list-style: none;
+    color: white;
+    display:flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.fullscreen-menu li{
+    text-align: center;
+}
+
+.fullscreen-menu a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Jost', sans-serif;
+    font-size: 2.4rem;
+    font-weight:600;
+}
+
+.fullscreen-menu a:hover {
+    color:#900E16;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*footer-----------------------------------------------*/
@@ -161,6 +230,13 @@ footer img {
     #eyes {
         scale: 0.8;
     }
+
+    .fullscreen-menu a {
+        font-size: 1.800rem;
+    }
+
+
+
 
 
     /*footer-----------------------------------------------*/
