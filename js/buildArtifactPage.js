@@ -19,29 +19,126 @@ async function fetchApi(apiUrl) {
 
 
 function displayArtifact(data) {
-    console.log(data)
+    /*console.log(data)*/
+    let back_color;
+    let filter1;
+    let filter2;
+    let filter3;
+    let filter4;
+    let cor1;
+    let cor2;
+    let tags_back;
+    let tags_text;
+
+    let body = document.querySelector("body");
+    let movie = document.querySelector(".movie");
+    let footer = document.querySelector("footer");
+
+
+    if (data.metadata.filme !== null) {
+        console.log(data.metadata.filme);
+        back_color = data.metadata.filme.metadata.background_color;
+        filter1 = data.metadata.filme.metadata.filter1;
+        filter2 = data.metadata.filme.metadata.filter2;
+        filter3 = data.metadata.filme.metadata.filter3;
+        filter4 = data.metadata.filme.metadata.filter4;
+        cor1 = data.metadata.filme.metadata.cor1;
+        cor2 = data.metadata.filme.metadata.cor2;
+        tags_back = data.metadata.filme.metadata.tags_background;
+        tags_text = data.metadata.filme.metadata.tags_text;
+
+        //let movie = document.createElement("div");
+        //movie.classList.add("movie");
+        movie.style.backgroundColor = cor1;
+        //body.appendChild(movie);
+
+        let inspired = document.createElement("div");
+        inspired.innerText = "Inspired by";
+        inspired.classList.add("inspired");
+        inspired.style.color = cor2;
+        movie.appendChild(inspired);
+
+        let movie_title = document.createElement("div");
+        movie_title.innerText = data.metadata.filme.title;
+        movie_title.classList.add("movie_title");
+        movie_title.style.color = cor2;
+        movie_title.style.textTransform = "uppercase";
+        movie.appendChild(movie_title);
+
+        let img_filme = document.createElement("img");
+        img_filme.alt = "Movie"
+        img_filme.classList.add("img_filme");
+        img_filme.src = data.metadata.filme.metadata.cover.url;
+        movie.appendChild(img_filme);
+
+        let year = document.createElement("div");
+        year.innerText = "–" + data.metadata.filme.metadata.year;
+        year.classList.add("year");
+        year.style.color = cor2;
+        movie.appendChild(year);
+
+        /*<div class="inspired">Inspired by</div>
+        <div class="movie_title">Fantastic Mr. Fox</div>
+        <div class="img_filme"><img></div>
+        <div class="year">2009</div>*/
+
+    } else { //se for igual a null
+        back_color = "#F7C5C8";
+        filter1 = "#CA4C45";
+        filter2 = "#F2F2F2";
+        filter3 = "#3B53AB";
+        filter4 = "#F2D140";
+        cor1 = "#640C08";
+        cor2 = "#640C08";
+        tags_back = "#640C08";
+        tags_text = "#FFFFFF";
+
+        footer.style.backgroundColor = "#F3E4EC";
+        body.removeChild(movie);
+    }
 
     // info
 
     const title = document.getElementById('title')
     const by = document.getElementById('by')
     const text = document.getElementById('text')
+    let background = document.querySelector("html");
+    let header = document.querySelector("header");
+    let back_div = document.querySelector("#back_div");
 
-    title.textContent = data.metadata.name
-    let year 
-    if (data.metadata.year) year = data.metadata.year
-    else year = ''
-    by.textContent = 'by ' + data.metadata.author_name + ' ' + year
-    text.innerHTML = data.metadata.description
+    background.style.backgroundColor = back_color;
+    header.style.backgroundColor = back_color;
+    back_div.style.backgroundColor = cor1;
+
+    title.textContent = data.metadata.name;
+    title.style.color = cor1;
+
+    let author = data.metadata.author_name;
+    if (author === null) author = "Anonymous";
+
+
+    if (data.metadata.year) {
+        by.innerHTML = 'by ' + '<b>' + author + '</b>' + ' (' + data.metadata.year + ')';
+    } else {
+        by.innerHTML = 'by ' + '<b>' + author + '</b>';
+    }
+
+    //by.textContent = 'by ' + author + ' (' + year + ')';
+    //by.style.color = "black";
+
+    text.innerHTML = data.metadata.description;
 
     // more link
     if (data.metadata.more_link) {
-        const linkContainer = document.getElementById('more-link')
-        const link = document.createElement('a')
-        link.href = data.metadata.more_link
-        link.textContent = 'More +'
-        linkContainer.appendChild(link)
+        const linkContainer = document.getElementById('more-link');
+        const link = document.createElement('a');
+        link.href = data.metadata.more_link;
+        link.textContent = 'More +';
+        link.target = "_blank";
+        link.style.color = cor1;
+        linkContainer.appendChild(link);
     }
+
     // tags
     if (data.metadata.tags) {
         const tagsContainer = document.getElementById('tags-container')
@@ -49,6 +146,8 @@ function displayArtifact(data) {
         data.metadata.tags.forEach(tag => {
             const item = document.createElement('li')
             item.textContent = tag.title
+            item.style.backgroundColor = tags_back;
+            item.style.color = tags_text;
             list.appendChild(item)
         });
         tagsContainer.appendChild(list)
@@ -64,12 +163,19 @@ function displayArtifact(data) {
     // dominant colors
     const colors = document.getElementById('dominant-colors')
     const palette = document.createElement('ul')
+    const filterArray = [filter1, filter2, filter3, filter4];
+
     for (let i = 0; i < 4; i++) {
         const item = document.createElement('li')
-        item.classList.add(`cor-${i + 1}`)
-        palette.appendChild(item)
+        item.classList.add(`cor`)
+        //item.classList.add(`cor-${i + 1}`)
+
+        item.style.backgroundColor = filterArray[i];
+        palette.appendChild(item);
     }
-    colors.appendChild(palette)
+
+    colors.appendChild(palette);
+
 }
 
 (async () => {
