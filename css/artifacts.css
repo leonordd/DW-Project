@@ -265,7 +265,7 @@ b {
 @media screen and (max-width: 600px) {
     .container-fluid {
         padding-top: 140px;
-        min-height: none;
+        min-height: auto;
         text-align: center;
     }
 
