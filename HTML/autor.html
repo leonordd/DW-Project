@@ -6,6 +6,7 @@
     <title>Diretor</title>
     <meta name="viewport" content="width=device-width">
     <link href="../css/estilos.css" rel="stylesheet">
+    <link href="../css/geral.css" rel="stylesheet">
     <link href="../css/autor.css" rel="stylesheet">
     <link href="../css/flexbox_grid.css" rel="stylesheet">
     <link
@@ -13,23 +14,31 @@
         rel="stylesheet">
 
 
+
 </head>
 
 <body>
     <header>
         <nav>
-            <!-- logo -->
-            <p class="prevent-select">Wes Anderson</p>
-            <p class="prevent-select">through your eyes</p>
+            <p>WES ANDERSON</p>
+            <div id="eyes">
+                <div class='eye'>
+                    <div></div>
+                </div>
+                <div class='eye'>
+                    <div></div>
+                </div>
+            </div>
+            <!--<img id="eyes" src="../content/icons/eyes.svg" alt="eyes" />-->
+            <p>through your eyes</p>
         </nav>
     </header>
-
-
+    <div class="row" id="zero"></div>
     <main>
 
         <div class="autor">
             <h1 class="first-name"> WES </h1>
-            <h1 class="last-name"> ANDERS </h1>
+            <h1 class="last-name"> ANDERSON </h1>
             <div class="img_autor">
                 <img width="" height="" src="../images/autor.png" alt="Imagem intro" class="">
             </div>
@@ -59,21 +68,22 @@
 
         <div class="directors_style">
             <h4>DIRECTOR'S STYLE</h4>
-        
+
             <h1 class="simetry"> SIMETRY</h1>
-            <img width="" height="" src="../images/simetria.png" alt="Imagem intro" class="simetria">
+            <div class="simetria">
+            <img width="" height="" src="../images/simetria.png" alt="Imagem intro" > </div>
             <p class="intro-text">
                 Lorem ipsum dolor sit amet consectetur. Commodo ac posuere in varius vitae. Egestas nibh tristique vitae
                 felis vitae id in dolor sed. Tincidunt sem enim amet magna vitae egestas porttitor egestas semper. Cras
                 auctor magna suscipit duis cras vel nunc egestas scelerisque.
             </p>
-        
+
             <h1 class="colors"> COLORS</h1>
             <div class="colors1">
                 <img width="" height="" src="../images/color1.png" alt="Imagem intro" class="">
                 <img width="" height="" src="../images/color3.png" alt="Imagem intro" class="">
             </div>
-            
+
             <div class="colors2">
                 <img width="" height="" src="../images/color2.png" alt="Imagem intro" class="">
                 <img width="" height="" src="../images/color4.png" alt="Imagem intro" class="">
@@ -84,10 +94,11 @@
                 felis vitae id in dolor sed. Tincidunt sem enim amet magna vitae egestas porttitor egestas semper. Cras
                 auctor magna suscipit duis cras vel nunc egestas scelerisque.
             </p>
-        
+
             <h1 class="first-name"> COMPO </h1>
             <h1 class="last-name"> SITION </h1>
-            <img width="" height="" src="../images/composicao.png" alt="Imagem intro" class="composition">
+            <div class="composition" >
+            <img width="" height="" src="../images/composicao.png" alt="Imagem intro"> </div>
             <p class="composition-text">
                 Lorem ipsum dolor sit amet consectetur. Commodo ac posuere in varius vitae. Egestas nibh tristique vitae
                 felis vitae id in dolor sed. Tincidunt sem enim amet magna vitae egestas porttitor egestas semper. Cras
@@ -96,6 +107,18 @@
         </div>
 
     </main>
+
+    <footer>
+        <span>WES ANDERSON <br> through your eyes</span>
+        <a href="#zero">
+            <div>Top</div>
+            <img src="../content/icons/arrow.svg" alt="top arrow">
+        </a>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js">
+    </script>
+    <script src="../js/geral.js"></script>
     <script src="../js/geral.js"></script>
     <script src="../js/autorpage.js"></script>
 

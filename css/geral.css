@@ -110,6 +110,7 @@ footer a {
     position: absolute;
     right: 3%;
     font-family: 'Jost', sans-serif;
+    text-decoration: none;
     /*transform: translateX(-50%);*/
 }
 
@@ -117,6 +118,7 @@ footer div {
     display: inline-block;
     align-self: center;
     font-size: 1.2rem;
+    color:black;
 }
 
 footer img {

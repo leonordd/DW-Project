@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Bremlin";
-    src: url("fonts/Bremlin.otf");
+    src: url("../content/font/Bremlin.otf");
 }
 
 body {
@@ -9,26 +9,12 @@ body {
     background-color: var(--rosaclaro);
 }
 
-
-nav {
-    text-align: center;
-    color: black;
-    font-size: 30px;
-    height: 10vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    /* Adjusted padding */
+header{
+    background-color: var(--rosaclaro);
 }
 
-nav img {
-    height: 50px;
-}
-
-nav p {
-    font-family: "Bremlin";
-    font-size: 25px;
+footer{
+    background-color: var(--rosasalmão);
 }
 
 h2,
@@ -46,7 +32,7 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 50px;
+    padding-top: 100px;
 }
 
 .img_autor {
@@ -76,8 +62,8 @@ p {
 .autor .last-name {
     position: relative;
     text-align: right;
-    margin-left: 700px;
-    margin-top: 220px;
+    margin-left: 350px;
+    margin-top: 260px;
 }
 
 .bio {
@@ -209,7 +195,7 @@ p {
 .colors1 {
     flex-direction: column;
     align-items: flex-end;
-    margin-right: 5%;
+    margin-right: 7%;
     margin-top: -100px;
 
 }
@@ -217,7 +203,7 @@ p {
 .colors2 {
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 5%;
+    margin-left: 7%;
     margin-top: -530px;
 }
 
@@ -228,16 +214,20 @@ p {
     z-index: 1;
 }
 
-.simetria {
+.simetria img {
+    width: 40%;
+    height: auto;
+    z-index: 4;
+    margin-left: 7%;
+}
+
+.composition img {
     width: 40%;
     height: auto;
     z-index: 2;
-    margin-left: 150px;
-}
+    margin-left: 7%;
+    margin-top: -100px;
 
-.composition {
-    width: 40%;
-    height: auto;
 }
 
 
@@ -246,13 +236,14 @@ p {
     text-align: right;
     right: 20px;
     top: 100px;
-
+    z-index: 1;
 }
 
 .directors_style .colors {
     position: relative;
     text-align: left;
     margin-top: 100px;
+    margin-left: 60px;
 }
 
 .directors_style .first-name {
@@ -264,14 +255,14 @@ p {
 .directors_style .last-name {
     position: relative;
     text-align: left;
-    margin-top: 220px;
+    z-index: 1;
 }
 
 .intro-text {
     max-width: 27%; 
     text-align: center; 
     margin: auto; 
-    margin-right: 100px;
+    margin-right: 170px;
     position: relative;
     bottom: 100px;
 }
@@ -281,7 +272,7 @@ p {
     max-width: 27%; 
     text-align: center; 
     margin: auto; 
-    margin-right: 100px;
+    margin-right: 170px;
     position: relative;
     bottom: 100px;
 }
@@ -290,7 +281,7 @@ p {
     max-width: 27%; 
     text-align: center; 
     margin: auto; 
-    margin-right: 100px;
+    margin-right: 170px;
     position: relative;
     bottom: 100px;
 }
@@ -300,4 +291,83 @@ p {
 .composition-text {
     color: var(--roxo);
     font-size: 1.3rem;
+}
+
+/* Larger screens (PC) */
+@media screen and (min-width: 980px) {
+
+}
+
+
+
+/* Tablet styles */
+@media screen and (min-width: 600px) and (max-width: 980px) {
+    .img_autor {
+        max-width: 80%; /* Adjust as needed */
+        top: 130px; /* Adjust as needed */
+    }
+
+    .autor h1 {
+        font-size: 8rem; /* Adjust as needed */
+    }
+
+    .autor .first-name {
+        margin-right: 20px; /* Adjust as needed */
+    }
+
+    .autor .last-name {
+        margin-left: 20px; /* Adjust as needed */
+        margin-top: 120px; /* Adjust as needed */
+    }
+
+    .movies {
+        grid-template-columns: repeat(2, 1fr); /* Adjust as needed */
+    }
+
+    .info-container {
+        padding: 1.5vh; /* Adjust as needed */
+    }
+
+    .intro-text,
+    .color-text,
+    .composition-text {
+        max-width: 50%; /* Adjust as needed */
+        margin-right: 30px; /* Adjust as needed */
+        bottom: 50px; /* Adjust as needed */
+    }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 600px) {
+    .img_autor {
+        max-width: 100%; /* Adjust as needed */
+        top: 80px; /* Adjust as needed */
+    }
+
+    .autor h1 {
+        font-size: 6rem; /* Adjust as needed */
+    }
+
+    .autor .first-name,
+    .autor .last-name {
+        margin-right: 10px; /* Adjust as needed */
+        margin-left: 10px; /* Adjust as needed */
+        margin-top: 80px; /* Adjust as needed */
+    }
+
+    .movies {
+        grid-template-columns: 1fr; /* Adjust as needed */
+    }
+
+    .info-container {
+        padding: 1vh; /* Adjust as needed */
+    }
+
+    .intro-text,
+    .color-text,
+    .composition-text {
+        max-width: 80%; /* Adjust as needed */
+        margin-right: 10px; /* Adjust as needed */
+        bottom: 30px; /* Adjust as needed */
+    }
 }
