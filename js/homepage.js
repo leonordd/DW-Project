@@ -1,18 +1,16 @@
-// const urlParams = new URLSearchParams(window.location.search);
+/*let tagsList = [];
 
-// const ARTIFACT_URL = `https://api.cosmicjs.com/v3/buckets/dw-project-production/objects/${artifactId}?read_key=rpHe3JIOqs8yp0uC1q6v1J1NjWXksisBbjgrQrUG1voFfLITHg&depth=1&props=slug,title,metadata,`
-const MOVIES_URL = 'https://api.cosmicjs.com/v3/buckets/dw-project-production/objects?pretty=true&query=%7B%22type%22:%22movies%22%7D&limit=10&read_key=rpHe3JIOqs8yp0uC1q6v1J1NjWXksisBbjgrQrUG1voFfLITHg&depth=1&props=slug,title,metadata,';
-const CATEGORIES_URL =  'https://api.cosmicjs.com/v3/buckets/dw-project-production/objects?pretty=true&query=%7B%22type%22:%22categories%22%7D&limit=19&skip=0&read_key=rpHe3JIOqs8yp0uC1q6v1J1NjWXksisBbjgrQrUG1voFfLITHg&depth=1&props=slug,title,metadata,id,'
-
+const PROJECTS_URL = 'https://api.cosmicjs.com/v3/buckets/dw-project-production/objects?pretty=true&query=%7B%22type%22:%22projects%22%7D&limit=53&skip=0&read_key=rpHe3JIOqs8yp0uC1q6v1J1NjWXksisBbjgrQrUG1voFfLITHg&depth=1&props=slug,title,metadata,id,';
+const CATEGORIES_URL = 'https://api.cosmicjs.com/v3/buckets/dw-project-production/objects?pretty=true&query=%7B%22type%22:%22categories%22%7D&limit=19&skip=0&read_key=rpHe3JIOqs8yp0uC1q6v1J1NjWXksisBbjgrQrUG1voFfLITHg&depth=1&props=slug,title,metadata,id,';
 
 async function fetchApi(apiUrl) {
     try {
         const response = await fetch(apiUrl);
         if (!response.ok) {
-            throw new Error(`error loading search results: ${response.status}`)
+            throw new Error(`error loading search results: ${response.status}`);
         }
-        const data = await response.json()
-        return data.object;
+        const data = await response.json();
+        return data.objects;
     } catch (error) {
         console.error('Fetching error:', error);
         throw error;
@@ -20,77 +18,138 @@ async function fetchApi(apiUrl) {
 }
 
 function setTags(project) {
-    let projectTags = project.metadata.tags
-    let tags = []
+    let projectTags = project.metadata.tags;
+    let tags = [];
 
     projectTags.forEach(tag => {
-        tags.push(tag.slug)
+        tags.push(tag.slug);
     });
- 
-    return tags
+
+    tagsList = tagsList.concat(tags);
 }
 
-
 function displayCategories(data) {
-    const keywords = document.getElementById('list1-tags');
-    let tags = {}; // Initialize tags dictionary outside the loop
+    const tagsContainer1 = document.getElementById('list1-tags');
+    const tagsContainer2 = document.getElementById('list2-tags');
 
     data.forEach(tag => {
-        const tagProperties = setTags(tag);
-
-        // initialize tags dictionary to false <==> none of the tags are selected
-        tags[`${tagProperties}`] = false;
-
-        // display tags
-        const newTag = document.createElement('span'); // Change from <p> to <span>
+        const newTag = document.createElement('span');
         newTag.textContent = `${tag.title}`;
         newTag.classList.add('prevent-select');
-        newTag.setAttribute('id', `${tagProperties}`);
+        newTag.setAttribute('id', `${tag.slug}`);
 
-        // add event listener (hover event) to each tag
-        newTag.addEventListener('mouseenter', function (e) {
-            tags[`${tagProperties}`] = true;
+        newTag.style.marginRight = '5%';
 
-            // your hover logic here
-
-            const projects = document.querySelectorAll(`.${tagProperties}`);
-            projects.forEach(project => {
-                project.style.display = 'block';
-            });
-        });
-
-        // add event listener (hover out event) to each tag
-        newTag.addEventListener('mouseleave', function (e) {
-            tags[`${tagProperties}`] = false;
-
-            // your hover out logic here
-
-            const projects = document.querySelectorAll('.img-container');
-            projects.forEach(project => {
-                project.style.display = 'block';
-            });
-        });
-
-        keywords.appendChild(newTag); // Append to h4
+        tagsContainer1.appendChild(newTag);
+        tagsContainer2.appendChild(newTag.cloneNode(true)); // clonar o segundo container
     });
 }
 
 (async () => {
     try {
-        categoriesData = await fetchApi(CATEGORIES_URL)
-        displayCategories(categoriesData)
+        const categoriesData = await fetchApi(CATEGORIES_URL);
+        displayCategories(categoriesData);
 
+        const projectsData = await fetchApi(PROJECTS_URL);
+        projectsData.forEach(project => setTags(project));
+
+    } catch (error) {
+        console.error('Fetching error:', error);
+        throw error;
+    }
+})();*/
+let tagsList = [];
+let projectsData; // Declarar a variável de projetos como global
+
+const PROJECTS_URL = 'https://api.cosmicjs.com/v3/buckets/dw-project-production/objects?pretty=true&query=%7B%22type%22:%22projects%22%7D&limit=53&skip=0&read_key=rpHe3JIOqs8yp0uC1q6v1J1NjWXksisBbjgrQrUG1voFfLITHg&depth=1&props=slug,title,metadata,id,';
+const CATEGORIES_URL = 'https://api.cosmicjs.com/v3/buckets/dw-project-production/objects?pretty=true&query=%7B%22type%22:%22categories%22%7D&limit=19&skip=0&read_key=rpHe3JIOqs8yp0uC1q6v1J1NjWXksisBbjgrQrUG1voFfLITHg&depth=1&props=slug,title,metadata,id,';
+
+async function fetchApi(apiUrl) {
+    try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+            throw new Error(`error loading search results: ${response.status}`);
+        }
+        const data = await response.json();
+        return data.objects;
+    } catch (error) {
+        console.error('Fetching error:', error);
+        throw error;
+    }
+}
+
+function setTags(project) {
+    let projectTags = project.metadata.tags;
+    let tags = [];
+
+    projectTags.forEach(tag => {
+        tags.push(tag.slug);
+    });
+
+    tagsList = tagsList.concat(tags);
+}
+
+function displayCategories(data) {
+    const tagsContainer1 = document.getElementById('list1-tags');
+    const tagsContainer2 = document.getElementById('list2-tags');
+
+    // Limita o número de tags para exibir em list1-tags
+    const tagsToDisplayInList1 = 10;
+    
+    data.forEach((tag, index) => {
+        const newTag = document.createElement('span');
+        newTag.textContent = `${tag.title}`;
+        newTag.classList.add('prevent-select');
+        newTag.setAttribute('id', `${tag.slug}`);
+        newTag.style.marginRight = '5%';
+
+        // Adiciona evento de mouseover (hover)
+        newTag.addEventListener('mouseover', function () {
+            displayRandomImage(tag.slug);
+        });
+
+        if (index < tagsToDisplayInList1) {
+            tagsContainer1.appendChild(newTag);
+        } else {
+            // Clone o nó para o segundo contêiner
+            const clonedTag = newTag.cloneNode(true);
+            clonedTag.addEventListener('mouseover', function () {
+                displayRandomImage(tag.slug);
+            });
+            tagsContainer2.appendChild(clonedTag);
+        }
+    });
+}
+
+function displayRandomImage(tagSlug) {
+    const filteredProjects = projectsData && projectsData.filter(project => {
+        return project.metadata.tags.some(tag => tag.slug === tagSlug);
+    });
+
+    if (filteredProjects && filteredProjects.length > 0) {
+        const randomProject = filteredProjects[Math.floor(Math.random() * filteredProjects.length)];
+        const fotoContainer = document.querySelector('.img_select');
+
+        // Limpa o conteúdo atual e adiciona a nova imagem
+        fotoContainer.innerHTML = '';
+        const img = document.createElement('img');
+        img.width = ''; // Adicione a largura desejada
+        img.height = ''; // Adicione a altura desejada
+        img.src = randomProject.metadata.image.url;
+        img.alt = randomProject.metadata.title;
+        fotoContainer.appendChild(img);
+    }
+}
+
+(async () => {
+    try {
+        const categoriesData = await fetchApi(CATEGORIES_URL);
+        const projectsDataResponse = await fetchApi(PROJECTS_URL);
+        projectsData = projectsDataResponse; // Atribui os projetos à variável global
+        displayCategories(categoriesData);
 
     } catch (error) {
         console.error('Fetching error:', error);
         throw error;
     }
 })();
-
-
-
-
-
-
-
-
