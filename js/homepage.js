@@ -41,6 +41,7 @@ function displayCategories(data) {
         newTag.classList.add('prevent-select');
         newTag.setAttribute('id', `${tag.slug}`);
         newTag.style.marginRight = '5%';
+        newTag.style.cursor ='pointer';
 
         newTag.addEventListener('mouseover', function () {
             displayRandomImage(tag.slug);
@@ -91,3 +92,5 @@ function displayRandomImage(tagSlug) {
         throw error;
     }
 })();
+
+

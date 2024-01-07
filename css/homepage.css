@@ -88,6 +88,7 @@ header {
 .keywords {
     background-color:var(--rosasalmão);
     width: 100vw;
+    
 
 }
 /* .words1 {
@@ -96,6 +97,7 @@ header {
     flex-wrap: nowrap;
 } */
 .words1 {
+    width: 100%;
     position: relative;
     white-space: nowrap;
     overflow: hidden;
@@ -103,21 +105,22 @@ header {
 
 .words1 h4 {
     display: inline-block;
-    animation: moveLeft 60s linear infinite;
+    animation: moveLeft 10s linear infinite;
 }
 
 @keyframes moveLeft {
     0% {
-        transform: translateX(0%);
+        transform: translateX(100%);
     }
 
     100% {
-        transform: translateX(-100%);
-    } 
+        transform: translateX(-150%);
+    }
      
 }
 
 .words2 {
+    width: 100%;
     position: relative;
     white-space: nowrap;
     overflow: hidden;
@@ -134,7 +137,7 @@ header {
     }
 
     100% {
-        transform: translateX(100%);
+        transform: translateX(150%);
     } 
 }
 
