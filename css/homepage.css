@@ -361,16 +361,18 @@ header {
         .img4 {
             top: 10%;
             position: relative;
+            left: 10%;
+            grid-column: 3 / span 4;
         }
         .img4 img {
-            width: 155%;
+            width: 185%;
         }
         .img6 {
             position: relative;
             top: 10%;
         }
         .img7 img {
-            width: 140%;
+            width: 170%;
         }
         .img7 {
             display: flex;
