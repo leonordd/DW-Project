@@ -17,7 +17,6 @@ async function fetchApi(apiUrl) {
     }
 }
 
-
 function displayArtifact(data) {
     /*console.log(data)*/
     let back_color;
@@ -47,10 +46,7 @@ function displayArtifact(data) {
         tags_back = data.metadata.filme.metadata.tags_background;
         tags_text = data.metadata.filme.metadata.tags_text;
 
-        //let movie = document.createElement("div");
-        //movie.classList.add("movie");
         movie.style.backgroundColor = cor1;
-        //body.appendChild(movie);
 
         let inspired = document.createElement("div");
         inspired.innerText = "Inspired by";
@@ -77,11 +73,6 @@ function displayArtifact(data) {
         year.style.color = cor2;
         movie.appendChild(year);
 
-        /*<div class="inspired">Inspired by</div>
-        <div class="movie_title">Fantastic Mr. Fox</div>
-        <div class="img_filme"><img></div>
-        <div class="year">2009</div>*/
-
     } else { //se for igual a null
         back_color = "#F7C5C8";
         filter1 = "#CA4C45";
@@ -98,7 +89,6 @@ function displayArtifact(data) {
     }
 
     // info
-
     const title = document.getElementById('title')
     const by = document.getElementById('by')
     const text = document.getElementById('text')
@@ -110,14 +100,11 @@ function displayArtifact(data) {
     back_div.style.backgroundColor = cor1;
 
 
-
-
-
-
+    //verifica se a class show está ou não presente e muda a cor de background do header
     let eyes = document.querySelector("#eyes");
     let a = document.querySelector("#fullscreen");
     let boolean = a.classList.contains("show");
-    console.log(boolean);
+    //console.log(boolean);
     header.style.backgroundColor = back_color;
 
     eyes.addEventListener("click", function () {
@@ -127,15 +114,11 @@ function displayArtifact(data) {
         if (boolean === true) {
             header.style.backgroundColor = "rgba(0,0,0,0)";
         } else {
+            //cor específica de cada página
             header.style.backgroundColor = back_color;
         }
     });
-
-    
-
-
-    
-
+    //termina aqui
 
 
     title.textContent = data.metadata.name;
@@ -144,15 +127,11 @@ function displayArtifact(data) {
     let author = data.metadata.author_name;
     if (author === null) author = "Anonymous";
 
-
     if (data.metadata.year) {
         by.innerHTML = 'by ' + '<b>' + author + '</b>' + ' (' + data.metadata.year + ')';
     } else {
         by.innerHTML = 'by ' + '<b>' + author + '</b>';
     }
-
-    //by.textContent = 'by ' + author + ' (' + year + ')';
-    //by.style.color = "black";
 
     text.innerHTML = data.metadata.description;
 
@@ -196,14 +175,11 @@ function displayArtifact(data) {
     for (let i = 0; i < 4; i++) {
         const item = document.createElement('li')
         item.classList.add(`cor`)
-        //item.classList.add(`cor-${i + 1}`)
-
         item.style.backgroundColor = filterArray[i];
         palette.appendChild(item);
     }
 
     colors.appendChild(palette);
-
 }
 
 (async () => {
