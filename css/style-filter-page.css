@@ -182,19 +182,18 @@ header nav p {
 }
 
 
-/* desktop */
-@media only screen and (min-width: 992px) {
-    .search-engine {
-        padding-top: 100px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-        width: 40vw;
-        margin: auto;
-        margin-bottom: 4vh;
-    }
+
+.search-engine {
+    padding-top: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 40vw;
+    margin: auto;
+    margin-bottom: 4vh;
+
 }
 
 /* mobile */
@@ -274,6 +273,7 @@ header nav p {
   
 
 .dropdown-content {
+    margin-top: 5px;
     visibility: hidden;
     display: flex;
     flex-direction: column;
@@ -296,6 +296,7 @@ header nav p {
     text-decoration: none;
     display: block;
     border-radius: 25px;
+    height: fit-content;
 
 }
 
@@ -326,7 +327,7 @@ header nav p {
     padding: 0;
     margin-right: 5px;
     display: inline-block;
-    border: 1px solid #F2F2F2;
+    border: 0.3px solid #F2F2F2;
 }
 .filters-container p:hover {
     cursor: pointer;
