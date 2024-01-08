@@ -70,11 +70,32 @@ function displayMovies(movies) {
     });
 }
 
+function navBar() {
+    //verifica se a class show está ou não presente e muda a cor de background do header
+    let eyes = document.querySelector("#eyes");
+    let a = document.querySelector("#fullscreen");
+    let boolean = a.classList.contains("show");
+    //console.log(boolean);
+    header.style.backgroundColor = "#F3E4EC";
+
+    eyes.addEventListener("click", function () {
+        boolean = !boolean;
+        console.log(boolean);
+
+        if (boolean === true) {
+            header.style.backgroundColor = "rgba(0,0,0,0)";
+        } else {
+            //cor específica de cada página
+            header.style.backgroundColor = "#F3E4EC";
+        }
+    });
+}
+
 (async () => {
     try {
         const moviesData = await fetchApi(MOVIES_URL);
         displayMovies(moviesData);
-
+        navBar();
     } catch (error) {
         console.error('Fetching error:', error);
         throw error;
