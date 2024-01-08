@@ -182,19 +182,18 @@ header nav p {
 }
 
 
-/* desktop */
-@media only screen and (min-width: 992px) {
-    .search-engine {
-        padding-top: 100px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-        width: 40vw;
-        margin: auto;
-        margin-bottom: 4vh;
-    }
+
+.search-engine {
+    padding-top: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 40vw;
+    margin: auto;
+    margin-bottom: 4vh;
+
 }
 
 /* mobile */
