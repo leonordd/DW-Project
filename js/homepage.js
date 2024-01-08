@@ -95,3 +95,30 @@ function displayRandomImage(tagSlug) {
 
 
 
+function changeBackgroundColor() {
+    // Array de cores possíveis em formato hexadecimal
+    const coresHex = ["#642E68", "#FBE45B", "#900E16", "#842D53", "#C0FFF3", '#0E5266','#773613', '#EFEBD0'];
+
+    // Obter as divs específicas
+    const imagensHomeDiv = document.querySelector('.imagens_home');
+    const keywordsDiv = document.querySelector('.keywords');
+    const WADiv = document.querySelector('.WA');
+
+    // Escolher cores aleatórias únicas para cada div
+    let corAleatoriaHexImagensHome, corAleatoriaHexKeywords, corAleatoriaHexWA;
+
+    // Garantir que as cores sejam diferentes
+    do {
+      corAleatoriaHexImagensHome = coresHex[Math.floor(Math.random() * coresHex.length)];
+      corAleatoriaHexKeywords = coresHex[Math.floor(Math.random() * coresHex.length)];
+      corAleatoriaHexWA = coresHex[Math.floor(Math.random() * coresHex.length)];
+    } while (corAleatoriaHexKeywords === corAleatoriaHexImagensHome || corAleatoriaHexKeywords === corAleatoriaHexWA || corAleatoriaHexImagensHome === corAleatoriaHexWA);
+
+    // Alterar a cor de fundo de cada div
+    imagensHomeDiv.style.backgroundColor = corAleatoriaHexImagensHome;
+    keywordsDiv.style.backgroundColor = corAleatoriaHexKeywords;
+    WADiv.style.backgroundColor = corAleatoriaHexWA;
+
+    // Alterar a cor de fundo da página (opcional)
+    document.body.style.backgroundColor = coresHex[Math.floor(Math.random() * coresHex.length)];
+  }

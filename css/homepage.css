@@ -228,6 +228,28 @@ header {
   
 }
 
+.costumize {
+    display: flex;
+    background-color: var(--rosaclaro);
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    position: fixed;
+    left: 135vh;
+    bottom: 10vh;
+    cursor: pointer;
+}
+
+.costumize img {
+    width: 60%;
+    height: auto;
+}
+body, .imagens_home, .keywords, .WA {
+    transition: background-color 0.5s;
+  }
 
 /*Valores Desktop*/
 @media screen and (min-width: 980px) {
@@ -319,7 +341,7 @@ header {
 
         .intro h1 {
 
-            font-size: 2.65rem;
+            font-size: 2.30rem;
         }
         .quote-WA h4 {
 
