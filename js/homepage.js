@@ -95,6 +95,33 @@ function displayRandomImage(tagSlug) {
 
 
 
+// function changeBackgroundColor() {
+//     // Array de cores possíveis em formato hexadecimal
+//     const coresHex = ["#642E68", "#FBE45B", "#900E16", "#842D53", "#C0FFF3", '#0E5266','#773613', '#EFEBD0'];
+
+//     // Obter as divs específicas
+//     const imagensHomeDiv = document.querySelector('.imagens_home');
+//     const keywordsDiv = document.querySelector('.keywords');
+//     const WADiv = document.querySelector('.WA');
+
+//     // Escolher cores aleatórias únicas para cada div
+//     let corAleatoriaHexImagensHome, corAleatoriaHexKeywords, corAleatoriaHexWA;
+
+//     // Garantir que as cores sejam diferentes
+//     do {
+//       corAleatoriaHexImagensHome = coresHex[Math.floor(Math.random() * coresHex.length)];
+//       corAleatoriaHexKeywords = coresHex[Math.floor(Math.random() * coresHex.length)];
+//       corAleatoriaHexWA = coresHex[Math.floor(Math.random() * coresHex.length)];
+//     } while (corAleatoriaHexKeywords === corAleatoriaHexImagensHome || corAleatoriaHexKeywords === corAleatoriaHexWA || corAleatoriaHexImagensHome === corAleatoriaHexWA);
+
+//     // Alterar a cor de fundo de cada div
+//     imagensHomeDiv.style.backgroundColor = corAleatoriaHexImagensHome;
+//     keywordsDiv.style.backgroundColor = corAleatoriaHexKeywords;
+//     WADiv.style.backgroundColor = corAleatoriaHexWA;
+
+//     // Alterar a cor de fundo da página (opcional)
+//     document.body.style.backgroundColor = coresHex[Math.floor(Math.random() * coresHex.length)];
+//   }
 function changeBackgroundColor() {
     // Array de cores possíveis em formato hexadecimal
     const coresHex = ["#642E68", "#FBE45B", "#900E16", "#842D53", "#C0FFF3", '#0E5266','#773613', '#EFEBD0'];
@@ -119,6 +146,25 @@ function changeBackgroundColor() {
     keywordsDiv.style.backgroundColor = corAleatoriaHexKeywords;
     WADiv.style.backgroundColor = corAleatoriaHexWA;
 
+    // Definir a cor do texto com base na cor de fundo da div
+    setTextColor(imagensHomeDiv, '', '#642E68', '#F3E4EC');
+    setTextColor(imagensHomeDiv, '', '#642E68', '#F3E4EC');
+    setTextColor(keywordsDiv, '.words1 h4', '#FBE45B', '#900E16');
+    setTextColor(keywordsDiv, '.words2 h4', '#FBE45B', '#900E16');
+    setTextColor(WADiv, '.pic_h3 h3', '#0E5266', '#EFEBD0');
+    setTextColor(WADiv, '.quote-WA h4', '#0E5266', '#EFEBD0');
+
     // Alterar a cor de fundo da página (opcional)
     document.body.style.backgroundColor = coresHex[Math.floor(Math.random() * coresHex.length)];
+  }
+
+  function setTextColor(container, selector, backgroundColor, textColor) {
+    // Verificar se a cor de fundo da div é igual à cor específica
+    if (container.style.backgroundColor.toLowerCase() === backgroundColor.toLowerCase()) {
+      // Definir a cor do texto
+      container.querySelector(selector).style.color = textColor;
+    } else {
+      // Se não for igual, definir a cor do texto como padrão (preto, por exemplo)
+      container.querySelector(selector).style.color = '#000000';
+    }
   }
