@@ -41,10 +41,8 @@
 
 
 h1 {    /* header homepage*/
- 
+
     font-family: 'Bremlin', sans-serif;
-    color: var(--bordo);
-    /* cor de exemplo */
     text-align: center;
     font-size: 6.25rem;
 
@@ -55,8 +53,7 @@ h3,
 h4,
 p {
     font-family: 'Jost', sans-serif;
-    color: var(--bordo);
-    /* cor de exemplo */
+
 }
 
 h2 {

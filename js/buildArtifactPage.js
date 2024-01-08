@@ -99,6 +99,25 @@ function displayArtifact(data) {
     background.style.backgroundColor = back_color;
     back_div.style.backgroundColor = cor1;
 
+    //verifica se a class show está ou não presente e muda a cor de background do header
+    let eyes = document.querySelector("#eyes");
+    let a = document.querySelector("#fullscreen");
+    let boolean = a.classList.contains("show");
+    //console.log(boolean);
+    header.style.backgroundColor = back_color;
+
+    eyes.addEventListener("click", function () {
+        boolean = !boolean;
+        console.log(boolean);
+
+        if (boolean === true) {
+            header.style.backgroundColor = "rgba(0,0,0,0)";
+        } else {
+            //cor específica de cada página
+            header.style.backgroundColor = back_color;
+        }
+    });
+
     title.textContent = data.metadata.name;
     title.style.color = cor1;
 
@@ -160,32 +179,10 @@ function displayArtifact(data) {
     colors.appendChild(palette);
 }
 
-function navBar() {
-    //verifica se a class show está ou não presente e muda a cor de background do header
-    let eyes = document.querySelector("#eyes");
-    let a = document.querySelector("#fullscreen");
-    let boolean = a.classList.contains("show");
-    //console.log(boolean);
-    header.style.backgroundColor = back_color;
-
-    eyes.addEventListener("click", function () {
-        boolean=!boolean;
-        console.log(boolean);
-
-        if (boolean === true) {
-            header.style.backgroundColor = "rgba(0,0,0,0)";
-        } else {
-            //cor específica de cada página
-            header.style.backgroundColor = back_color;
-        }
-    });
-}
-
 (async () => {
     try {
         const artifactData = await fetchApi(ARTIFACT_URL);
         displayArtifact(artifactData);
-        navBar();
     } catch (error) {
         console.error('Fetching error:', error);
         throw error;
