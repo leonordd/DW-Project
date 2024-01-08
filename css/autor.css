@@ -47,7 +47,6 @@ p {
 
 .autor{
     overflow:hidden;
-    min-height:80vh;
 }
 
 .autor h1 {
@@ -399,6 +398,10 @@ p {
 
 /* Mobile  */
 @media screen and (max-width: 600px) {
+
+    .autor{
+        min-height:700px;
+    }
 
     .autor h1 {
         font-size: 4rem;
