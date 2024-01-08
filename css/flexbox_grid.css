@@ -12,10 +12,14 @@ Não alterar este ficheiro, copiar para outra página para usar (obrigada :D)*/
 }
 
 .container-fluid {
-    padding-left: calc(3.97% - calc(1.65%/2)); /*margem interna esquerda*/
-    padding-right: calc(3.97% - calc(1.65%/2)); /*margem interna direita*/
-    padding-top: 5.12%; /*margem interna superior*/
-    padding-bottom: 5.12%; /*margem interna inferior*/
+    padding-left: calc(3.97% - calc(1.65%/2));
+    /*margem interna esquerda*/
+    padding-right: calc(3.97% - calc(1.65%/2));
+    /*margem interna direita*/
+    padding-top: 5.12%;
+    /*margem interna superior*/
+    padding-bottom: 5.12%;
+    /*margem interna inferior*/
     margin-right: auto;
     margin-left: auto;
 }
@@ -36,14 +40,18 @@ div {
     -webkit-box-direction: normal;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-right: -calc(1.65%/2); /*margem de cada coluna (1.65%) é o valor completo, é negativo para inicializar o valor da row*/
-    margin-left: -calc(1.65%/2); /*margem de cada coluna (1.65%) é o valor completo, é negativo para inicializar o valor da row*/
+    margin-right: -calc(1.65%/2);
+    /*margem de cada coluna (1.65%) é o valor completo, é negativo para inicializar o valor da row*/
+    margin-left: -calc(1.65%/2);
+    /*margem de cada coluna (1.65%) é o valor completo, é negativo para inicializar o valor da row*/
 }
 
 [class*='col'] {
     box-sizing: border-box;
-    padding-right: calc(1.65%/2); /*margem de cada coluna (1.65%)*/
-    padding-left: calc(1.65%/2); /*margem de cada coluna (1.65%)*/
+    padding-right: calc(1.65%/2);
+    /*margem de cada coluna (1.65%)*/
+    padding-left: calc(1.65%/2);
+    /*margem de cada coluna (1.65%)*/
 }
 
 
@@ -52,10 +60,13 @@ div {
 .box-row {
     position: relative;
     box-sizing: border-box;
-    /*background: red;*/ /*APAGAR SE NECESSÁRIO*/
+    /*background: red;*/
+    /*APAGAR SE NECESSÁRIO*/
     overflow: hidden;
-    margin-bottom: 20px; /*ALTERAR SE NECESSÁRIO margem de baixo de cada row*/
+    margin-bottom: 20px;
+    /*ALTERAR SE NECESSÁRIO margem de baixo de cada row*/
 }
+
 /*--------------------------------------------------------------------------------------------------------------------*/
 
 

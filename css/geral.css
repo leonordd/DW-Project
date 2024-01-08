@@ -1,0 +1,252 @@
+a {
+    text-decoration: none;
+}
+
+/*CSS GERAL -----------------------------------------------------------------------*/
+/*header-------------------------------------------------*/
+header {
+    /*margem interna esquerda*/
+    padding-left: calc(3.97% - calc(1.65%/2));
+    /*margem interna direita*/
+    padding-right: calc(3.97% - calc(1.65%/2));
+    /*margem interna superior*/
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+}
+
+nav {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#eyes {
+    max-height: 6vh;
+}
+
+nav p {
+    font-family: "Bremlin";
+    font-size: 1.6rem;
+    color: black;
+    opacity: 1;
+}
+
+nav img {
+    max-width: 70%;
+    height: auto;
+    width: auto;
+}
+
+.eye {
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    background: #F2F2F2;
+}
+
+.eye>div {
+    /*pupil*/
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    background-color: #424141;
+    border-radius: 50%;
+    content: " ";
+    scale: 1;
+}
+
+.eye .static-eye {
+    position: absolute;
+    bottom: 6px;
+    right: 8px;
+    scale: 1.3;
+}
+
+.eye>div:after {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 8px;
+    height: 8px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    content: " ";
+}
+
+/*quando o utilizador faz hover os olhos ficam fixos*/
+#eyes:hover>.eye div {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.fullscreen-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    z-index: 3;
+    background-image: url("../content/images/background.png");
+    background-size: cover;
+    background-position: 50%;
+    transition: height 0.3s ease-in-out;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.fullscreen-menu.show {
+    height:100%;
+    overflow: hidden;
+    pointer-events: auto;
+}
+
+.fullscreen-menu ul {
+    list-style: none;
+    color: white;
+    display:flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.fullscreen-menu li{
+    text-align: center;
+}
+
+.fullscreen-menu a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Jost', sans-serif;
+    font-size: 2.4rem;
+    font-weight:600;
+}
+
+.fullscreen-menu a:hover {
+    color:#900E16;
+}
+
+
+/*footer-----------------------------------------------*/
+footer {
+    /*margem interna esquerda*/
+    padding-left: calc(3.97% - calc(1.65%/2));
+    /*margem interna direita*/
+    padding-right: calc(3.97% - calc(1.65%/2));
+    /*margem interna superior*/
+    padding-top: 3%;
+    /*margem interna inferior*/
+    padding-bottom: 3%;
+    display: flex;
+    position: relative;
+}
+
+footer span {
+    font-family: Bremlin;
+    src: url(../content/font/bremlin.otf);
+    font-size: 1.5rem;
+    line-height: 1.6rem;
+    text-align: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+footer a {
+    align-self: center;
+    position: absolute;
+    right: 3%;
+    font-family: 'Jost', sans-serif;
+}
+
+footer div {
+    display: inline-block;
+    font-size: 1.2rem;
+    color: #000000;
+}
+
+footer img {
+    width: 15%;
+    align-self: center;
+}
+
+/* Para tablets: */
+@media screen and (min-width: 600px) and (max-width: 980px) {}
+
+/*para telemóveis*/
+@media screen and (max-width: 600px) {
+
+    header {
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+
+    nav {
+        flex-direction: column-reverse;
+    }
+
+    nav p {
+        font-size: 1.25rem;
+    }
+
+    nav p:first-child {
+        order: 2;
+    }
+
+    nav p:nth-child(3) {
+        order: 1;
+    }
+
+    nav img {
+        display: block;
+    }
+
+    #eyes {
+        scale: 0.8;
+    }
+
+    .fullscreen-menu a {
+        font-size: 1.800rem;
+    }
+
+    /*footer-----------------------------------------------*/
+    footer {
+        /*margem interna superior*/
+        padding-top: 24px;
+        /*margem interna inferior*/
+        padding-bottom: 24px;
+    }
+
+    footer span {
+        font-size: 1.25rem;
+        line-height: 1.4rem;
+        text-align: center;
+    }
+
+    footer a {
+        align-self: center;
+        position: absolute;
+        right: 3%;
+        font-family: 'Jost', sans-serif;
+        margin-right: calc(3.97% - calc(1.65%/2));
+    }
+
+    footer div {
+        display: none;
+    }
+
+    footer img {
+        width: 40%;
+        float: right;
+    }
+}

@@ -80,6 +80,15 @@ function displayRandomImage(tagSlug) {
     }
 }
 
+//faz a troca da class do elemento fullscreen quando se clica nos olhos
+let eyes = document.querySelector("#eyes");
+let fullscreen = document.querySelector(".fullscreen-menu");
+
+eyes.addEventListener("click", function () {
+    fullscreen.classList.toggle('show');
+});
+
+
 (async () => {
     try {
         const categoriesData = await fetchApi(CATEGORIES_URL);
