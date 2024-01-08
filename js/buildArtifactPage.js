@@ -88,6 +88,9 @@ function displayArtifact(data) {
         body.removeChild(movie);
     }
 
+    let doc_title = document.querySelector("title");
+    doc_title.innerText = data.metadata.name;
+    
     // info
     const title = document.getElementById('title')
     const by = document.getElementById('by')
