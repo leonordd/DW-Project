@@ -98,13 +98,10 @@ function displayRandomImage(tagSlug) {
 
 
    function changeBackgroundColor() {
-    // Array de cores possíveis para o background das divs
+  
     const coresFundo = ["#642E68", "#F0B7BA", "#900E16", "#FBE45B", "#842D53", "#C0FFF3", "#0E5266", "#EFEBD0", "#773613"];
-
-    // Array de cores possíveis para o texto
     const coresTexto = ["#F3E4EC", "#640C08", "#FBE45B", "#900E16", "#FEED7D", "#972A22", "#EFEBD0", "#0E5266", "#FFEC69"];
 
-    // Obter as divs específicas
     const imagensHomeDiv = document.querySelector('.imagens_home');
     const keywordsDiv = document.querySelector('.keywords');
     const WADiv = document.querySelector('.WA');
@@ -142,7 +139,7 @@ function displayRandomImage(tagSlug) {
     name.style.color = corAleatoriaTextoWA;
     quote.style.color = corAleatoriaTextoWA;
 
-    // Alterar a cor de fundo da página (opcional)
+    // Alterar a cor de fundo da página 
     document.body.style.backgroundColor = coresFundo[Math.floor(Math.random() * coresFundo.length)];
     document.body.style.color = encontrarCorTexto(document.body.style.backgroundColor);
   }
