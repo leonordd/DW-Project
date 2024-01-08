@@ -45,6 +45,11 @@ p {
     top: 40%;
 }
 
+.autor{
+    overflow:hidden;
+    min-height:80vh;
+}
+
 .autor h1 {
     color: var(--roxo);
     font-family: 'Jost', sans-serif;
@@ -56,12 +61,14 @@ p {
     position: relative;
     text-align: left;
     margin-right: 750px;
+    
 }
 
 .autor .last-name {
     position: relative;
+    right: -14%;
     text-align: right;
-    margin-left: 440px;
+    align-self: end;
     margin-top: 260px;
 }
 
