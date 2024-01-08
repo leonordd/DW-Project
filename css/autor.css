@@ -423,10 +423,6 @@ p {
         max-width: 277px;
     }
 
-    .movies h4 {
-        font-size: 1.8rem;
-    }
-
 
     .directors_style h1 {
         font-size: 3rem;
@@ -434,6 +430,39 @@ p {
 
     .directors_style h4 {
         font-size: 1.8rem;
+    }
+
+/* para mudar */
+    .movies {
+        background-color: var(--rosasalmão);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 17px;
+        padding: 20px;
+        justify-items: center;
+    }
+    
+    .movies h4 {
+        position: relative;
+        justify-self: start;
+        grid-column: span 3;
+        color: var(--bordo);
+        font-weight: 700;
+        margin-bottom: 25px;
+        font-size: 1.8rem;
+    }
+
+    
+    .movie .image-container,
+    .movie .info-container {
+        width: 100%;
+    }
+    
+    .movie .image-container {
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+        perspective: 1000px;
     }
 
     .info-container h5 {
