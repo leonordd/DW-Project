@@ -21,7 +21,6 @@ a {
     padding-top: 100px;
     min-height: 100vh;
     padding-bottom: 10vh;
-    /*margin-bottom: 5.12%;*/
     font-family: 'Jost', sans-serif;
 }
 
@@ -85,9 +84,7 @@ b {
     display: flex;
     align-items: center;
     justify-content: center;
-    /*padding-bottom: 10%;*/
 }
-
 
 .image>img {
     object-fit: cover;
@@ -95,12 +92,10 @@ b {
     max-height: 70vh;
 }
 
-
 [class*='cor'] {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    /*margin-top: 20%;*/
     margin-bottom: 20%;
 }
 
@@ -153,33 +148,13 @@ b {
     margin-bottom: 50px;
 }
 
-/*.movie_title{
-    font-size: 14rem;
-    font-weight: 600;
-    line-height: 9.5rem;
-    opacity:40%;
-}*/
-
-/*.movie_title {
-    font-size: 100%; 
-    font-weight: 600;
-    line-height: 12vw; 
-    max-width: 100%; 
-    opacity: 40%;
-}*/
-
 .movie_title {
     font-size: 15vw;
-    /* Use 'vw' para ajustar o tamanho com base na largura da viewport */
     font-weight: 600;
     line-height: 10vw;
-    /* Use um valor adequado para o espaçamento entre linhas */
     opacity: 40%;
-    /* Ajuste conforme necessário */
     overflow-wrap: break-word;
-    /* Permite a quebra de palavras quando necessário */
     text-align-last: right;
-    /* Alinha o texto à margem direita na última linha */
 }
 
 .img_filme {
@@ -197,15 +172,13 @@ b {
     text-align: right;
 }
 
-/*back_div*/
 #back_div {
     flex-direction: row;
     width: 35px;
     min-width: 35px;
     height: 100%;
-    /*background: salmon;*/
     overflow: hidden;
-    transition: width 0.5s linear;
+    transition: width 0.1s linear;
     white-space: nowrap;
     border-radius: 40px;
     margin-bottom: 2%;

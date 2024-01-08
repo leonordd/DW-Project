@@ -15,7 +15,6 @@
     <link href="../css/flexbox_grid.css" rel="stylesheet">
     <link href="../css/geral.css" rel="stylesheet">
     <link href="../css/artifacts.css" rel="stylesheet">
-
 </head>
 
 <body>
@@ -30,13 +29,19 @@
                     <div></div>
                 </div>
             </div>
-            <!--<img id="eyes" src="../content/icons/eyes.svg" alt="eyes" />-->
             <p>through your eyes</p>
         </nav>
     </header>
 
+    <div class="fullscreen-menu" id="fullscreen">
+        <ul>
+            <li><a href="../HTML/index.html">HOMEPAGE</a></li>
+            <li><a href="../HTML/filter-page.html">ARCHIVE</a></li>
+            <li><a href="../HTML/autor.html">WES ANDERSON</a></li>
+        </ul>
+    </div>
+
     <div class="wrap container-fluid">
-        <!--ALTERAR COLUNAS ---------------------------------------------------------------------------------------- -->
         <div class="row" id="zero"></div>
         <a href="../HTML/filter-page.html" class="row" id=back_div>
             <div>
@@ -51,7 +56,6 @@
                     <p class="by" id="by"></p>
                     <div class="text" id="text"></div>
                     <div class="smaller semibold" id="more-link"></div>
-                    <!--<div class="filter" id="tags-container"></div>-->
                 </div>
             </div>
             <div class="col-m-6 col-t-5 col-d-4">
@@ -62,10 +66,13 @@
             </div>
             <div class="col-m-6 col-t-8 col-d-12 filter" id="tags-container"></div>
         </div>
-        <!-- ------------------------------------------------------------------------------------------------------- -->
     </div>
 
     <div class="movie">
+        <!--<div>Inspired by</div>
+        <div class="movie_title">Fantastic Mr. Fox</div>
+        <div class="img_filme"><img></div>
+        <div class="year">2009</div>-->
     </div>
 
     <footer>
@@ -75,18 +82,11 @@
             <img src="../content/icons/arrow.svg" alt="top arrow">
         </a>
     </footer>
-    <!--<div class="movie">
-        <div>Inspired by</div>
-        <div class="movie_title">Fantastic Mr. Fox</div>
-        <div class="img_filme"><img></div>
-        <div class="year">2009</div>
-    </div>-->
+
+    <script src="../js/buildArtifactPage.js"></script>
 
     <!--JS GERAL ------------------------------------------------------------------------->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="../js/geral.js"></script>
-    <!--ATE AQUI ------------------------------------------------------------------------->
-    <script src="../js/buildArtifactPage.js"></script>
 </body>
-
 </html>

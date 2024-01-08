@@ -4,7 +4,7 @@ let palettes = {}
 let openMenu = false
 
 const PROJECTS_URL = 'https://api.cosmicjs.com/v3/buckets/dw-project-production/objects?pretty=true&query=%7B%22type%22:%22projects%22%7D&limit=62&skip=0&read_key=rpHe3JIOqs8yp0uC1q6v1J1NjWXksisBbjgrQrUG1voFfLITHg&depth=1&props=slug,title,metadata,id,'
-const CATEGORIES_URL =  'https://api.cosmicjs.com/v3/buckets/dw-project-production/objects?pretty=true&query=%7B%22type%22:%22categories%22%7D&limit=19&skip=0&read_key=rpHe3JIOqs8yp0uC1q6v1J1NjWXksisBbjgrQrUG1voFfLITHg&depth=1&props=slug,title,metadata,id,'
+const CATEGORIES_URL = 'https://api.cosmicjs.com/v3/buckets/dw-project-production/objects?pretty=true&query=%7B%22type%22:%22categories%22%7D&limit=19&skip=0&read_key=rpHe3JIOqs8yp0uC1q6v1J1NjWXksisBbjgrQrUG1voFfLITHg&depth=1&props=slug,title,metadata,id,'
 const MOVIES_URL = 'https://api.cosmicjs.com/v3/buckets/dw-project-production/objects?pretty=true&query=%7B%22type%22:%22movies%22%7D&limit=10&read_key=rpHe3JIOqs8yp0uC1q6v1J1NjWXksisBbjgrQrUG1voFfLITHg&depth=1&props=slug,title,metadata,id,'
 
 async function fetchApi(apiUrl) {
@@ -29,17 +29,17 @@ function setTags(project) {
         tags.push(tag.slug)
     });
 
-    
+
     return tags
 }
 
 
 function displayProjects(data) {
-    
+
     const imagesContainer = document.createElement('div')
     imagesContainer.classList.add('images-container')
     imagesContainer.setAttribute('id', 'images-container')
-    
+
     data.forEach(project => {
         const div = document.createElement('div')
         div.classList.add('img-container')
@@ -71,9 +71,9 @@ function displayProjects(data) {
         div.appendChild(hyperlink)
         div.appendChild(container)
         imagesContainer.appendChild(div)
-        
+
     });
-    
+
     // add footer
     const footer = document.createElement('footer')
     footer.setAttribute('id', 'footer')
@@ -86,7 +86,7 @@ function displayProjects(data) {
 function displayCategories(data, movies, projects) {
     const filtersContainer = document.createElement('div')
     filtersContainer.classList.add('filters-container')
-    
+
 
     data.forEach(tag => {
         // initialize tags dictionary to false <==> none of the tags are selected
@@ -96,17 +96,17 @@ function displayCategories(data, movies, projects) {
         newTag.textContent = `${tag.title}`
         newTag.classList.add('prevent-select')
         newTag.setAttribute('id', `${tag.slug}`)
-        
+
         // add event listener (click event) to each tag
         newTag.addEventListener('click', function (e) {
             tags[`${tag.slug}`] = !tags[`${tag.slug}`]
-            
+
             //removes the 100% width from the .info-container
             let contain = document.querySelectorAll(".info-container");
-            for(let i=0; i<contain.length; i++){
+            for (let i = 0; i < contain.length; i++) {
                 contain[i].style.width = "auto";
             }
-            
+
             // no filter selected => display all images
 
             if (Object.values(tags).reduce((a, b) => a + b, 0) === 0) {
@@ -142,8 +142,8 @@ function displayCategories(data, movies, projects) {
                         button.style.background = '#642E68'
                     }
                 }
-                
-             }            
+
+            }
         })
 
         filtersContainer.appendChild(newTag)
@@ -160,7 +160,7 @@ function displayCategories(data, movies, projects) {
             dropdownContent.style.visibility = 'hidden'
             openMenu = false
         }
-        
+
     })
 
     dropdown.classList.add('dropdown')
@@ -179,7 +179,7 @@ function displayCategories(data, movies, projects) {
             console.log(movie.metadata)
             const colorPalette = document.createElement('div')
             palettes[movie.metadata.name] = false
-            
+
             colorPalette.classList.add('color-palette')
             colorPalette.setAttribute('id', `${movie.id}`)
 
@@ -192,13 +192,13 @@ function displayCategories(data, movies, projects) {
             dropdownContent.appendChild(colorPalette)
 
             colorPalette.addEventListener('click', (e) => {
-               
+
                 palettes[movie.metadata.name] = !palettes[movie.metadata.name]
 
                 if (palettes[movie.metadata.name]) {
                     newData = []
                     colorPalette.style.backgroundColor = '#D8C2D3'
-                    
+
                     for (const [key, value] of Object.entries(palettes)) {
                         if (palettes[key]) {
                             projects.forEach(project => {
@@ -208,7 +208,7 @@ function displayCategories(data, movies, projects) {
                             });
                         }
                     }
-    
+
                     if (newData !== null) {
                         // clear image container ans display new results
                         const imagesContainer = document.getElementById('images-container');
@@ -267,7 +267,7 @@ function handleSearchEngine() {
 
     // display all
     if (!value || value.length === 0 || value.length < 3) {
-        
+
         // clear image container
         const imagesContainer = document.getElementById('images-container');
         const footer = document.getElementById('footer')
@@ -309,6 +309,27 @@ function handleSearchEngine() {
 }
 
 
+function navBar() {
+    //verifica se a class show está ou não presente e muda a cor de background do header
+    let eyes = document.querySelector("#eyes");
+    let a = document.querySelector("#fullscreen");
+    let boolean = a.classList.contains("show");
+    //console.log(boolean);
+    header.style.backgroundColor = "#F3E4EC";
+
+    eyes.addEventListener("click", function () {
+        boolean = !boolean;
+        console.log(boolean);
+
+        if (boolean === true) {
+            header.style.backgroundColor = "rgba(0,0,0,0)";
+        } else {
+            //cor específica de cada página
+            header.style.backgroundColor = "#F3E4EC";
+        }
+    });
+}
+
 (async () => {
     try {
         categoriesData = await fetchApi(CATEGORIES_URL)
@@ -317,7 +338,7 @@ function handleSearchEngine() {
         displayCategories(categoriesData, moviesData, projectsData)
         displayProjects(projectsData);
         handleSearchEngine()
-
+        navBar();
     } catch (error) {
         console.error('Fetching error:', error);
         throw error;
