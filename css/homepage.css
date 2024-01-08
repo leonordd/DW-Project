@@ -1,4 +1,9 @@
-header {
+
+header p {
+    opacity:0;
+}
+
+.intro{
     background-color: var(--preto);
     height: 100vh;
 }

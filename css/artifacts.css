@@ -1,123 +1,326 @@
-html{
-    background-color: #F2DDC0;
-    --red:#742A2B;
-    --yellow: #E1AE66;
+@font-face {
+    font-family: "Bremlin";
+    src: url("../content/font/bremlin.otf");
 }
 
-a{ /*retira o default de todas os links*/
-    text-decoration:none;
-    color:black;
+html {
+    background-color: #FFFFFF;
+    --red: #742A2B;
+    --yellow: #E1AE66;
+    list-style-type: none;
+}
+
+a {
+    /*retira o default de todas os links*/
+    text-decoration: none;
+    color: black;
     cursor: pointer;
 }
 
 .container-fluid {
-padding-top:0;
-padding-bottom:0;
-margin-bottom:5.12%;
-font-family: 'Jost', sans-serif;
+    padding-top: 100px;
+    min-height: 100vh;
+    padding-bottom: 10vh;
+    font-family: 'Jost', sans-serif;
 }
 
-.box-row{
-    position:relative;
-    min-height:100%;
+.box-row {
+    position: relative;
+    min-height: 100%;
 }
 
-nav{
-    height:10vh;
+#zero {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-#um{
-    min-height:90vh;
-    /*background-color:red;*/
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--red);
+    margin-bottom: 9px;
 }
 
-.title{
-    font-size:2.5rem;
-    font-weight:700;
-    color:var(--red);
-    margin-bottom:9px;
+.by {
+    color: black;
+    margin-bottom: 53px;
 }
 
-.by{
-    font-size:1.875rem;
-    margin-bottom:53px;
+b {
+    font-weight: 600;
 }
 
-.text{
-    font-size:1.25rem;
-    margin-bottom:32px;
-    line-height:2rem;
-
+.text {
+    margin-bottom: 32px;
 }
 
-.link{
-    font-size:1.375rem;
-    font-weight:600;
-    color:var(--red);
+.text>p {
+    font-size: 1.25rem;
+    line-height: 1.85rem;
+    color: black;
 }
 
-.filter{
-    position:absolute;
-    bottom:10%;
-    left:0;
-    justify-content: center;
-    align-items: center;
-    width:100%;
+.link {
+    color: var(--red);
 }
 
-.filter li{
-    display:inline-block;
-    margin-right:3%;
-    margin-bottom:3%;
+.filter {
+    margin-top: 2%;
+    text-align: left;
+}
+
+.filter li {
+    display: inline-block;
+    margin-right: 8px;
+    margin-bottom: 8px;
     background-color: var(--yellow);
     border-radius: 25px;
     padding: 15px 30px;
+    font-weight:500;
 }
 
-.image, .cores{
+.image,
+.cores {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom:10%;
 }
 
-.image > img {
-    width:100%;
-    height:100%;
+.image>img {
+    object-fit: cover;
+    width: 100%;
+    max-height: 70vh;
 }
 
-
-[class*='cor']{
-    width:50px;
-    height:50px;
+[class*='cor'] {
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
+    margin-bottom: 20%;
 }
 
-.cor-1{
-    background-color:#EA2127;
+.cores {
+    border-radius: 0;
 }
 
-.cor-2{
-    background-color:#E86E21;
+.cores ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
 }
 
-.cor-3{
-    background-color:#742A2B;
+.cor-1 {
+    background-color: #EA2127;
 }
 
-.cor-4{
-    background-color:#F8E03E;
+.cor-2 {
+    background-color: #E86E21;
 }
 
+.cor-3 {
+    background-color: #742A2B;
+}
 
+.cor-4 {
+    background-color: #F8E03E;
+}
+
+.movie {
+    padding-left: calc(3.97% - calc(1.65%/2));
+    /*margem interna esquerda*/
+    padding-right: calc(3.97% - calc(1.65%/2));
+    /*margem interna direita*/
+    padding-top: 5.12%;
+    /*margem interna superior*/
+    padding-bottom: 5.12%;
+    /*margem interna inferior*/
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box;
+    margin: 0 auto;
+    font-family: 'Jost', sans-serif;
+    position: relative;
+}
+
+.inspired {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+
+.movie_title {
+    font-size: 15vw;
+    font-weight: 600;
+    line-height: 10vw;
+    opacity: 40%;
+    overflow-wrap: break-word;
+    text-align-last: right;
+}
+
+.img_filme {
+    transform: translate(-50%, -6%);
+    position: relative;
+    left: 50%;
+    margin-left: calc(3.97% - calc(1.65%/2));
+    margin-right: calc(3.97% - calc(1.65%/2));
+}
+
+.year {
+    font-size: 3.125rem;
+    font-weight: 600;
+    opacity: 40%;
+    text-align: right;
+}
+
+#back_div {
+    flex-direction: row;
+    width: 35px;
+    min-width: 35px;
+    height: 100%;
+    overflow: hidden;
+    transition: width 0.1s linear;
+    white-space: nowrap;
+    border-radius: 40px;
+    margin-bottom: 2%;
+}
+
+#back_div:hover {
+    border-radius: 40px;
+    width: 85px;
+    cursor: pointer;
+}
+
+#back_div>div {
+    display: block;
+    padding: 4px 8px;
+}
+
+#img {
+    display: inline-block;
+    width: 20px;
+    height: auto;
+}
+
+#back {
+    display: inline-block;
+    margin: 0;
+    font-size: 1.125rem;
+    color: white;
+    margin-left: 2px;
+    font-weight: 500;
+}
 
 /*Valores Desktop*/
 @media screen and (min-width: 980px) {
-    .title{
-        max-width:calc((100%/6)*4);
+    .title {
+        max-width: calc((100%/6)*4);
     }
-    
-    .text{
-        max-width:calc((100%/6)*5);
+
+    .text {
+        max-width: calc((100%/6)*5);
     }
+}
+
+/* Para tablets: */
+@media screen and (min-width: 600px) and (max-width: 980px) {
+    .filter {
+        margin-top: 40px;
+    }
+
+    .image>img {
+        object-fit: cover;
+        width: 100%;
+        max-height: 100%;
+    }
+}
+
+/*para telemóveis*/
+@media screen and (max-width: 600px) {
+    .container-fluid {
+        padding-top: 140px;
+        min-height: auto;
+        text-align: center;
+    }
+
+    .title {
+        font-size: 2rem;
+        margin-top: 10px;
+    }
+
+    .by {
+        font-size: 1.25rem;
+        margin-bottom: 28px;
+    }
+
+    .text {
+        margin-bottom: 32px;
+    }
+
+    .text>p {
+        font-size: 1.063rem;
+        line-height: 1.65rem;
+        color: black;
+    }
+
+    #more_link a {
+        font-size: 1.25rem;
+        text-align: center;
+    }
+
+    .filter {
+        margin-top: 36px;
+        margin-bottom: 28px;
+        text-align: center;
+        order: 4;
+    }
+
+    .filter li {
+        font-size: 0.875rem;
+    }
+
+    #colors {
+        order: 5;
+    }
+
+    .cores {
+        width: 100%;
+        align-items: normal;
+    }
+
+    .cores ul {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .movie {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .inspired {
+        font-size: 2rem;
+    }
+
+    .img_filme {
+        transform: translate(-50%, -6%);
+        position: relative;
+        left: 50%;
+        width: 70%;
+    }
+
+    .year {
+        font-size: 3.125rem;
+        font-weight: 600;
+        opacity: 40%;
+        text-align: right;
+    }
+
+    #um {
+        display: flex;
+        flex-direction: column;
+    }
+
+
 }
