@@ -153,6 +153,9 @@ footer {
     padding-bottom: 3%;
     display: flex;
     position: relative;
+    background-color:#F3E4EC;
+    z-index:5;
+
 }
 
 footer span {
