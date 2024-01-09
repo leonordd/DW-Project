@@ -1,3 +1,4 @@
+/*---------------------------SECÇÃO DE KEYWORDS E PROJETOS HOMEPAGE--------------------------------*/
 let tagsList = [];
 let projectsData; 
 
@@ -50,7 +51,7 @@ function displayCategories(data) {
         if (index < tagsToDisplayInList1) {
             tagsContainer1.appendChild(newTag);
         } else {
-            // Clone o nó para o segundo contêiner
+            // Clone o nó para o segundo container
             const clonedTag = newTag.cloneNode(true);
             clonedTag.addEventListener('mouseover', function () {
                 displayRandomImage(tag.slug);
@@ -80,14 +81,6 @@ function displayRandomImage(tagSlug) {
     }
 }
 
-//faz a troca da class do elemento fullscreen quando se clica nos olhos
-let eyes = document.querySelector("#eyes");
-let fullscreen = document.querySelector(".fullscreen-menu");
-
-eyes.addEventListener("click", function () {
-    fullscreen.classList.toggle('show');
-});
-
 
 (async () => {
     try {
@@ -103,77 +96,183 @@ eyes.addEventListener("click", function () {
 })();
 
 
+/*----------------------------------------ANIMAÇÕES HOMEPAGE---------------------------------------------*/
 
-// function changeBackgroundColor() {
-//     // Array de cores possíveis em formato hexadecimal
-//     const coresHex = ["#642E68", "#FBE45B", "#900E16", "#842D53", "#C0FFF3", '#0E5266','#773613', '#EFEBD0'];
+//faz a troca da class do elemento fullscreen quando se clica nos olhos
+let eyes = document.querySelector("#eyes");
+let fullscreen = document.querySelector(".fullscreen-menu");
 
-//     // Obter as divs específicas
-//     const imagensHomeDiv = document.querySelector('.imagens_home');
-//     const keywordsDiv = document.querySelector('.keywords');
-//     const WADiv = document.querySelector('.WA');
+eyes.addEventListener("click", function () {
+    fullscreen.classList.toggle('show');
+});
 
-//     // Escolher cores aleatórias únicas para cada div
-//     let corAleatoriaHexImagensHome, corAleatoriaHexKeywords, corAleatoriaHexWA;
 
-//     // Garantir que as cores sejam diferentes
-//     do {
-//       corAleatoriaHexImagensHome = coresHex[Math.floor(Math.random() * coresHex.length)];
-//       corAleatoriaHexKeywords = coresHex[Math.floor(Math.random() * coresHex.length)];
-//       corAleatoriaHexWA = coresHex[Math.floor(Math.random() * coresHex.length)];
-//     } while (corAleatoriaHexKeywords === corAleatoriaHexImagensHome || corAleatoriaHexKeywords === corAleatoriaHexWA || corAleatoriaHexImagensHome === corAleatoriaHexWA);
+//----------------------CORES FUNDO
 
-//     // Alterar a cor de fundo de cada div
-//     imagensHomeDiv.style.backgroundColor = corAleatoriaHexImagensHome;
-//     keywordsDiv.style.backgroundColor = corAleatoriaHexKeywords;
-//     WADiv.style.backgroundColor = corAleatoriaHexWA;
+   function changeBackgroundColor() {
+  
+    const coresFundo = ["#642E68", "#F0B7BA", "#900E16", "#FBE45B", "#842D53", "#C0FFF3", "#0E5266", "#EFEBD0", "#773613"];
+    const coresTexto = ["#F3E4EC", "#640C08", "#FBE45B", "#900E16", "#FEED7D", "#972A22", "#EFEBD0", "#0E5266", "#FFEC69"];
 
-//     // Alterar a cor de fundo da página (opcional)
-//     document.body.style.backgroundColor = coresHex[Math.floor(Math.random() * coresHex.length)];
-//   }
-function changeBackgroundColor() {
-    // Array de cores possíveis em formato hexadecimal
-    const coresHex = ["#642E68", "#FBE45B", "#900E16", "#842D53", "#C0FFF3", '#0E5266','#773613', '#EFEBD0'];
-
-    // Obter as divs específicas
     const imagensHomeDiv = document.querySelector('.imagens_home');
     const keywordsDiv = document.querySelector('.keywords');
     const WADiv = document.querySelector('.WA');
 
+    const words1 = document.querySelector('.words1 h4');
+    const words2 = document.querySelector('.words2 h4');
+    const name = document.querySelector('.pic_h3 h3');
+    const quote = document.querySelector('.quote-WA h4');
+
     // Escolher cores aleatórias únicas para cada div
-    let corAleatoriaHexImagensHome, corAleatoriaHexKeywords, corAleatoriaHexWA;
+    let corAleatoriaFundoImagensHome, corAleatoriaFundoKeywords, corAleatoriaFundoWA;
+    let corAleatoriaTextoImagensHome, corAleatoriaTextoKeywords, corAleatoriaTextoWA;
 
-    // Garantir que as cores sejam diferentes
+    // Garantir que as cores de fundo sejam diferentes
     do {
-      corAleatoriaHexImagensHome = coresHex[Math.floor(Math.random() * coresHex.length)];
-      corAleatoriaHexKeywords = coresHex[Math.floor(Math.random() * coresHex.length)];
-      corAleatoriaHexWA = coresHex[Math.floor(Math.random() * coresHex.length)];
-    } while (corAleatoriaHexKeywords === corAleatoriaHexImagensHome || corAleatoriaHexKeywords === corAleatoriaHexWA || corAleatoriaHexImagensHome === corAleatoriaHexWA);
+      corAleatoriaFundoImagensHome = coresFundo[Math.floor(Math.random() * coresFundo.length)];
+      corAleatoriaFundoKeywords = coresFundo[Math.floor(Math.random() * coresFundo.length)];
+      corAleatoriaFundoWA = coresFundo[Math.floor(Math.random() * coresFundo.length)];
+    } while (corAleatoriaFundoKeywords === corAleatoriaFundoImagensHome || corAleatoriaFundoKeywords === corAleatoriaFundoWA || corAleatoriaFundoImagensHome === corAleatoriaFundoWA);
 
-    // Alterar a cor de fundo de cada div
-    imagensHomeDiv.style.backgroundColor = corAleatoriaHexImagensHome;
-    keywordsDiv.style.backgroundColor = corAleatoriaHexKeywords;
-    WADiv.style.backgroundColor = corAleatoriaHexWA;
+    // Encontrar as cores de texto correspondentes
+    corAleatoriaTextoImagensHome = encontrarCorTexto(corAleatoriaFundoImagensHome);
+    corAleatoriaTextoKeywords = encontrarCorTexto(corAleatoriaFundoKeywords);
+    corAleatoriaTextoWA = encontrarCorTexto(corAleatoriaFundoWA);
 
-    // Definir a cor do texto com base na cor de fundo da div
-    setTextColor(imagensHomeDiv, '', '#642E68', '#F3E4EC');
-    setTextColor(imagensHomeDiv, '', '#642E68', '#F3E4EC');
-    setTextColor(keywordsDiv, '.words1 h4', '#FBE45B', '#900E16');
-    setTextColor(keywordsDiv, '.words2 h4', '#FBE45B', '#900E16');
-    setTextColor(WADiv, '.pic_h3 h3', '#0E5266', '#EFEBD0');
-    setTextColor(WADiv, '.quote-WA h4', '#0E5266', '#EFEBD0');
+    // Alterar a cor de fundo e de texto de cada div
+    imagensHomeDiv.style.backgroundColor = corAleatoriaFundoImagensHome;
+    imagensHomeDiv.style.color = corAleatoriaTextoImagensHome;
 
-    // Alterar a cor de fundo da página (opcional)
-    document.body.style.backgroundColor = coresHex[Math.floor(Math.random() * coresHex.length)];
+    keywordsDiv.style.backgroundColor = corAleatoriaFundoKeywords;
+    words1.style.color = corAleatoriaTextoKeywords;
+    words2.style.color = corAleatoriaTextoKeywords;
+
+    WADiv.style.backgroundColor = corAleatoriaFundoWA;
+    name.style.color = corAleatoriaTextoWA;
+    quote.style.color = corAleatoriaTextoWA;
+
+    // Alterar a cor de fundo da página 
+    document.body.style.backgroundColor = coresFundo[Math.floor(Math.random() * coresFundo.length)];
+    document.body.style.color = encontrarCorTexto(document.body.style.backgroundColor);
   }
 
-  function setTextColor(container, selector, backgroundColor, textColor) {
-    // Verificar se a cor de fundo da div é igual à cor específica
-    if (container.style.backgroundColor.toLowerCase() === backgroundColor.toLowerCase()) {
-      // Definir a cor do texto
-      container.querySelector(selector).style.color = textColor;
-    } else {
-      // Se não for igual, definir a cor do texto como padrão (preto, por exemplo)
-      container.querySelector(selector).style.color = '#000000';
+  function encontrarCorTexto(corFundo) {
+    switch (corFundo) {
+      case "#642E68":
+        return "#F3E4EC";
+      case "#F0B7BA":
+        return "#640C08";
+      case "#900E16":
+        return "#FBE45B";
+      case "#FBE45B":
+        return "#900E16";
+      case "#842D53":
+        return "#FEED7D";
+      case "#C0FFF3":
+        return "#972A22";
+      case "#0E5266":
+        return "#EFEBD0";
+      case "#EFEBD0":
+        return "#0E5266";
+      case "#773613":
+        return "#FFEC69";
+      default:
+        return "#000000";
     }
+    
   }
+
+//Adicione um ouvinte de evento para o scroll
+window.addEventListener('scroll', function () {
+
+    if (window.scrollY > 100) {
+        // Obtenha a cor de fundo da .imagens_home
+        var corFundoImagensHome = window.getComputedStyle(document.querySelector('.imagens_home')).backgroundColor;
+
+        // Ajuste a cor de fundo da .intro
+        document.querySelector('.intro').style.backgroundColor = corFundoImagensHome;
+        document.querySelector('.intro h1').style.backgroundColor = corFundoImagensHome;
+
+        // Atualize a cor do texto h1 com base na nova cor de fundo
+        updateH1Color(corFundoImagensHome);
+    } else {
+        // Se estiver no topo, defina a cor de fundo padrão para a .intro
+        document.querySelector('.intro').style.backgroundColor = ''; 
+        document.querySelector('.intro h1').style.backgroundColor = ''; 
+    }
+});
+
+// Função para atualizar a cor do texto h1 com base na cor de fundo da .intro
+function updateH1Color(corFundoIntro) {
+    const h1Texto = document.querySelector('.intro h1');
+
+    switch (corFundoIntro) {
+        case "#642E68":
+            h1Texto.style.color = "#F3E4EC";
+            break;
+        case "#FBE45B":
+        case "#900E16":
+        case "#EFEBD0":
+            h1Texto.style.color = "#900E16";
+            break;
+        case "#F0B7BA":
+            h1Texto.style.color = "#640C08";
+            break;
+        default:
+        
+            h1Texto.style.color = ''; 
+}
+
+}
+
+
+
+
+  
+/*-------------------------------------------------LOADING SCREEN HOMEPAGE----------------------------------------- */
+document.addEventListener('DOMContentLoaded', function () {
+  window.addEventListener('load', function () {
+      setTimeout(function () {
+          window.scrollTo(0, 0);
+          zoomOut();
+      }, 1000);
+  });
+});
+
+function zoomOut() {
+  var image = document.querySelector('.zoom-image');
+  document.body.classList.add('no-scroll');
+
+  // Adiciona a classe para iniciar a animação
+  image.classList.add('zoom-out-animation');
+
+  image.addEventListener('transitionend', function () {
+      image.classList.add('scale-zero'); //dar reset na scale
+      setTimeout(function () {
+          document.body.classList.remove('no-scroll');
+      }, 1000);
+  });
+}
+
+/*-------------BOTÃO COSTUMIZAR INVISIVEL NO HEADER------- */
+document.addEventListener("DOMContentLoaded", function () {
+  var costumizeDiv = document.querySelector(".costumize");
+  var headerHeight = document.querySelector("header").offsetHeight;
+
+  // Verifica a posição do scroll
+  window.addEventListener("scroll", function () {
+      if (window.scrollY > headerHeight ) {
+          // Scroll está fora do cabeçalho, torna a div visível
+          costumizeDiv.style.opacity = "1";
+      } else {
+          // Scroll está dentro do cabeçalho, torna a div invisível
+          costumizeDiv.style.opacity = "0";
+      }
+  });
+  costumizeDiv.style.transition = "opacity 0.3s ease";
+});
+
+
+
+
+

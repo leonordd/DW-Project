@@ -25,3 +25,5 @@ $("html").mousemove(function (event) {
         div.removeClass("static-eye");
     }
 });
+
+
