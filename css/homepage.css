@@ -5,13 +5,7 @@ header p {
 
 .intro{
     background-color: var(--preto);
-    height: 100vh;
-}
-
-.hero-section {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
+    height: 400vh;
 }
 
 .animacao {
@@ -20,8 +14,14 @@ header p {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    z-index: 150;
     overflow: hidden;
+}
+
+.animacao img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .zoom-effect {
@@ -32,7 +32,7 @@ header p {
 }
 
 .intro h1 {
-    height: 100vh;
+    height: 600vh;
     position: relative;
     display: flex;
     justify-content: center;
