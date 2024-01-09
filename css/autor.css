@@ -25,6 +25,44 @@ p {
     font-family: 'Jost', sans-serif;
 }
 
+
+@media only screen and (max-width: 767px) {
+    .gallery {
+        background: var(--rosasalmão);
+    }
+    
+    .mention h4{
+        background: var(--rosasalmão);
+        position: relative;
+        justify-self: start;
+        grid-column: span 3;
+        color: var(--bordo);
+        font-weight: 700;
+    }
+    
+    .gallery-cell {
+        left: 50%;
+        width: 30%;
+        height: fit-content;
+        margin-right: 10px;
+    }
+    
+    .gallery-cell img {
+        width: 100%;
+    }
+    
+    /* cell number */
+    .gallery-cell:before {
+        display: block;
+        text-align: center;
+        line-height: 200px;
+        font-size: 80px;
+        color: white;
+    }
+
+}
+    
+
 .autor,
 .bio {
     background-color: var(--rosaclaro);
@@ -88,6 +126,7 @@ p {
     max-width: 805px;
 
 }
+
 
 .movies {
     background-color: var(--rosasalmão);
@@ -524,7 +563,7 @@ p {
         padding-bottom: 78px;
     }
 
-
+  
     .colors1,
     .colors2 {
         display: flex;
