@@ -8,7 +8,7 @@ body {
     box-sizing: border-box;
     background-color: var(--rosaclaro);
 }
-
+    
 header {
     background-color: var(--rosaclaro);
 }
@@ -433,15 +433,6 @@ p {
     }
 
 /* para mudar */
-    .movies {
-        background-color: var(--rosasalmão);
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 17px;
-        padding: 20px;
-        justify-items: center;
-    }
-    
     .movies h4 {
         position: relative;
         justify-self: start;
