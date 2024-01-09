@@ -407,3 +407,27 @@ body, .imagens_home, .keywords, .WA {
             grid-column: 5 / span 4;
         }
 }
+
+
+
+.zoom-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 150;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: transform 2s ease-out, opacity 2s ease-out;
+}
+
+.zoom-image.zoom-out-animation {
+    transform: scale(20);
+    opacity: 0;
+    transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.zoom-image.scale-zero {
+    transform: scale(0);
+}

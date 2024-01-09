@@ -25,3 +25,28 @@ $("html").mousemove(function (event) {
         div.removeClass("static-eye");
     }
 });
+
+
+/*-------------------------------------------------LOADING SCREEN HOMEPAGE----------------------------------------- */
+document.addEventListener('DOMContentLoaded', function () {
+    window.addEventListener('load', function () {
+        setTimeout(function () {
+            zoomOut();
+        }, 800);
+    });
+});
+
+function zoomOut() {
+    var image = document.querySelector('.zoom-image');
+
+    // Adicionando uma classe para iniciar a animação
+    image.classList.add('zoom-out-animation');
+
+    // Adicionando um ouvinte para quando a transição de zoom out estiver completa
+    image.addEventListener('transitionend', function () {
+        // Adicionando a classe para transformar a escala para 0
+        image.classList.add('scale-zero');
+    });
+}
+
+
