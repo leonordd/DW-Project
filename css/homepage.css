@@ -179,7 +179,7 @@ header p {
 
 .traingif {
     background-color: var(--bordo);
-    width: 100vw;
+    /* width: 100vw; */
     overflow: hidden;
 }
 
@@ -193,7 +193,6 @@ header p {
     background-color: var(--bordo);
     padding: 10% 15% 10% 15%;
     
-
 }
 .pic_h3{
     align-items: center;
@@ -254,6 +253,7 @@ header p {
 }
 body, .imagens_home, .keywords, .WA {
     transition: background-color 0.5s;
+    width: 100%;
   }
 
 /*Valores Desktop*/

@@ -1,3 +1,4 @@
+/*---------------------------SECÇÃO DE KEYWORDS E PROJETOS HOMEPAGE--------------------------------*/
 let tagsList = [];
 let projectsData; 
 
@@ -50,7 +51,7 @@ function displayCategories(data) {
         if (index < tagsToDisplayInList1) {
             tagsContainer1.appendChild(newTag);
         } else {
-            // Clone o nó para o segundo contêiner
+            // Clone o nó para o segundo container
             const clonedTag = newTag.cloneNode(true);
             clonedTag.addEventListener('mouseover', function () {
                 displayRandomImage(tag.slug);
@@ -103,7 +104,7 @@ eyes.addEventListener("click", function () {
 })();
 
 
-
+/*----------------------------------------ANIMAÇÕES HOMEPAGE---------------------------------------------*/
 
 
    function changeBackgroundColor() {
