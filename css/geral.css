@@ -82,6 +82,10 @@ nav img {
 }
 
 /*quando o utilizador faz hover os olhos ficam fixos*/
+#eyes:hover {
+    cursor: pointer;
+}
+
 #eyes:hover>.eye div {
     position: absolute;
     bottom: 10px;
@@ -107,7 +111,7 @@ nav img {
 }
 
 .fullscreen-menu.show {
-    height:100%;
+    height: 100%;
     overflow: hidden;
     pointer-events: auto;
 }
@@ -115,12 +119,12 @@ nav img {
 .fullscreen-menu ul {
     list-style: none;
     color: white;
-    display:flex;
+    display: flex;
     flex-direction: column;
     gap: 48px;
 }
 
-.fullscreen-menu li{
+.fullscreen-menu li {
     text-align: center;
 }
 
@@ -129,11 +133,11 @@ nav img {
     color: white;
     font-family: 'Jost', sans-serif;
     font-size: 2.4rem;
-    font-weight:600;
+    font-weight: 600;
 }
 
 .fullscreen-menu a:hover {
-    color:#900E16;
+    color: #900E16;
 }
 
 
@@ -178,6 +182,15 @@ footer div {
 footer img {
     width: 15%;
     align-self: center;
+}
+
+.prevent-select {
+    /* Safari */
+    -webkit-user-select: none;
+    /* IE 10 and IE 11 */
+    -ms-user-select: none;
+    /* Standard syntax */
+    user-select: none;
 }
 
 /* Para tablets: */
