@@ -9,7 +9,7 @@ header p {
 
 .intro h1 {
     height: 100vh;
-    background-color: var(--preto);
+ background-color: var(--preto); 
     position: relative;
     display: flex;
     justify-content: center;
@@ -254,7 +254,7 @@ header p {
     width: 60%;
     height: auto;
 }
-body, .imagens_home, .keywords, .WA {
+body, .imagens_home, .keywords, .WA, .intro , .intro h1 {
     transition: background-color 0.5s;
     width: 100%;
   }

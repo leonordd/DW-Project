@@ -81,14 +81,6 @@ function displayRandomImage(tagSlug) {
     }
 }
 
-//faz a troca da class do elemento fullscreen quando se clica nos olhos
-let eyes = document.querySelector("#eyes");
-let fullscreen = document.querySelector(".fullscreen-menu");
-
-eyes.addEventListener("click", function () {
-    fullscreen.classList.toggle('show');
-});
-
 
 (async () => {
     try {
@@ -106,6 +98,16 @@ eyes.addEventListener("click", function () {
 
 /*----------------------------------------ANIMAÇÕES HOMEPAGE---------------------------------------------*/
 
+//faz a troca da class do elemento fullscreen quando se clica nos olhos
+let eyes = document.querySelector("#eyes");
+let fullscreen = document.querySelector(".fullscreen-menu");
+
+eyes.addEventListener("click", function () {
+    fullscreen.classList.toggle('show');
+});
+
+
+//----------------------CORES FUNDO
 
    function changeBackgroundColor() {
   
@@ -177,8 +179,56 @@ eyes.addEventListener("click", function () {
       default:
         return "#000000";
     }
+    
   }
 
+//Adicione um ouvinte de evento para o scroll
+window.addEventListener('scroll', function () {
+
+    if (window.scrollY > 100) {
+        // Obtenha a cor de fundo da .imagens_home
+        var corFundoImagensHome = window.getComputedStyle(document.querySelector('.imagens_home')).backgroundColor;
+
+        // Ajuste a cor de fundo da .intro
+        document.querySelector('.intro').style.backgroundColor = corFundoImagensHome;
+        document.querySelector('.intro h1').style.backgroundColor = corFundoImagensHome;
+
+        // Atualize a cor do texto h1 com base na nova cor de fundo
+        updateH1Color(corFundoImagensHome);
+    } else {
+        // Se estiver no topo, defina a cor de fundo padrão para a .intro
+        document.querySelector('.intro').style.backgroundColor = ''; 
+        document.querySelector('.intro h1').style.backgroundColor = ''; 
+    }
+});
+
+// Função para atualizar a cor do texto h1 com base na cor de fundo da .intro
+function updateH1Color(corFundoIntro) {
+    const h1Texto = document.querySelector('.intro h1');
+
+    switch (corFundoIntro) {
+        case "#642E68":
+            h1Texto.style.color = "#F3E4EC";
+            break;
+        case "#FBE45B":
+        case "#900E16":
+        case "#EFEBD0":
+            h1Texto.style.color = "#900E16";
+            break;
+        case "#F0B7BA":
+            h1Texto.style.color = "#640C08";
+            break;
+        default:
+        
+            h1Texto.style.color = ''; 
+}
+
+}
+
+
+
+
+  
 /*-------------------------------------------------LOADING SCREEN HOMEPAGE----------------------------------------- */
 document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('load', function () {
