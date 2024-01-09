@@ -1,4 +1,3 @@
-
 header p {
     opacity:0;
 }
@@ -10,12 +9,14 @@ header p {
 
 .intro h1 {
     height: 100vh;
+ background-color: var(--preto); 
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     color:var( --rosasalmão); 
     font-weight: normal;
+    z-index: 2;
 }
 
 
@@ -172,14 +173,15 @@ header p {
 }
 
 .img_select img {
-    width: 25%;
+    width: 20%;
     height: auto;
 }
 
 
 .traingif {
     background-color: var(--bordo);
-    width: 100vw;
+    /* width: 100vw; */
+    height: 70vh;
     overflow: hidden;
 }
 
@@ -193,7 +195,6 @@ header p {
     background-color: var(--bordo);
     padding: 10% 15% 10% 15%;
     
-
 }
 .pic_h3{
     align-items: center;
@@ -241,19 +242,21 @@ header p {
     border-radius: 100%;
     align-items: center;
     justify-content: center;
-    z-index: 10;
+    z-index: 1;
     position: fixed;
-    left: 135vh;
-    bottom: 10vh;
+    right: 5%;
+    bottom: 5%;
     cursor: pointer;
+    opacity: 1;
 }
 
 .costumize img {
     width: 60%;
     height: auto;
 }
-body, .imagens_home, .keywords, .WA {
+body, .imagens_home, .keywords, .WA, .intro , .intro h1 {
     transition: background-color 0.5s;
+    width: 100%;
   }
 
 /*Valores Desktop*/
@@ -266,6 +269,10 @@ body, .imagens_home, .keywords, .WA {
     }
     .img7 img {
         width: 150%;
+    }
+    .costumize {
+        width: 60px;
+        height: 60px;
     }
 }
 
@@ -334,6 +341,10 @@ body, .imagens_home, .keywords, .WA {
     }
     .words2 h4 {
         font-size: 2.3rem;
+    }
+    .costumize {
+        width: 50px;
+        height: 50px;
     }
 
 }
@@ -406,4 +417,39 @@ body, .imagens_home, .keywords, .WA {
             justify-content: center;
             grid-column: 5 / span 4;
         }
+        .costumize {
+            width: 40px;
+            height: 40px;
+        }
+}
+
+
+
+.zoom-image {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 150;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: transform 2s ease-out, opacity 2s ease-out;
+}
+
+.zoom-image.zoom-out-animation {
+    overflow: hidden;
+    transform: scale(20);
+    opacity: 0;
+    transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.zoom-image.scale-zero {
+    overflow: hidden;
+    transform: scale(0);
+}
+body.no-scroll {
+    transition: overflow 1.8s ease-out;
+    overflow: hidden;
 }
