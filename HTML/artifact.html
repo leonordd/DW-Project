@@ -1,45 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Artifacts</title>
+    <link rel="shortcut icon" type="img/svg" href="../content/icons/eyes.svg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 
+    <link href="../css/estilos.css" rel="stylesheet">
     <link href="../css/flexbox_grid.css" rel="stylesheet">
-    <link href="../css/artifacts.css" rel="stylesheet">  
+    <link href="../css/geral.css" rel="stylesheet">
+    <link href="../css/artifacts.css" rel="stylesheet">
 </head>
+
 <body>
     <header>
         <nav>
-            Wes Anderson Trough your eyes
-        </nav>
-    </header>
-    
-    <div class="wrap container-fluid">
-
-        <!--ALTERAR COLUNAS ---------------------------------------------------------------------------------------- -->
-        <div class="row" id="um">
-            <div class="col-m-6 col-t-6 col-d-6">
-                <div class="box-row">
-                    <div class="title" id="title"></div>
-                    <div class="by" id="by"></div>
-                    <div class="text" id="text"></div>
-                    <div class="link" id="more-link"></div>  
-                    <div class="filter" id="tags-container"></div>  
+            <p>WES ANDERSON</p>
+            <div id="eyes">
+                <div class='eye'>
+                    <div></div>
+                </div>
+                <div class='eye'>
+                    <div></div>
                 </div>
             </div>
-            <div class="col-m-6 col-t-5 col-d-5">
+            <p>through your eyes</p>
+        </nav>
+    </header>
+
+    <div class="fullscreen-menu" id="fullscreen">
+        <ul>
+            <li><a href="../HTML/index.html">HOMEPAGE</a></li>
+            <li><a href="../HTML/filter-page.html">ARCHIVE</a></li>
+            <li><a href="../HTML/autor.html">WES ANDERSON</a></li>
+        </ul>
+    </div>
+
+    <div class="wrap container-fluid">
+        <div class="row" id="zero"></div>
+        <a href="../HTML/filter-page.html" class="row" id=back_div>
+            <div>
+                <img id="img" src="../content/icons/back.svg">
+                <p id="back">Back</p>
+            </div>
+        </a>
+        <div class="row" id="um">
+            <div class="col-m-6 col-t-6 col-d-7">
+                <div class="box-row">
+                    <div class="title" id="title"></div>
+                    <p class="by" id="by"></p>
+                    <div class="text" id="text"></div>
+                    <div class="smaller semibold" id="more-link"></div>
+                </div>
+            </div>
+            <div class="col-m-6 col-t-5 col-d-4">
                 <div class="box-row image" id="img-container"></div>
             </div>
-            <div class="col-m-6 col-t-1 col-d-1">
+            <div class="col-m-6 col-t-1 col-d-1" id="colors">
                 <div class="box-row cores" id="dominant-colors"></div>
             </div>
+            <div class="col-m-6 col-t-8 col-d-12 filter" id="tags-container"></div>
         </div>
-        <!-- ------------------------------------------------------------------------------------------------------- -->
     </div>
-<script src="../js/buildArtifactPage.js"></script>
+
+    <div class="movie">
+        <!--<div>Inspired by</div>
+        <div class="movie_title">Fantastic Mr. Fox</div>
+        <div class="img_filme"><img></div>
+        <div class="year">2009</div>-->
+    </div>
+
+    <footer>
+        <span>WES ANDERSON <br> through your eyes</span>
+        <a href="#zero">
+            <div>Top</div>
+            <img src="../content/icons/arrow.svg" alt="top arrow">
+        </a>
+    </footer>
+
+    <script src="../js/buildArtifactPage.js"></script>
+
+    <!--JS GERAL ------------------------------------------------------------------------->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="../js/eyes.js"></script>
+    <script src="../js/geral.js"></script>
 </body>
 </html>
