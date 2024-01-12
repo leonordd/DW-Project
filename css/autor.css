@@ -70,6 +70,22 @@ p {
         font-size: 80px;
         color: white;
     }
+
+    .info-container {
+        transform: translate(0, -5px);
+    }
+
+    h5 {
+        width: 100%;
+        white-space: normal;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        height: 1.5rem;
+        /*margin-bottom: 8px;*/
+    }
 }
 
 .autor,
@@ -186,7 +202,7 @@ p {
     transform: rotateY(180deg);
 }
 
-.movie .info-container {
+.info-container {
     position: relative;
     border: 1.5px solid var(--bordo);
     padding: 2vh;
@@ -452,11 +468,14 @@ p {
     .colors2 {
         margin-top: -323px;
     }
+
+    .movie{
+        width:90%;
+    }
 }
 
 /* Mobile  */
 @media screen and (max-width: 600px) {
-
     .autor {
         min-height: 700px;
     }

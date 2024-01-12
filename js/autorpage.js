@@ -96,11 +96,28 @@ function displayMovies(movies) {
 }
 
 function createMobileElement (movie){
-    const galleryCell = document.createElement('div')
-    galleryCell.classList.add('gallery-cell', 'carousel-movie')
-    const img = document.createElement('img')
+    const galleryCell = document.createElement('div');
+    galleryCell.classList.add('gallery-cell', 'carousel-movie');
+    const img = document.createElement('img');
     img.src = movie.metadata.cover.url;
-    galleryCell.appendChild(img)
+    img.alt = `${movie.title} Cover`;
+    galleryCell.appendChild(img);
+
+
+    const infoContainer = document.createElement('div');
+    infoContainer.classList.add('info-container');
+
+    const nameElement = document.createElement('h5');
+    nameElement.textContent = movie.title;
+
+    const yearElement = document.createElement('p');
+    yearElement.classList.add('year');
+    yearElement.textContent = movie.metadata.year;
+
+    galleryCell.appendChild(infoContainer);
+    infoContainer.appendChild(nameElement);
+    infoContainer.appendChild(yearElement);
+
     return galleryCell;
 }
 
