@@ -45,13 +45,16 @@ https://flickity.metafizzy.co
   
   .flickity-button {
     position: absolute;
-    background: hsla(0, 0%, 100%, 0.75);
+    background: #F3E4EC;
+    border: 1px solid #640C08;
     border: none;
-    color: #333;
+    color: #640C08;
+    cursor:pointer;
   }
   
   .flickity-button:hover {
-    background: white;
+    background: #640C08;
+    color: #F3E4EC;
     cursor: pointer;
   }
   
@@ -83,7 +86,7 @@ https://flickity.metafizzy.co
     height: 44px;
     border-radius: 50%;
     /* vertically center */
-    transform: translateY(-50%);
+    transform: translateY(-100%);
   }
   
   .flickity-prev-next-button.previous { left: 10px; }

@@ -18,7 +18,7 @@ async function fetchApi(apiUrl) {
 }
 
 function navBar() {
-    //verifica se a class show está ou nãoor presente e muda a cor de background do header
+    //verifica se a class show está ou não presente e muda a cor de background do header
     let eyes = document.querySelector("#eyes");
     let a = document.querySelector("#fullscreen");
     let boolean = a.classList.contains("show");
@@ -96,11 +96,28 @@ function displayMovies(movies) {
 }
 
 function createMobileElement (movie){
-    const galleryCell = document.createElement('div')
-    galleryCell.classList.add('gallery-cell', 'carousel-movie')
-    const img = document.createElement('img')
+    const galleryCell = document.createElement('div');
+    galleryCell.classList.add('gallery-cell', 'carousel-movie');
+    const img = document.createElement('img');
     img.src = movie.metadata.cover.url;
-    galleryCell.appendChild(img)
+    img.alt = `${movie.title} Cover`;
+    galleryCell.appendChild(img);
+
+
+    const infoContainer = document.createElement('div');
+    infoContainer.classList.add('info-container');
+
+    const nameElement = document.createElement('h5');
+    nameElement.textContent = movie.title;
+
+    const yearElement = document.createElement('p');
+    yearElement.classList.add('year');
+    yearElement.textContent = movie.metadata.year;
+
+    galleryCell.appendChild(infoContainer);
+    infoContainer.appendChild(nameElement);
+    infoContainer.appendChild(yearElement);
+
     return galleryCell;
 }
 
@@ -112,12 +129,7 @@ function displayMobile(moviesData) {
         moviesContainer.classList.add("gallery");
         moviesContainer.classList.remove("movies");
         moviesContainer.appendChild(movieElement);
-
     });
-
-    /*if (flkty) {
-        flkty.destroy();
-    }*/
 
     flkty = new Flickity('.gallery', {
         cellAlign: 'left',
@@ -126,12 +138,8 @@ function displayMobile(moviesData) {
     });
 }
 
-
-
-
 mobile.addEventListener("change", function () {
     // mobile
-
     if (mobile.matches) {
         console.log("mobile")
 
@@ -179,25 +187,10 @@ mobile.addEventListener("change", function () {
     }
 });
 
-
-
 (async () => {
     try {
         moviesData = await fetchApi(MOVIES_URL);
         if (mobile.matches) {
-            /*var movies = document.querySelectorAll('.movie');
-            var gallery = document.querySelectorAll('.gallery-cell');
-            if (movies) {
-                movies.forEach(function (movie) {
-                    movie.remove();
-                });
-            }
-            if (gallery) {
-                gallery.forEach(function (cell) {
-                    cell.remove();
-                });
-            }*/
-
             displayMobile(moviesData);
         } else {
             displayMovies(moviesData);
