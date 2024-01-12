@@ -108,7 +108,6 @@ function displayCategories(data, movies, projects) {
             }
 
             // no filter selected => display all images
-
             if (Object.values(tags).reduce((a, b) => a + b, 0) === 0) {
                 const projects = document.querySelectorAll('.img-container');
                 const buttons = document.querySelectorAll('.filters-container p');
@@ -142,10 +141,8 @@ function displayCategories(data, movies, projects) {
                         button.style.background = '#642E68'
                     }
                 }
-
             }
         })
-
         filtersContainer.appendChild(newTag)
     });
 
@@ -160,7 +157,6 @@ function displayCategories(data, movies, projects) {
             dropdownContent.style.visibility = 'hidden'
             openMenu = false
         }
-
     })
 
     dropdown.classList.add('dropdown')

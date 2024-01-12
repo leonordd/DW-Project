@@ -1,6 +1,3 @@
-/*NOTAAAAA 
-Não alterar este ficheiro, copiar para outra página para usar (obrigada :D)*/
-
 * {
     margin: 0;
     padding: 0;
@@ -12,14 +9,14 @@ Não alterar este ficheiro, copiar para outra página para usar (obrigada :D)*/
 }
 
 .container-fluid {
-    padding-left: calc(3.97% - calc(1.65%/2));
     /*margem interna esquerda*/
-    padding-right: calc(3.97% - calc(1.65%/2));
+    padding-left: calc(3.97% - calc(1.65%/2));
     /*margem interna direita*/
-    padding-top: 5.12%;
+    padding-right: calc(3.97% - calc(1.65%/2));
     /*margem interna superior*/
-    padding-bottom: 5.12%;
+    padding-top: 5.12%;
     /*margem interna inferior*/
+    padding-bottom: 5.12%;
     margin-right: auto;
     margin-left: auto;
 }
@@ -40,18 +37,19 @@ div {
     -webkit-box-direction: normal;
     flex-direction: row;
     flex-wrap: wrap;
+    /*margem de cada coluna (1.65%) é o valor completo, é negativo para inicializar o valor da row*/
     margin-right: -calc(1.65%/2);
     /*margem de cada coluna (1.65%) é o valor completo, é negativo para inicializar o valor da row*/
     margin-left: -calc(1.65%/2);
-    /*margem de cada coluna (1.65%) é o valor completo, é negativo para inicializar o valor da row*/
 }
 
 [class*='col'] {
     box-sizing: border-box;
+    /*margem de cada coluna (1.65%)*/
     padding-right: calc(1.65%/2);
     /*margem de cada coluna (1.65%)*/
     padding-left: calc(1.65%/2);
-    /*margem de cada coluna (1.65%)*/
+
 }
 
 

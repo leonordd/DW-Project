@@ -11,6 +11,7 @@ header {
     padding-right: calc(3.97% - calc(1.65%/2));
     /*margem interna superior*/
     padding-top: 20px;
+    /*margem interna inferior*/
     padding-bottom: 20px;
     position: fixed;
     z-index: 100;
@@ -195,9 +196,6 @@ footer img {
     /* Standard syntax */
     user-select: none;
 }
-
-/* Para tablets: */
-@media screen and (min-width: 600px) and (max-width: 980px) {}
 
 /*para telemóveis*/
 @media screen and (max-width: 600px) {

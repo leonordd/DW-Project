@@ -18,7 +18,7 @@ async function fetchApi(apiUrl) {
 }
 
 function navBar() {
-    //verifica se a class show está ou nãoor presente e muda a cor de background do header
+    //verifica se a class show está ou não presente e muda a cor de background do header
     let eyes = document.querySelector("#eyes");
     let a = document.querySelector("#fullscreen");
     let boolean = a.classList.contains("show");
@@ -129,12 +129,7 @@ function displayMobile(moviesData) {
         moviesContainer.classList.add("gallery");
         moviesContainer.classList.remove("movies");
         moviesContainer.appendChild(movieElement);
-
     });
-
-    /*if (flkty) {
-        flkty.destroy();
-    }*/
 
     flkty = new Flickity('.gallery', {
         cellAlign: 'left',
@@ -143,12 +138,8 @@ function displayMobile(moviesData) {
     });
 }
 
-
-
-
 mobile.addEventListener("change", function () {
     // mobile
-
     if (mobile.matches) {
         console.log("mobile")
 
@@ -196,25 +187,10 @@ mobile.addEventListener("change", function () {
     }
 });
 
-
-
 (async () => {
     try {
         moviesData = await fetchApi(MOVIES_URL);
         if (mobile.matches) {
-            /*var movies = document.querySelectorAll('.movie');
-            var gallery = document.querySelectorAll('.gallery-cell');
-            if (movies) {
-                movies.forEach(function (movie) {
-                    movie.remove();
-                });
-            }
-            if (gallery) {
-                gallery.forEach(function (cell) {
-                    cell.remove();
-                });
-            }*/
-
             displayMobile(moviesData);
         } else {
             displayMovies(moviesData);
