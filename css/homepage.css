@@ -28,6 +28,7 @@ header p {
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(5, 1fr); 
 }
+
 .rellax {
     transition: transform 0.6s ease-out; 
 }
@@ -35,21 +36,21 @@ header p {
 .imagens_home img {
     width: 100%;
 }
+
 .img0{
     grid-column: 2 / span 5;
     grid-row: 1/ span 3;
     height: fit-content;
-    width: fit-content;
-    
+    width: fit-content;   
 }
+
 .img1{
     grid-column: 8/ span 4;
     grid-row: 1/ span 3;
     height: fit-content;
-    width: fit-content;
-    
-    
+    width: fit-content;   
 }
+
 .img2{
     grid-column: 3 / span 2;
     grid-row: 2/ span 2;
@@ -57,42 +58,42 @@ header p {
     width: fit-content;
     
 }
+
 .img3{
     grid-column: 8 / span 4;
     grid-row: 2/ span 4;
     height: fit-content;
-    width: fit-content;
-      
+    width: fit-content;    
 }
+
 .img4{
     grid-column: 4 / span 4;
     grid-row: 3/ span 2;
     width: fit-content;
-    height: fit-content;
-    
+    height: fit-content;   
 }
+
 .img5{
     grid-column: 2 / span 4;
     grid-row: 4/ span 1;
     height: fit-content;
-    width: fit-content;
-    
+    width: fit-content;  
 }
+
 .img6{
     grid-column: 9 / span 3;
     grid-row: 4/ span 1;
     height: fit-content;
-    width: fit-content;
-    
+    width: fit-content;   
 }
+
 .img7{
     display: flex;
     justify-content: center;
     grid-column: 5 / span 4;
     grid-row: 5/ span 1;
     height: fit-content;
-    width: fit-content;
-    
+    width: fit-content; 
 }
 
 .keywords {
@@ -420,6 +421,36 @@ body, .imagens_home, .keywords, .WA, .intro , .intro h1 {
         .costumize {
             width: 40px;
             height: 40px;
+        }
+
+        .img_select img {
+            width: 60%;
+        }
+
+        .name-pic{
+            display:inline;
+        }
+
+        .pic_h3{
+            max-width:100%;
+        }
+
+        .pic_h3 img{
+            width:200%;
+        }
+
+        .pic_h3 h3{
+            font-size: 2rem;
+            transform: translateX(-200px);
+        }
+
+        .quote-WA{
+            margin-top: 40px;
+        }
+
+        .quote-WA h4{
+            font-size:1.5rem;
+            text-align: center;
         }
 }
 
