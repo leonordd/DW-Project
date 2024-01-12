@@ -9,22 +9,20 @@ header p {
 
 .intro h1 {
     height: 100vh;
- background-color: var(--preto); 
+    background-color: var(--preto); 
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    color:var( --rosasalmão); 
+    color:#F3E4EC;
     font-weight: normal;
     z-index: 2;
 }
-
 
 .imagens_home {
     background-color: var(--roxo);
     display: grid;
     gap: 10px;
-    /* padding: 7%; */
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(5, 1fr); 
 }
@@ -181,7 +179,6 @@ header p {
 
 .traingif {
     background-color: var(--bordo);
-    /* width: 100vw; */
     height: 70vh;
     overflow: hidden;
 }
